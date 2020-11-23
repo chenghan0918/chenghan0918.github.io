@@ -6,7 +6,7 @@
   <link href="https://chenghan0918.github.io/atom.xml" rel="self"/>
   
   <link href="https://chenghan0918.github.io/"/>
-  <updated>2020-09-10T01:48:29.663Z</updated>
+  <updated>2020-11-23T14:19:47.898Z</updated>
   <id>https://chenghan0918.github.io/</id>
   
   <author>
@@ -17,30 +17,27 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>first-post</title>
-    <link href="https://chenghan0918.github.io/2020/09/10/first-post/"/>
-    <id>https://chenghan0918.github.io/2020/09/10/first-post/</id>
-    <published>2020-09-10T01:48:29.000Z</published>
-    <updated>2020-09-10T01:48:29.663Z</updated>
+    <title>Vue Cli 簡介</title>
+    <link href="https://chenghan0918.github.io/2020/11/23/Vue-Cli%E7%B0%A1%E4%BB%8B/"/>
+    <id>https://chenghan0918.github.io/2020/11/23/Vue-Cli%E7%B0%A1%E4%BB%8B/</id>
+    <published>2020-11-23T13:58:03.000Z</published>
+    <updated>2020-11-23T14:19:47.898Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Vue-Cli&quot;&gt;&lt;a href=&quot;#Vue-Cli&quot; class=&quot;headerlink&quot; title=&quot;Vue Cli&quot;&gt;&lt;/a&gt;Vue Cli&lt;/h1&gt;&lt;h2 id=&quot;Vue-Cli-介紹&quot;&gt;&lt;a href=&quot;#Vue-Cli-介紹&quot;</summary>
+        
+      
     
     
     
+    <category term="Web" scheme="https://chenghan0918.github.io/categories/Web/"/>
     
     
-  </entry>
-  
-  <entry>
-    <title>林承翰李亞妮林阿明</title>
-    <link href="https://chenghan0918.github.io/2020/08/06/hello-world/"/>
-    <id>https://chenghan0918.github.io/2020/08/06/hello-world/</id>
-    <published>2020-08-06T09:48:13.000Z</published>
-    <updated>2020-09-08T04:25:31.029Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for more info.</summary>
-    
-    
-    
+    <category term="Vue Cli" scheme="https://chenghan0918.github.io/tags/Vue-Cli/"/>
     
   </entry>
   

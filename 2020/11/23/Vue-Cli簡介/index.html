@@ -24,20 +24,33 @@
     var CONFIG = {"hostname":"chenghan0918.github.io","root":"/","scheme":"Pisces","version":"8.0.0-rc.5","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"path":"search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
 
-  <meta name="description" content="You can’t connect the dots looking forward; you can only connect them looking backwards.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="tags">
-<meta property="og:url" content="https://chenghan0918.github.io/tags/index.html">
+  <meta name="description" content="Vue CliVue Cli 介紹 基於 Webpack 所建置的開發工具  Webpack: 現在前端技術發展快速，多了很多 Preprocess (前處理器)工具與框架，像是Scss,Vue， 但是瀏覽器只看得懂(js,css,html)，因此Webpack 就出現了，它幫我們編譯Preprocess 成瀏覽器得懂的內容然後打包成一包 dis 發布檔，直接讓後端上傳到 server。   方便">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue Cli 簡介">
+<meta property="og:url" content="https://chenghan0918.github.io/2020/11/23/Vue-Cli%E7%B0%A1%E4%BB%8B/index.html">
 <meta property="og:site_name" content="Leo&#39;s Space">
-<meta property="og:description" content="You can’t connect the dots looking forward; you can only connect them looking backwards.">
+<meta property="og:description" content="Vue CliVue Cli 介紹 基於 Webpack 所建置的開發工具  Webpack: 現在前端技術發展快速，多了很多 Preprocess (前處理器)工具與框架，像是Scss,Vue， 但是瀏覽器只看得懂(js,css,html)，因此Webpack 就出現了，它幫我們編譯Preprocess 成瀏覽器得懂的內容然後打包成一包 dis 發布檔，直接讓後端上傳到 server。   方便">
 <meta property="og:locale" content="zh_TW">
-<meta property="article:published_time" content="2020-09-04T12:41:14.000Z">
-<meta property="article:modified_time" content="2020-09-05T13:13:23.843Z">
+<meta property="og:image" content="https://i.imgur.com/P7hOVln.png">
+<meta property="og:image" content="https://i.imgur.com/9c3EgkL.png">
+<meta property="og:image" content="https://i.imgur.com/Dv8w0Dm.png">
+<meta property="og:image" content="https://i.imgur.com/9ZcOby3.png">
+<meta property="og:image" content="https://i.imgur.com/lsD2Ms9.png">
+<meta property="og:image" content="https://i.imgur.com/FijGIsb.png">
+<meta property="og:image" content="https://i.imgur.com/PFdom52.png">
+<meta property="og:image" content="https://i.imgur.com/lecm6cz.png">
+<meta property="og:image" content="https://i.imgur.com/QZ1ZfsB.png">
+<meta property="og:image" content="https://i.imgur.com/Sgk77Fv.png">
+<meta property="og:image" content="https://i.imgur.com/GGV96D1.png">
+<meta property="article:published_time" content="2020-11-23T13:58:03.000Z">
+<meta property="article:modified_time" content="2020-11-23T14:19:47.898Z">
 <meta property="article:author" content="Leo">
+<meta property="article:tag" content="Vue Cli">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.imgur.com/P7hOVln.png">
 
 
-<link rel="canonical" href="https://chenghan0918.github.io/tags/">
+<link rel="canonical" href="https://chenghan0918.github.io/2020/11/23/Vue-Cli%E7%B0%A1%E4%BB%8B/">
 
 
 <script class="page-configurations">
@@ -45,13 +58,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-TW'
   };
 </script>
 
-  <title>tags | Leo's Space
-</title>
+  <title>Vue Cli 簡介 | Leo's Space</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-177314724-1"></script>
     <script>
@@ -211,7 +223,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目錄
@@ -223,6 +235,7 @@
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Vue-Cli"><span class="nav-number">1.</span> <span class="nav-text">Vue Cli</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Vue-Cli-%E4%BB%8B%E7%B4%B9"><span class="nav-number">1.1.</span> <span class="nav-text">Vue Cli 介紹</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Vue-Cli-%E5%BB%BA%E6%A7%8B"><span class="nav-number">1.2.</span> <span class="nav-text">Vue Cli 建構</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Vue-Cli-%E8%B3%87%E6%96%99%E5%A4%BE%E7%B5%90%E6%A7%8B"><span class="nav-number">1.3.</span> <span class="nav-text">Vue Cli 資料夾結構</span></a></li></ol></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -292,56 +305,229 @@
 
       <div class="main-inner">
         
-  
-  
 
-        <div class="content page posts-expand">
+        <div class="content post posts-expand">
           
 
     
-    
-    
-    <div class="post-block" lang="zh-TW">
-      <header class="post-header">
-
-<h1 class="post-title" itemprop="name headline">tags
-</h1>
-
-<div class="post-meta">
   
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://chenghan0918.github.io/2020/11/23/Vue-Cli%E7%B0%A1%E4%BB%8B/">
 
-</div>
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/Leo.jpg">
+      <meta itemprop="name" content="Leo">
+      <meta itemprop="description" content="You can’t connect the dots looking forward; you can only connect them looking backwards.">
+    </span>
 
-</header>
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Leo's Space">
+    </span>
 
-      
-      
-      
-      <div class="post-body">
-          <div class="tag-cloud">
-  <div class="tag-cloud-title">
-    目前共有 1 個標籤
-  </div>
-  <div class="tag-cloud-tags">
-    <a href="/tags/Vue-Cli/" style="font-size: 12px;" class="tag-cloud-0">Vue Cli</a>
-  </div>
-</div>
+    
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Vue Cli 簡介
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+              
+
+              <time title="創建時間：2020-11-23 21:58:03 / 修改時間：22:19:47" itemprop="dateCreated datePublished" datetime="2020-11-23T21:58:03+08:00">2020-11-23</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Web/" itemprop="url" rel="index"><span itemprop="name">Web</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="閱讀次數" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">閱讀次數：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2020/11/23/Vue-Cli%E7%B0%A1%E4%BB%8B/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/11/23/Vue-Cli簡介/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="文章字數">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">文章字數：</span>
+              <span>889</span>
+            </span>
+            <span class="post-meta-item" title="所需閱讀時間">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+              <span>1 分鐘</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="Vue-Cli"><a href="#Vue-Cli" class="headerlink" title="Vue Cli"></a>Vue Cli</h1><h2 id="Vue-Cli-介紹"><a href="#Vue-Cli-介紹" class="headerlink" title="Vue Cli 介紹"></a>Vue Cli 介紹</h2><ol>
+<li><p>基於 Webpack 所建置的開發工具</p>
+<ul>
+<li>Webpack: 現在前端技術發展快速，多了很多 Preprocess (前處理器)工具與框架，像是Scss,Vue， 但是瀏覽器只看得懂(js,css,html)，因此Webpack 就出現了，它幫我們編譯Preprocess 成瀏覽器得懂的內容然後打包成一包 dis 發布檔，直接讓後端上傳到 server。<br><img src="https://i.imgur.com/P7hOVln.png"></li>
+</ul>
+</li>
+<li><p>方便使用各種第三方套件(BS4,Vue Router)</p>
+</li>
+<li><p>可以運行 Sass,Bebel 等編譯工具</p>
+</li>
+<li><p>便於開發 SPA 網頁工具</p>
+</li>
+<li><p>快速搭建開發環境</p>
+</li>
+</ol>
+<h2 id="Vue-Cli-建構"><a href="#Vue-Cli-建構" class="headerlink" title="Vue Cli 建構"></a>Vue Cli 建構</h2><ol>
+<li><p>安裝 <a target="_blank" rel="noopener" href="https://nodejs.org/en/">Node.js</a></p>
+ <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node -v <span class="comment">//確認 node 安裝成功</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>安裝 <a target="_blank" rel="noopener" href="https://cli.vuejs.org/guide/installation.html">Vue Cli</a></p>
+ <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install vue-cli -g <span class="comment">// 以全域方式安裝 vue-cli 2.版本</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>啟用 webpack</p>
+ <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">vue list  <span class="comment">// 列出可用樣板</span></span><br><span class="line">vue init webpack test <span class="comment">// vue init 樣板名稱 專案名稱</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://i.imgur.com/9c3EgkL.png"><br><img src="https://i.imgur.com/Dv8w0Dm.png"></p>
+</li>
+</ol>
+<ol start="4">
+<li><p>安裝模組</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install &#x2F;&#x2F;安裝package.json內相依套件 </span><br><span class="line">&#x2F;&#x2F; 安裝完後就會多一個 node_modules 的資料夾</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://i.imgur.com/9ZcOby3.png"></p>
+</li>
+<li><p>執行測試環境</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run dev &#x2F;&#x2F;執行測試環境</span><br></pre></td></tr></table></figure>
+
+<p> <img src="https://i.imgur.com/lsD2Ms9.png"></p>
+</li>
+</ol>
+<p>   <img src="https://i.imgur.com/FijGIsb.png"></p>
+<ol start="6">
+<li><p>正式發布檔</p>
+ <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run build <span class="comment">// 目錄會多 dis 資料夾 裡面的檔案是正式要放到 server的</span></span><br></pre></td></tr></table></figure>
+
+<p> <img src="https://i.imgur.com/PFdom52.png"></p>
+</li>
+</ol>
+<h2 id="Vue-Cli-資料夾結構"><a href="#Vue-Cli-資料夾結構" class="headerlink" title="Vue Cli 資料夾結構"></a>Vue Cli 資料夾結構</h2><ol>
+<li><p>主檔案結構</p>
+<p><img src="https://i.imgur.com/lecm6cz.png"></p>
+</li>
+</ol>
+<ol start="2">
+<li><p>被注入程式的 index.html</p>
+<p><img src="https://i.imgur.com/QZ1ZfsB.png"></p>
+</li>
+</ol>
+<ol start="3">
+<li><p>scr </p>
+<ul>
+<li>main.js 是所有 Vue.js 的進入點 entry，程式會注入到 index.html</li>
+</ul>
+<p><img src="https://i.imgur.com/Sgk77Fv.png"></p>
+<ul>
+<li>assets 資料夾裡面放會被編譯的檔案，像是圖檔小於某個大小，圖檔會用 base64 編譯</li>
+</ul>
+</li>
+<li><p>satic 資料夾內檔案不會被編譯</p>
+</li>
+<li><p>dis 資料夾</p>
+<ul>
+<li>裡面的 index.hml 是正式發布的檔案，需要用 server 執行</li>
+</ul>
+</li>
+</ol>
+<p><img src="https://i.imgur.com/GGV96D1.png"></p>
+<ol start="6">
+<li>build 資料夾<ul>
+<li>裡面有 webpack 的設定檔</li>
+</ul>
+</li>
+<li>config 資料夾<ul>
+<li>裡面有設定環境變數的檔案</li>
+</ul>
+</li>
+<li>node_modules<ul>
+<li>裡面為所有安裝的套件，套件清單在 package.json</li>
+</ul>
+</li>
+<li>.babelrc<ul>
+<li>ES6 語法不能在所有瀏覽器上執行，透過 Beble 可以編譯 ES6 成為大部分瀏覽器可以了解的語法</li>
+</ul>
+</li>
+<li>.postcssrc.js<ul>
+<li>css 前處理器的編譯器</li>
+</ul>
+</li>
+</ol>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Vue-Cli/" rel="tag"># Vue Cli</a>
+          </div>
 
         
-      </div>
-      
-      
-      
-    </div>
-    
 
+
+        
+      </footer>
     
-    
-    
+  </article>
+  
+  
+  
+
 
 
         </div>
         
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -463,6 +649,26 @@
   }
   // defer loading until the whole page loading is completed
   window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  var disqus_config = function() {
+    this.page.url = "https://chenghan0918.github.io/2020/11/23/Vue-Cli%E7%B0%A1%E4%BB%8B/";
+    this.page.identifier = "2020/11/23/Vue-Cli簡介/";
+    this.page.title = "Vue Cli 簡介";
+    };
+  NexT.utils.loadComments('#disqus_thread', () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://leos-coding-life.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
 </script>
 
 </body>
