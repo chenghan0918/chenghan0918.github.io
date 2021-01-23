@@ -4,14 +4,21 @@
   <url>
     <loc>https://chenghan0918.github.io/2020/11/24/Vue-Cli-Webpack/</loc>
     
-    <lastmod>2020-11-24</lastmod>
+    <lastmod>2021-01-23</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://chenghan0918.github.io/2021/01/23/Day1-%E5%BB%BA%E7%AB%8B-Vue-%E9%96%8B%E7%99%BC%E7%92%B0%E5%A2%83/</loc>
+    
+    <lastmod>2021-01-23</lastmod>
     
   </url>
   
   <url>
     <loc>https://chenghan0918.github.io/2020/11/23/Vue-Cli%E7%B0%A1%E4%BB%8B/</loc>
     
-    <lastmod>2020-11-24</lastmod>
+    <lastmod>2021-01-23</lastmod>
     
   </url>
   
@@ -39,15 +46,15 @@
 
   <url>
     <loc>https://chenghan0918.github.io/</loc>
-    <lastmod>2020-11-24</lastmod>
+    <lastmod>2021-01-23</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
   
   <url>
-    <loc>https://chenghan0918.github.io/tags/Vue-Cli/</loc>
-    <lastmod>2020-11-24</lastmod>
+    <loc>https://chenghan0918.github.io/tags/Vue/</loc>
+    <lastmod>2021-01-23</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -56,7 +63,7 @@
   
   <url>
     <loc>https://chenghan0918.github.io/categories/Web/</loc>
-    <lastmod>2020-11-24</lastmod>
+    <lastmod>2021-01-23</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>

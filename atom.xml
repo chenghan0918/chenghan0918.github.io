@@ -6,7 +6,7 @@
   <link href="https://chenghan0918.github.io/atom.xml" rel="self"/>
   
   <link href="https://chenghan0918.github.io/"/>
-  <updated>2020-11-24T12:04:21.690Z</updated>
+  <updated>2021-01-23T13:00:09.972Z</updated>
   <id>https://chenghan0918.github.io/</id>
   
   <author>
@@ -17,27 +17,63 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Vue Cli-Webpack</title>
-    <link href="https://chenghan0918.github.io/2020/11/24/Vue-Cli-Webpack/"/>
-    <id>https://chenghan0918.github.io/2020/11/24/Vue-Cli-Webpack/</id>
-    <published>2020-11-24T11:56:42.000Z</published>
-    <updated>2020-11-24T12:04:21.690Z</updated>
+    <title>Day1 建立 Vue 開發環境</title>
+    <link href="https://chenghan0918.github.io/2021/01/23/Day1-%E5%BB%BA%E7%AB%8B-Vue-%E9%96%8B%E7%99%BC%E7%92%B0%E5%A2%83/"/>
+    <id>https://chenghan0918.github.io/2021/01/23/Day1-%E5%BB%BA%E7%AB%8B-Vue-%E9%96%8B%E7%99%BC%E7%92%B0%E5%A2%83/</id>
+    <published>2021-01-23T12:47:33.000Z</published>
+    <updated>2021-01-23T13:00:09.972Z</updated>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;webpack-運行邏輯&quot;&gt;&lt;a href=&quot;#webpack-運行邏輯&quot; class=&quot;headerlink&quot; title=&quot;webpack 運行邏輯&quot;&gt;&lt;/a&gt;webpack 運行邏輯&lt;/h1&gt;&lt;p&gt;&lt;img</summary>
-        
-      
+    <summary type="html">&lt;h3 id=&quot;1-安裝編譯器&quot;&gt;&lt;a href=&quot;#1-安裝編譯器&quot; class=&quot;headerlink&quot; title=&quot;1.安裝編譯器&quot;&gt;&lt;/a&gt;1.安裝編譯器&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;VScode 安裝&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://code.visualstudio.com/&quot;&gt;官方下載&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;VScode 插件安裝&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=MS-CEINTL.vscode-language-pack-zh-hant&quot;&gt;Chinese (Traditional) Language Pack for Visual Studio Code&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;幫你把 VScode 繁體化&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=yuichinukiyama.vscode-preview-server&quot;&gt;Preview on Web Server&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;安裝完之後，在編譯器建立的 &lt;code&gt;index.html&lt;/code&gt; 檔上按&lt;code&gt;shift+control+L&lt;/code&gt;，就可以開啟一個虛擬 Web Server 來開啟你的首頁程式，Server 網址是&lt;a href=&quot;http://localhost:8080/index.html&quot;&gt;http://localhost:8080/index.html&lt;/a&gt; ，而不是一般在 &lt;code&gt;index.html&lt;/code&gt; 點擊兩下，使用本地端 file://… 的方式打開首頁程式。使用這個插件好處是當你網頁程式有所更動時，網頁畫面也會隨著程式自動更新，不用再重新啟動瀏覽器，增加開發效率。</summary>
     
     
     
     <category term="Web" scheme="https://chenghan0918.github.io/categories/Web/"/>
     
     
-    <category term="Vue Cli" scheme="https://chenghan0918.github.io/tags/Vue-Cli/"/>
+    <category term="Vue" scheme="https://chenghan0918.github.io/tags/Vue/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Vue Cli-Webpack</title>
+    <link href="https://chenghan0918.github.io/2020/11/24/Vue-Cli-Webpack/"/>
+    <id>https://chenghan0918.github.io/2020/11/24/Vue-Cli-Webpack/</id>
+    <published>2020-11-24T11:56:42.000Z</published>
+    <updated>2021-01-23T13:00:13.653Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;webpack-運行邏輯&quot;&gt;&lt;a href=&quot;#webpack-運行邏輯&quot; class=&quot;headerlink&quot; title=&quot;webpack 運行邏輯&quot;&gt;&lt;/a&gt;webpack 運行邏輯&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/FbxYqzy.png&quot;&gt;&lt;br&gt;main.js 是主要的進入點(entry)，webpack 會監控 main.js , 當main.js 有更動時 webpack 就自動編譯，編譯成 css,js 等遊覽器看得懂的語言。&lt;br&gt;由於 main.js 只是一個 js 檔案，無法看得懂 .vue 或者 .scss 檔，因此 webpack 有提供 loader 工具，來幫助 main.js 理解輸出這些檔案。&lt;/p&gt;
+&lt;h1 id=&quot;webpack-腳本檔案介紹&quot;&gt;&lt;a href=&quot;#webpack-腳本檔案介紹&quot; class=&quot;headerlink&quot; title=&quot;webpack 腳本檔案介紹&quot;&gt;&lt;/a&gt;webpack 腳本檔案介紹&lt;/h1&gt;&lt;p&gt;在 build 資料夾裡面有 webpack 腳本檔案，分別是:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;webpack.base.conf.js&lt;ul&gt;
+&lt;li&gt;主要核心&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;webpack.dev.conf.js&lt;ul&gt;
+&lt;li&gt;給我們開發中預覽畫面用的&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;webpack.prod.conf.js&lt;ul&gt;
+&lt;li&gt;輸出真正產品用的</summary>
+    
+    
+    
+    <category term="Web" scheme="https://chenghan0918.github.io/categories/Web/"/>
+    
+    
+    <category term="Vue" scheme="https://chenghan0918.github.io/tags/Vue/"/>
     
   </entry>
   
@@ -46,24 +82,19 @@
     <link href="https://chenghan0918.github.io/2020/11/23/Vue-Cli%E7%B0%A1%E4%BB%8B/"/>
     <id>https://chenghan0918.github.io/2020/11/23/Vue-Cli%E7%B0%A1%E4%BB%8B/</id>
     <published>2020-11-23T13:58:03.000Z</published>
-    <updated>2020-11-24T12:04:18.305Z</updated>
+    <updated>2021-01-23T13:00:00.986Z</updated>
     
     
-      
-      
-        
-        
     <summary type="html">&lt;h1 id=&quot;Vue-Cli-介紹&quot;&gt;&lt;a href=&quot;#Vue-Cli-介紹&quot; class=&quot;headerlink&quot; title=&quot;Vue Cli 介紹&quot;&gt;&lt;/a&gt;Vue Cli 介紹&lt;/h1&gt;&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;基於 Webpack</summary>
-        
-      
+&lt;li&gt;基於 Webpack 所建置的開發工具&lt;ul&gt;
+&lt;li&gt;Webpack: 現在前端技術發展快速，多了很多 Preprocess (前處理器)工具與框架，像是Scss,Vue， 但是瀏覽器只看得懂(js,css,html)，因此Webpack 就出現了，它幫我們編譯Preprocess 成瀏覽器得懂的內容然後打包成一包 dis 發布檔，直接讓後端上傳到 server。&lt;br&gt;&lt;img src=&quot;https://i.imgur.com/P7hOVln.png&quot;&gt;</summary>
     
     
     
     <category term="Web" scheme="https://chenghan0918.github.io/categories/Web/"/>
     
     
-    <category term="Vue Cli" scheme="https://chenghan0918.github.io/tags/Vue-Cli/"/>
+    <category term="Vue" scheme="https://chenghan0918.github.io/tags/Vue/"/>
     
   </entry>
   
