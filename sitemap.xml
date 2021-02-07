@@ -2,59 +2,66 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://chenghan0918.github.io/about/index.html</loc>
+    <loc>{{ post.permalink | uriencode }}</loc>
     
-    <lastmod>2021-02-07</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://chenghan0918.github.io/2020/11/24/Vue-Cli-Webpack/</loc>
-    
-    <lastmod>2021-01-23</lastmod>
+    <lastmod>{{ post.updated | formatDate }}</lastmod>
     
   </url>
   
   <url>
-    <loc>https://chenghan0918.github.io/2021/01/23/Day1-%E5%BB%BA%E7%AB%8B-Vue-%E9%96%8B%E7%99%BC%E7%92%B0%E5%A2%83/</loc>
+    <loc>{{ post.permalink | uriencode }}</loc>
     
-    <lastmod>2021-01-23</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://chenghan0918.github.io/2020/11/23/Vue-Cli%E7%B0%A1%E4%BB%8B/</loc>
-    
-    <lastmod>2021-01-23</lastmod>
+    <lastmod>{{ post.updated | formatDate }}</lastmod>
     
   </url>
   
   <url>
-    <loc>https://chenghan0918.github.io/tags/index.html</loc>
+    <loc>{{ post.permalink | uriencode }}</loc>
     
-    <lastmod>2020-09-05</lastmod>
+    <lastmod>{{ post.updated | formatDate }}</lastmod>
     
   </url>
   
   <url>
-    <loc>https://chenghan0918.github.io/categories/index.html</loc>
+    <loc>{{ post.permalink | uriencode }}</loc>
     
-    <lastmod>2020-09-05</lastmod>
+    <lastmod>{{ post.updated | formatDate }}</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>{{ post.permalink | uriencode }}</loc>
+    
+    <lastmod>{{ post.updated | formatDate }}</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>{{ post.permalink | uriencode }}</loc>
+    
+    <lastmod>{{ post.updated | formatDate }}</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>{{ post.permalink | uriencode }}</loc>
+    
+    <lastmod>{{ post.updated | formatDate }}</lastmod>
     
   </url>
   
 
   <url>
-    <loc>https://chenghan0918.github.io/</loc>
-    <lastmod>2021-02-07</lastmod>
+    <loc>{{ config.url | uriencode }}</loc>
+    <lastmod>{{ sNow | formatDate }}</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
   
   <url>
-    <loc>https://chenghan0918.github.io/tags/Vue/</loc>
-    <lastmod>2021-02-07</lastmod>
+    <loc>{{ tag.permalink | uriencode }}</loc>
+    <lastmod>{{ sNow | formatDate }}</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -62,8 +69,8 @@
 
   
   <url>
-    <loc>https://chenghan0918.github.io/categories/Web/</loc>
-    <lastmod>2021-02-07</lastmod>
+    <loc>{{ cat.permalink | uriencode }}</loc>
+    <lastmod>{{ sNow | formatDate }}</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
