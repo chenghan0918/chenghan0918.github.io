@@ -1,98 +1,122 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>{{ config.title }}</title>
+  <title>Leo&#39;s Space</title>
   
-  <subtitle>{{ config.subtitle }}</subtitle>
-  <link href="{{ feed_url | uriencode }}" rel="self"/>
+  <subtitle>我寫故我在</subtitle>
+  <link href="https://chenghan0918.github.io/atom.xml" rel="self"/>
   
-  <link href="{{ url | uriencode }}"/>
-  <updated>{{ posts.first().updated.toISOString() }}</updated>
-  <id>{{ url | uriencode }}</id>
+  <link href="https://chenghan0918.github.io/"/>
+  <updated>2021-02-07T14:32:45.216Z</updated>
+  <id>https://chenghan0918.github.io/</id>
   
   <author>
-    <name>{{ config.author }}</name>
+    <name>Leo</name>
     
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>{{ post.title }}</title>
-    <link href="{{ post.permalink | uriencode }}"/>
-    <id>{{ post.permalink | uriencode }}</id>
-    <published>{{ post.date.toISOString() }}</published>
-    <updated>{{ post.updated.toISOString() }}</updated>
+    <title>Day1 建立 Vue 開發環境</title>
+    <link href="https://chenghan0918.github.io/2021/02/07/Day1%20%E5%BB%BA%E7%AB%8B%20Vue%20%E9%96%8B%E7%99%BC%E7%92%B0%E5%A2%83/"/>
+    <id>https://chenghan0918.github.io/2021/02/07/Day1%20%E5%BB%BA%E7%AB%8B%20Vue%20%E9%96%8B%E7%99%BC%E7%92%B0%E5%A2%83/</id>
+    <published>2021-02-07T14:30:02.000Z</published>
+    <updated>2021-02-07T14:32:45.216Z</updated>
     
     
       
       
         
         
-    <summary type="html">{{ short_content.substring(0, delim_pos) }}</summary>
+    <summary type="html">&lt;h2 id=&quot;1-安裝編譯器&quot;&gt;&lt;a href=&quot;#1-安裝編譯器&quot; class=&quot;headerlink&quot; title=&quot;1.安裝編譯器&quot;&gt;&lt;/a&gt;1.安裝編譯器&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;VScode 安裝&lt;ul&gt;
+&lt;li&gt;&lt;a</summary>
         
       
     
     
     
+    <category term="Web" scheme="https://chenghan0918.github.io/categories/Web/"/>
+    
+    
+    <category term="Vue" scheme="https://chenghan0918.github.io/tags/Vue/"/>
     
   </entry>
   
   <entry>
-    <title>{{ post.title }}</title>
-    <link href="{{ post.permalink | uriencode }}"/>
-    <id>{{ post.permalink | uriencode }}</id>
-    <published>{{ post.date.toISOString() }}</published>
-    <updated>{{ post.updated.toISOString() }}</updated>
+    <title>使用javascript來解leetcode(#1 Two Sum)(Easy)</title>
+    <link href="https://chenghan0918.github.io/2021/02/07/%E4%BD%BF%E7%94%A8javascript%E4%BE%86%E8%A7%A3leetcode(#1%20Two%20Sum)(Easy)/"/>
+    <id>https://chenghan0918.github.io/2021/02/07/%E4%BD%BF%E7%94%A8javascript%E4%BE%86%E8%A7%A3leetcode(#1%20Two%20Sum)(Easy)/</id>
+    <published>2021-02-07T14:28:42.000Z</published>
+    <updated>2021-02-07T14:33:09.162Z</updated>
     
     
       
       
         
         
-    <summary type="html">{{ short_content.substring(0, delim_pos) }}</summary>
+    <summary type="html">&lt;h2 id=&quot;題目原文&quot;&gt;&lt;a href=&quot;#題目原文&quot; class=&quot;headerlink&quot; title=&quot;題目原文&quot;&gt;&lt;/a&gt;題目原文&lt;/h2&gt;&lt;p&gt;Given an array of integers,</summary>
         
       
     
     
     
+    <category term="leetcode" scheme="https://chenghan0918.github.io/categories/leetcode/"/>
+    
+    
+    <category term="easy" scheme="https://chenghan0918.github.io/tags/easy/"/>
     
   </entry>
   
   <entry>
-    <title>{{ post.title }}</title>
-    <link href="{{ post.permalink | uriencode }}"/>
-    <id>{{ post.permalink | uriencode }}</id>
-    <published>{{ post.date.toISOString() }}</published>
-    <updated>{{ post.updated.toISOString() }}</updated>
+    <title>Vue Cli-Webpack</title>
+    <link href="https://chenghan0918.github.io/2020/11/24/Vue-Cli-Webpack/"/>
+    <id>https://chenghan0918.github.io/2020/11/24/Vue-Cli-Webpack/</id>
+    <published>2020-11-24T11:56:42.000Z</published>
+    <updated>2021-01-23T13:00:13.653Z</updated>
     
     
-    <summary type="html">{{ post.excerpt }}</summary>
+    <summary type="html">&lt;h1 id=&quot;webpack-運行邏輯&quot;&gt;&lt;a href=&quot;#webpack-運行邏輯&quot; class=&quot;headerlink&quot; title=&quot;webpack 運行邏輯&quot;&gt;&lt;/a&gt;webpack 運行邏輯&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/FbxYqzy.png&quot;&gt;&lt;br&gt;main.js 是主要的進入點(entry)，webpack 會監控 main.js , 當main.js 有更動時 webpack 就自動編譯，編譯成 css,js 等遊覽器看得懂的語言。&lt;br&gt;由於 main.js 只是一個 js 檔案，無法看得懂 .vue 或者 .scss 檔，因此 webpack 有提供 loader 工具，來幫助 main.js 理解輸出這些檔案。&lt;/p&gt;
+&lt;h1 id=&quot;webpack-腳本檔案介紹&quot;&gt;&lt;a href=&quot;#webpack-腳本檔案介紹&quot; class=&quot;headerlink&quot; title=&quot;webpack 腳本檔案介紹&quot;&gt;&lt;/a&gt;webpack 腳本檔案介紹&lt;/h1&gt;&lt;p&gt;在 build 資料夾裡面有 webpack 腳本檔案，分別是:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;webpack.base.conf.js&lt;ul&gt;
+&lt;li&gt;主要核心&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;webpack.dev.conf.js&lt;ul&gt;
+&lt;li&gt;給我們開發中預覽畫面用的&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;webpack.prod.conf.js&lt;ul&gt;
+&lt;li&gt;輸出真正產品用的</summary>
     
     
     
-    <category term="{{ category.name }}" scheme="{{ category.permalink }}"/>
+    <category term="Web" scheme="https://chenghan0918.github.io/categories/Web/"/>
     
     
-    <category term="{{ tag.name }}" scheme="{{ tag.permalink }}"/>
+    <category term="Vue" scheme="https://chenghan0918.github.io/tags/Vue/"/>
     
   </entry>
   
   <entry>
-    <title>{{ post.title }}</title>
-    <link href="{{ post.permalink | uriencode }}"/>
-    <id>{{ post.permalink | uriencode }}</id>
-    <published>{{ post.date.toISOString() }}</published>
-    <updated>{{ post.updated.toISOString() }}</updated>
+    <title>Vue Cli-簡介</title>
+    <link href="https://chenghan0918.github.io/2020/11/23/Vue-Cli%E7%B0%A1%E4%BB%8B/"/>
+    <id>https://chenghan0918.github.io/2020/11/23/Vue-Cli%E7%B0%A1%E4%BB%8B/</id>
+    <published>2020-11-23T13:58:03.000Z</published>
+    <updated>2021-01-23T13:00:00.986Z</updated>
     
     
-    <summary type="html">{{ post.excerpt }}</summary>
+    <summary type="html">&lt;h1 id=&quot;Vue-Cli-介紹&quot;&gt;&lt;a href=&quot;#Vue-Cli-介紹&quot; class=&quot;headerlink&quot; title=&quot;Vue Cli 介紹&quot;&gt;&lt;/a&gt;Vue Cli 介紹&lt;/h1&gt;&lt;ol&gt;
+&lt;li&gt;基於 Webpack 所建置的開發工具&lt;ul&gt;
+&lt;li&gt;Webpack: 現在前端技術發展快速，多了很多 Preprocess (前處理器)工具與框架，像是Scss,Vue， 但是瀏覽器只看得懂(js,css,html)，因此Webpack 就出現了，它幫我們編譯Preprocess 成瀏覽器得懂的內容然後打包成一包 dis 發布檔，直接讓後端上傳到 server。&lt;br&gt;&lt;img src=&quot;https://i.imgur.com/P7hOVln.png&quot;&gt;</summary>
     
     
     
-    <category term="{{ category.name }}" scheme="{{ category.permalink }}"/>
+    <category term="Web" scheme="https://chenghan0918.github.io/categories/Web/"/>
     
     
-    <category term="{{ tag.name }}" scheme="{{ tag.permalink }}"/>
+    <category term="Vue" scheme="https://chenghan0918.github.io/tags/Vue/"/>
     
   </entry>
   

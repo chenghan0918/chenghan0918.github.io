@@ -24,29 +24,21 @@
     var CONFIG = {"hostname":"chenghan0918.github.io","root":"/","scheme":"Pisces","version":"8.0.0-rc.5","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"path":"search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
 
-  <meta name="description" content="webpack 運行邏輯main.js 是主要的進入點(entry)，webpack 會監控 main.js , 當main.js 有更動時 webpack 就自動編譯，編譯成 css,js 等遊覽器看得懂的語言。由於 main.js 只是一個 js 檔案，無法看得懂 .vue 或者 .scss 檔，因此 webpack 有提供 loader 工具，來幫助 main.js 理解輸出這些檔案。 we">
+  <meta name="description" content="題目原文Given an array of integers, return indices of the two numbers such that they add up to a specific target. You may assume that each input would have exactly one solution, and you may not use the sa">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Vue Cli-Webpack">
-<meta property="og:url" content="https://chenghan0918.github.io/2020/11/24/Vue-Cli-Webpack/index.html">
+<meta property="og:title" content="使用javascript來解leetcode(#1 Two Sum)(Easy)">
+<meta property="og:url" content="https://chenghan0918.github.io/2021/02/07/%E4%BD%BF%E7%94%A8javascript%E4%BE%86%E8%A7%A3leetcode(#1%20Two%20Sum)(Easy)/index.html">
 <meta property="og:site_name" content="Leo&#39;s Space">
-<meta property="og:description" content="webpack 運行邏輯main.js 是主要的進入點(entry)，webpack 會監控 main.js , 當main.js 有更動時 webpack 就自動編譯，編譯成 css,js 等遊覽器看得懂的語言。由於 main.js 只是一個 js 檔案，無法看得懂 .vue 或者 .scss 檔，因此 webpack 有提供 loader 工具，來幫助 main.js 理解輸出這些檔案。 we">
+<meta property="og:description" content="題目原文Given an array of integers, return indices of the two numbers such that they add up to a specific target. You may assume that each input would have exactly one solution, and you may not use the sa">
 <meta property="og:locale" content="zh_TW">
-<meta property="og:image" content="https://i.imgur.com/FbxYqzy.png">
-<meta property="og:image" content="https://i.imgur.com/W3KxOwW.png">
-<meta property="og:image" content="https://i.imgur.com/ykoXXUp.png">
-<meta property="og:image" content="https://i.imgur.com/DaNMMgb.png">
-<meta property="og:image" content="https://i.imgur.com/A6C8oJM.png">
-<meta property="og:image" content="https://i.imgur.com/JtcpnN8.png">
-<meta property="og:image" content="https://i.imgur.com/RoFpHJn.png">
-<meta property="article:published_time" content="2020-11-24T11:56:42.000Z">
-<meta property="article:modified_time" content="2021-01-23T13:00:13.653Z">
+<meta property="article:published_time" content="2021-02-07T14:28:42.000Z">
+<meta property="article:modified_time" content="2021-02-07T14:33:09.162Z">
 <meta property="article:author" content="Leo">
-<meta property="article:tag" content="Vue">
+<meta property="article:tag" content="easy">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://i.imgur.com/FbxYqzy.png">
 
 
-<link rel="canonical" href="https://chenghan0918.github.io/2020/11/24/Vue-Cli-Webpack/">
+<link rel="canonical" href="https://chenghan0918.github.io/2021/02/07/%E4%BD%BF%E7%94%A8javascript%E4%BE%86%E8%A7%A3leetcode(#1%20Two%20Sum)(Easy)/">
 
 
 <script class="page-configurations">
@@ -59,7 +51,7 @@
   };
 </script>
 
-  <title>Vue Cli-Webpack | Leo's Space</title>
+  <title>使用javascript來解leetcode(#1 Two Sum)(Easy) | Leo's Space</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-177314724-1"></script>
     <script>
@@ -231,7 +223,7 @@
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
-          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#webpack-%E9%81%8B%E8%A1%8C%E9%82%8F%E8%BC%AF"><span class="nav-number">1.</span> <span class="nav-text">webpack 運行邏輯</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#webpack-%E8%85%B3%E6%9C%AC%E6%AA%94%E6%A1%88%E4%BB%8B%E7%B4%B9"><span class="nav-number">2.</span> <span class="nav-text">webpack 腳本檔案介紹</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#webpack-base-%E4%BB%8B%E7%B4%B9"><span class="nav-number">3.</span> <span class="nav-text">webpack.base 介紹</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#config-%E7%92%B0%E5%A2%83%E8%AE%8A%E6%95%B8"><span class="nav-number">4.</span> <span class="nav-text">config 環境變數</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%87%AA%E5%AE%9A%E7%BE%A9%E7%92%B0%E5%A2%83%E8%AE%8A%E6%95%B8"><span class="nav-number">5.</span> <span class="nav-text">自定義環境變數</span></a></li></ol></div>
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A1%8C%E7%9B%AE%E5%8E%9F%E6%96%87"><span class="nav-number">1.</span> <span class="nav-text">題目原文</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A1%8C%E7%9B%AE%E7%BF%BB%E8%AD%AF"><span class="nav-number">2.</span> <span class="nav-text">題目翻譯</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E9%A1%8C%E6%80%9D%E8%B7%AF"><span class="nav-number">3.</span> <span class="nav-text">解題思路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%83%E8%80%83%E6%96%87%E7%AB%A0"><span class="nav-number">4.</span> <span class="nav-text">參考文章</span></a></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -309,7 +301,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://chenghan0918.github.io/2020/11/24/Vue-Cli-Webpack/">
+    <link itemprop="mainEntityOfPage" href="https://chenghan0918.github.io/2021/02/07/%E4%BD%BF%E7%94%A8javascript%E4%BE%86%E8%A7%A3leetcode(#1%20Two%20Sum)(Easy)/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/Leo.jpg">
@@ -324,7 +316,7 @@
     
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Vue Cli-Webpack
+          使用javascript來解leetcode(#1 Two Sum)(Easy)
         </h1>
 
         <div class="post-meta">
@@ -333,23 +325,17 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">發表於</span>
+              
 
-              <time title="創建時間：2020-11-24 19:56:42" itemprop="dateCreated datePublished" datetime="2020-11-24T19:56:42+08:00">2020-11-24</time>
+              <time title="創建時間：2021-02-07 22:28:42 / 修改時間：22:33:09" itemprop="dateCreated datePublished" datetime="2021-02-07T22:28:42+08:00">2021-02-07</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-01-23 21:00:13" itemprop="dateModified" datetime="2021-01-23T21:00:13+08:00">2021-01-23</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分類於</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Web/" itemprop="url" rel="index"><span itemprop="name">Web</span></a>
+                  <a href="/categories/leetcode/" itemprop="url" rel="index"><span itemprop="name">leetcode</span></a>
                 </span>
             </span>
 
@@ -369,8 +355,8 @@
       </span>
       <span class="post-meta-item-text">Disqus：</span>
     
-    <a title="disqus" href="/2020/11/24/Vue-Cli-Webpack/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/11/24/Vue-Cli-Webpack/" itemprop="commentCount"></span>
+    <a title="disqus" href="/2021/02/07/%E4%BD%BF%E7%94%A8javascript%E4%BE%86%E8%A7%A3leetcode(#1%20Two%20Sum)(Easy)/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/02/07/使用javascript來解leetcode(#1 Two Sum)(Easy)/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -380,14 +366,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">文章字數：</span>
-              <span>1k</span>
+              <span>2.4k</span>
             </span>
             <span class="post-meta-item" title="所需閱讀時間">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
-              <span>1 分鐘</span>
+              <span>2 分鐘</span>
             </span>
 
         </div>
@@ -397,45 +383,46 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h1 id="webpack-運行邏輯"><a href="#webpack-運行邏輯" class="headerlink" title="webpack 運行邏輯"></a>webpack 運行邏輯</h1><p><img src="https://i.imgur.com/FbxYqzy.png"><br>main.js 是主要的進入點(entry)，webpack 會監控 main.js , 當main.js 有更動時 webpack 就自動編譯，編譯成 css,js 等遊覽器看得懂的語言。<br>由於 main.js 只是一個 js 檔案，無法看得懂 .vue 或者 .scss 檔，因此 webpack 有提供 loader 工具，來幫助 main.js 理解輸出這些檔案。</p>
-<h1 id="webpack-腳本檔案介紹"><a href="#webpack-腳本檔案介紹" class="headerlink" title="webpack 腳本檔案介紹"></a>webpack 腳本檔案介紹</h1><p>在 build 資料夾裡面有 webpack 腳本檔案，分別是:</p>
+        <h2 id="題目原文"><a href="#題目原文" class="headerlink" title="題目原文"></a>題目原文</h2><p>Given an array of integers, return <strong>indices</strong> of the two numbers such that they add up to a specific target.</p>
+<p>You may assume that each input would have <strong><em>exactly</em></strong> one solution, and you may not use the <em>same</em> element twice.</p>
+<p><strong>Example:</strong></p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Given nums = [<span class="number">2</span>, <span class="number">7</span>, <span class="number">11</span>, <span class="number">15</span>], target = <span class="number">9</span>,</span><br><span class="line"></span><br><span class="line">Because nums[<span class="number">0</span>] + nums[<span class="number">1</span>] = <span class="number">2</span> + <span class="number">7</span> = <span class="number">9</span>,</span><br><span class="line"><span class="keyword">return</span> [<span class="number">0</span>, <span class="number">1</span>].</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://leetcode.com/problems/two-sum/">題目網址</a></p>
+<h2 id="題目翻譯"><a href="#題目翻譯" class="headerlink" title="題目翻譯"></a>題目翻譯</h2><ul>
+<li>給予一組數列nums</li>
+<li>給予一個target目標值</li>
+<li>從數列nums中找出兩個數字相加是target值</li>
+<li>將兩個數字在數列中的位置回傳</li>
+<li>input數列只會找到一組可以合成target值的解(像是如果target=8則輸入數列不可能是[3,5,6,2]，因為有兩組解數字3和５，數字6和2)</li>
+<li>每個數字不能重複使用(比如target=4，輸入數列[2,1,5]，不能將數字2使用二次來合成4)</li>
+</ul>
+<h2 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h2><ul>
+<li><p>假設情境</p>
+<p>  某次資料結構的期中考，老師因為太多同學常常翹課所以起賭爛，決定出一份超難的考卷，下定決心要當掉一半的人。聰明的小明，在那次考試中拿到60分(target)的成績，逃過被老師當掉的風險，但天生個性白爛的他，決定去取笑那些考得比他低的同學，要找兩個加起來才剛好和他分數一樣60分的同學取笑。小明知道同學都把考卷放在自己的置物櫃裡，因此決定要翻同學的櫃子，偷拿出他們的考卷來當面取笑。</p>
+</li>
+<li><p>暴力破解法(Brute Force)</p>
+<p>  小明來到同學的櫃子，先開了第一個櫃子發現是自己平常很討厭的小華，只考了34分。小明很想取笑他，因此開始從第一個櫃子之後依序翻櫃子，要找出只有考26分的同學，用來取笑小華，但是後來將全部櫃子都看過一遍，卻發現全班沒有人考26分??，只好又以2號櫃子考33分的小美當基準，要找考27分的同學。由於他先前沒有紀錄每個櫃子的同學考幾分，因此又要重頭開始翻同學的櫃子，最後終於在第45號櫃子找到考27分的同學，偷出他們的考卷，卻也浪費一堆時間。</p>
+</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> twoSum = <span class="function"><span class="keyword">function</span>(<span class="params">nums, target</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> x=<span class="number">0</span>;x&lt;nums.length;x++)&#123;</span><br><span class="line">        <span class="keyword">let</span> goal=target-nums[x];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> y=x+<span class="number">1</span>;y&lt;=nums.length;y++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(nums[y]===goal)</span><br><span class="line">                <span class="keyword">return</span> [x,y];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//nums[]表示櫃子裡的考卷分數</span></span><br><span class="line"><span class="comment">//target表示小明的成績</span></span><br><span class="line"><span class="comment">//nums[x]小華的成績</span></span><br><span class="line"><span class="comment">//goal代表小明成績與小華成績相減的值，另一位他要嘲笑的同學</span></span><br><span class="line"><span class="comment">//x,y代表櫃子號碼</span></span><br></pre></td></tr></table></figure>
+
 <ul>
-<li>webpack.base.conf.js<ul>
-<li>主要核心</li>
+<li>使用dictionaries概念</li>
 </ul>
-</li>
-<li>webpack.dev.conf.js<ul>
-<li>給我們開發中預覽畫面用的</li>
+<blockquote>
+<p>Map、 dictionaries、associative arrays、hashtable 都是一樣的概念，一種用key:value來表達關係的資料結構，就把他想像成key是書頁而value是內容，透過索引key來快速找到所要的值value，而不同程式語言有不同的實作方式。</p>
+</blockquote>
+<p>又經過了一次期末考，白爛的小明又再次出動了，這次他考了70分，也一樣決定找兩位同學嘲笑。但是這次他學聰明了，先依序打開同學櫃子後，將同學的分數與櫃子號碼用表格紀錄下來。然後從第一個櫃子小華考了34分為基準，快速透過表格找到考26分的阿呆是在20號櫃子，快速將兩人考卷拿走。</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//使用Map實作</span></span><br><span class="line"><span class="keyword">let</span> twoSum = <span class="function"><span class="keyword">function</span>(<span class="params">nums, target</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> Mymap = <span class="keyword">new</span> <span class="built_in">Map</span>();</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;nums.length;i++)&#123;</span><br><span class="line">        Mymap.set(nums[i],i);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> x=<span class="number">0</span>;x&lt;nums.length;x++)&#123;</span><br><span class="line">        <span class="keyword">let</span> goal=target-nums[x];</span><br><span class="line">        <span class="keyword">if</span>(Mymap.has(goal)&amp;&amp;x!=Mymap.get(goal))</span><br><span class="line">            <span class="keyword">return</span>[x,Mymap.get(goal)];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//將班上同學的成績與櫃子號碼用Ｍap紀錄</span></span><br><span class="line"><span class="comment">//直覺會想說要將櫃子號碼存在key，成績存value</span></span><br><span class="line"><span class="comment">//但是最後題目是要回傳櫃子號碼，因此將櫃子號碼放在value，之後方便get得到值</span></span><br><span class="line"><span class="comment">//set(key,value)將資料加入表格</span></span><br><span class="line"><span class="comment">//get(key)用key得到value</span></span><br><span class="line"><span class="comment">//x!=Mymap.get(goal)預防x數字重複使用</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//使用Object實作</span></span><br><span class="line"><span class="keyword">let</span> twoSum = <span class="function"><span class="keyword">function</span>(<span class="params">nums, target</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> dict=&#123;&#125;;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;nums.length;i++)&#123;</span><br><span class="line">        dict[nums[i]]=i;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> x=<span class="number">0</span>;x&lt;nums.length;x++)&#123;</span><br><span class="line">        <span class="keyword">let</span> goal=target-nums[x];</span><br><span class="line">        <span class="keyword">if</span>(goal <span class="keyword">in</span> dict&amp;&amp;x!=dict[goal])</span><br><span class="line">            <span class="keyword">return</span>[x,dict[goal]];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//將班上同學的成績與櫃子號碼用object紀錄</span></span><br><span class="line"><span class="comment">//直覺會想說要將櫃子號碼存在key，成績存value</span></span><br><span class="line"><span class="comment">//但是最後題目是要回傳櫃子號碼，因此將櫃子號碼放在value，之後方便得到值</span></span><br><span class="line"><span class="comment">//設定值dict[key]=value</span></span><br><span class="line"><span class="comment">//in用法是會看goal值有沒有出現在object的key過，有就回傳true</span></span><br><span class="line"><span class="comment">//x!=dict[goal]預防x數字重複使用</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="參考文章"><a href="#參考文章" class="headerlink" title="參考文章"></a>參考文章</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map">Map使用方式</a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/in">Object in使用方式</a></li>
 </ul>
-</li>
-<li>webpack.prod.conf.js<ul>
-<li>輸出真正產品用的<a id="more"></a>
-<h1 id="webpack-base-介紹"><a href="#webpack-base-介紹" class="headerlink" title="webpack.base 介紹"></a>webpack.base 介紹</h1></li>
-</ul>
-</li>
-<li>entry 進入點和 output 輸出點<br><img src="https://i.imgur.com/W3KxOwW.png"></li>
-<li>loaer 的寫在這些 module<ul>
-<li>test: /.(png|jpe?g|gif|svg)(?.<em>)?$/,test: /.(png|jpe?g|gif|svg)(?.</em>)?$/ 這個 loader 會將圖檔小於 10 KB 的圖檔用 base64 方式編碼呈現<br><img src="https://i.imgur.com/ykoXXUp.png"></li>
-</ul>
-</li>
-<li>resolve<ul>
-<li>extensions: [‘.js’, ‘.vue’, ‘.json’],這是讓你可以省略副檔名的</li>
-<li>alias:裡面是放各種路徑的縮寫，像是 src 就可以用 @ 來替代<br><img src="https://i.imgur.com/DaNMMgb.png"></li>
-</ul>
-</li>
-</ul>
-<h1 id="config-環境變數"><a href="#config-環境變數" class="headerlink" title="config 環境變數"></a>config 環境變數</h1><p>在 webpack.base.conf.js 的 output 裡面你會看到它輸出的路徑 <strong>path: config.build.assetsRoot</strong>,裡面的 build 就代表 build 資料夾，裡面檔案如下：</p>
-<ul>
-<li>index.js 代表整個運行環境，比如設定 port 口</li>
-<li>dev.env.js 設定開發時的環境變數</li>
-<li>prod.env.js 設定發布時的環境變數</li>
-<li>開發時和發布時環境變數可能不太一樣(ajax路徑不相同)<h1 id="自定義環境變數"><a href="#自定義環境變數" class="headerlink" title="自定義環境變數"></a>自定義環境變數</h1></li>
-</ul>
-<p>1.我們在 dev.env.js 的 module.exports 底下新增一個環境變數<br>記得除了加上’’外還要加””，不然會出錯，還有記得改完後要重啟環境，因為我們新增的是環境變數。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">HTTP_PATH: &#39;&quot;http:&#x2F;&#x2F;localhost&#x2F;&quot;&#39;</span><br></pre></td></tr></table></figure>
-<p><img src="https://i.imgur.com/A6C8oJM.png"><br>2.最後我們來到 scr/components 裡面的 App.vue 檔，移到最下面 js 部分，在 return 資料的部分，我們輸出兩個環境變數</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">msg: process.env.NODE_ENV,</span><br><span class="line">http: process.env.HTTP_PATH</span><br></pre></td></tr></table></figure>
-<p><img src="https://i.imgur.com/JtcpnN8.png"><br>3.使用 <strong>npm run dev</strong>重啟環境，環境變數加入成功<br><img src="https://i.imgur.com/RoFpHJn.png"></p>
+<p>如果文章內容有任何問題或意見麻煩留言給我知道<br>感謝您</p>
 
     </div>
 
@@ -445,7 +432,7 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/Vue/" rel="tag"># Vue</a>
+              <a href="/tags/easy/" rel="tag"># easy</a>
           </div>
 
         
@@ -454,12 +441,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/11/23/Vue-Cli%E7%B0%A1%E4%BB%8B/" rel="prev" title="Vue Cli-簡介">
-      <i class="fa fa-chevron-left"></i> Vue Cli-簡介
+    <a href="/2020/11/24/Vue-Cli-Webpack/" rel="prev" title="Vue Cli-Webpack">
+      <i class="fa fa-chevron-left"></i> Vue Cli-Webpack
     </a></div>
       <div class="post-nav-item">
-    <a href="/2021/02/07/%E4%BD%BF%E7%94%A8javascript%E4%BE%86%E8%A7%A3leetcode(#1%20Two%20Sum)(Easy)/" rel="next" title="使用javascript來解leetcode(#1 Two Sum)(Easy)">
-      使用javascript來解leetcode(#1 Two Sum)(Easy) <i class="fa fa-chevron-right"></i>
+    <a href="/2021/02/07/Day1%20%E5%BB%BA%E7%AB%8B%20Vue%20%E9%96%8B%E7%99%BC%E7%92%B0%E5%A2%83/" rel="next" title="Day1 建立 Vue 開發環境">
+      Day1 建立 Vue 開發環境 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -604,9 +591,9 @@
 </script>
 <script>
   var disqus_config = function() {
-    this.page.url = "https://chenghan0918.github.io/2020/11/24/Vue-Cli-Webpack/";
-    this.page.identifier = "2020/11/24/Vue-Cli-Webpack/";
-    this.page.title = "Vue Cli-Webpack";
+    this.page.url = "https://chenghan0918.github.io/2021/02/07/%E4%BD%BF%E7%94%A8javascript%E4%BE%86%E8%A7%A3leetcode(#1%20Two%20Sum)(Easy)/";
+    this.page.identifier = "2021/02/07/使用javascript來解leetcode(#1 Two Sum)(Easy)/";
+    this.page.title = "使用javascript來解leetcode(#1 Two Sum)(Easy)";
     };
   NexT.utils.loadComments('#disqus_thread', () => {
     if (window.DISQUS) {

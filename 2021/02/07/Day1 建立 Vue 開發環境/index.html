@@ -24,29 +24,25 @@
     var CONFIG = {"hostname":"chenghan0918.github.io","root":"/","scheme":"Pisces","version":"8.0.0-rc.5","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"path":"search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
 
-  <meta name="description" content="webpack 運行邏輯main.js 是主要的進入點(entry)，webpack 會監控 main.js , 當main.js 有更動時 webpack 就自動編譯，編譯成 css,js 等遊覽器看得懂的語言。由於 main.js 只是一個 js 檔案，無法看得懂 .vue 或者 .scss 檔，因此 webpack 有提供 loader 工具，來幫助 main.js 理解輸出這些檔案。 we">
+  <meta name="description" content="1.安裝編譯器 VScode 安裝 官方下載   VScode 插件安裝 Chinese (Traditional) Language Pack for Visual Studio Code 幫你把 VScode 繁體化   Preview on Web Server 安裝完之後，在編譯器建立的 index.html 檔上按shift+control+L，就可以開啟一個虛擬 Web Server">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Vue Cli-Webpack">
-<meta property="og:url" content="https://chenghan0918.github.io/2020/11/24/Vue-Cli-Webpack/index.html">
+<meta property="og:title" content="Day1 建立 Vue 開發環境">
+<meta property="og:url" content="https://chenghan0918.github.io/2021/02/07/Day1%20%E5%BB%BA%E7%AB%8B%20Vue%20%E9%96%8B%E7%99%BC%E7%92%B0%E5%A2%83/index.html">
 <meta property="og:site_name" content="Leo&#39;s Space">
-<meta property="og:description" content="webpack 運行邏輯main.js 是主要的進入點(entry)，webpack 會監控 main.js , 當main.js 有更動時 webpack 就自動編譯，編譯成 css,js 等遊覽器看得懂的語言。由於 main.js 只是一個 js 檔案，無法看得懂 .vue 或者 .scss 檔，因此 webpack 有提供 loader 工具，來幫助 main.js 理解輸出這些檔案。 we">
+<meta property="og:description" content="1.安裝編譯器 VScode 安裝 官方下載   VScode 插件安裝 Chinese (Traditional) Language Pack for Visual Studio Code 幫你把 VScode 繁體化   Preview on Web Server 安裝完之後，在編譯器建立的 index.html 檔上按shift+control+L，就可以開啟一個虛擬 Web Server">
 <meta property="og:locale" content="zh_TW">
-<meta property="og:image" content="https://i.imgur.com/FbxYqzy.png">
-<meta property="og:image" content="https://i.imgur.com/W3KxOwW.png">
-<meta property="og:image" content="https://i.imgur.com/ykoXXUp.png">
-<meta property="og:image" content="https://i.imgur.com/DaNMMgb.png">
-<meta property="og:image" content="https://i.imgur.com/A6C8oJM.png">
-<meta property="og:image" content="https://i.imgur.com/JtcpnN8.png">
-<meta property="og:image" content="https://i.imgur.com/RoFpHJn.png">
-<meta property="article:published_time" content="2020-11-24T11:56:42.000Z">
-<meta property="article:modified_time" content="2021-01-23T13:00:13.653Z">
+<meta property="og:image" content="http://i.imgur.com/CxPK1UR.png">
+<meta property="og:image" content="https://i.imgur.com/7HjXIHD.png">
+<meta property="og:image" content="https://i.imgur.com/zx5jwsH.png">
+<meta property="article:published_time" content="2021-02-07T14:30:02.000Z">
+<meta property="article:modified_time" content="2021-02-07T14:32:45.216Z">
 <meta property="article:author" content="Leo">
 <meta property="article:tag" content="Vue">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://i.imgur.com/FbxYqzy.png">
+<meta name="twitter:image" content="http://i.imgur.com/CxPK1UR.png">
 
 
-<link rel="canonical" href="https://chenghan0918.github.io/2020/11/24/Vue-Cli-Webpack/">
+<link rel="canonical" href="https://chenghan0918.github.io/2021/02/07/Day1%20%E5%BB%BA%E7%AB%8B%20Vue%20%E9%96%8B%E7%99%BC%E7%92%B0%E5%A2%83/">
 
 
 <script class="page-configurations">
@@ -59,7 +55,7 @@
   };
 </script>
 
-  <title>Vue Cli-Webpack | Leo's Space</title>
+  <title>Day1 建立 Vue 開發環境 | Leo's Space</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-177314724-1"></script>
     <script>
@@ -231,7 +227,7 @@
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
-          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#webpack-%E9%81%8B%E8%A1%8C%E9%82%8F%E8%BC%AF"><span class="nav-number">1.</span> <span class="nav-text">webpack 運行邏輯</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#webpack-%E8%85%B3%E6%9C%AC%E6%AA%94%E6%A1%88%E4%BB%8B%E7%B4%B9"><span class="nav-number">2.</span> <span class="nav-text">webpack 腳本檔案介紹</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#webpack-base-%E4%BB%8B%E7%B4%B9"><span class="nav-number">3.</span> <span class="nav-text">webpack.base 介紹</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#config-%E7%92%B0%E5%A2%83%E8%AE%8A%E6%95%B8"><span class="nav-number">4.</span> <span class="nav-text">config 環境變數</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%87%AA%E5%AE%9A%E7%BE%A9%E7%92%B0%E5%A2%83%E8%AE%8A%E6%95%B8"><span class="nav-number">5.</span> <span class="nav-text">自定義環境變數</span></a></li></ol></div>
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E5%AE%89%E8%A3%9D%E7%B7%A8%E8%AD%AF%E5%99%A8"><span class="nav-number">1.</span> <span class="nav-text">1.安裝編譯器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E5%AE%89%E8%A3%9D-chrome-%E6%93%B4%E5%85%85%E5%A5%97%E4%BB%B6"><span class="nav-number">2.</span> <span class="nav-text">2.安裝 chrome 擴充套件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E8%BC%89%E5%85%A5Vue%E6%AA%94%E6%A1%88"><span class="nav-number">3.</span> <span class="nav-text">3.載入Vue檔案</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E9%96%8B%E7%99%BC%E7%92%B0%E5%A2%83%E6%BA%96%E5%82%99%E5%AE%8C%E6%88%90"><span class="nav-number">4.</span> <span class="nav-text">4.開發環境準備完成</span></a></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -309,7 +305,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://chenghan0918.github.io/2020/11/24/Vue-Cli-Webpack/">
+    <link itemprop="mainEntityOfPage" href="https://chenghan0918.github.io/2021/02/07/Day1%20%E5%BB%BA%E7%AB%8B%20Vue%20%E9%96%8B%E7%99%BC%E7%92%B0%E5%A2%83/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/Leo.jpg">
@@ -324,7 +320,7 @@
     
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Vue Cli-Webpack
+          Day1 建立 Vue 開發環境
         </h1>
 
         <div class="post-meta">
@@ -333,16 +329,10 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">發表於</span>
+              
 
-              <time title="創建時間：2020-11-24 19:56:42" itemprop="dateCreated datePublished" datetime="2020-11-24T19:56:42+08:00">2020-11-24</time>
+              <time title="創建時間：2021-02-07 22:30:02 / 修改時間：22:32:45" itemprop="dateCreated datePublished" datetime="2021-02-07T22:30:02+08:00">2021-02-07</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-01-23 21:00:13" itemprop="dateModified" datetime="2021-01-23T21:00:13+08:00">2021-01-23</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -369,8 +359,8 @@
       </span>
       <span class="post-meta-item-text">Disqus：</span>
     
-    <a title="disqus" href="/2020/11/24/Vue-Cli-Webpack/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/11/24/Vue-Cli-Webpack/" itemprop="commentCount"></span>
+    <a title="disqus" href="/2021/02/07/Day1%20%E5%BB%BA%E7%AB%8B%20Vue%20%E9%96%8B%E7%99%BC%E7%92%B0%E5%A2%83/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/02/07/Day1 建立 Vue 開發環境/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -380,7 +370,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">文章字數：</span>
-              <span>1k</span>
+              <span>1.3k</span>
             </span>
             <span class="post-meta-item" title="所需閱讀時間">
               <span class="post-meta-item-icon">
@@ -397,45 +387,75 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h1 id="webpack-運行邏輯"><a href="#webpack-運行邏輯" class="headerlink" title="webpack 運行邏輯"></a>webpack 運行邏輯</h1><p><img src="https://i.imgur.com/FbxYqzy.png"><br>main.js 是主要的進入點(entry)，webpack 會監控 main.js , 當main.js 有更動時 webpack 就自動編譯，編譯成 css,js 等遊覽器看得懂的語言。<br>由於 main.js 只是一個 js 檔案，無法看得懂 .vue 或者 .scss 檔，因此 webpack 有提供 loader 工具，來幫助 main.js 理解輸出這些檔案。</p>
-<h1 id="webpack-腳本檔案介紹"><a href="#webpack-腳本檔案介紹" class="headerlink" title="webpack 腳本檔案介紹"></a>webpack 腳本檔案介紹</h1><p>在 build 資料夾裡面有 webpack 腳本檔案，分別是:</p>
+        <h2 id="1-安裝編譯器"><a href="#1-安裝編譯器" class="headerlink" title="1.安裝編譯器"></a>1.安裝編譯器</h2><ul>
+<li>VScode 安裝<ul>
+<li><a target="_blank" rel="noopener" href="https://code.visualstudio.com/">官方下載</a></li>
+</ul>
+</li>
+<li>VScode 插件安裝<ul>
+<li><a target="_blank" rel="noopener" href="https://marketplace.visualstudio.com/items?itemName=MS-CEINTL.vscode-language-pack-zh-hant">Chinese (Traditional) Language Pack for Visual Studio Code</a><ul>
+<li>幫你把 VScode 繁體化</li>
+</ul>
+</li>
+<li><a target="_blank" rel="noopener" href="https://marketplace.visualstudio.com/items?itemName=yuichinukiyama.vscode-preview-server">Preview on Web Server</a><ul>
+<li>安裝完之後，在編譯器建立的 <code>index.html</code> 檔上按<code>shift+control+L</code>，就可以開啟一個虛擬 Web Server 來開啟你的首頁程式，Server 網址是<a target="_blank" rel="noopener" href="http://localhost:8080/index.html">http://localhost:8080/index.html</a> ，而不是一般在 <code>index.html</code> 點擊兩下，使用本地端 file://… 的方式打開首頁程式。使用這個插件好處是當你網頁程式有所更動時，網頁畫面也會隨著程式自動更新，不用再重新啟動瀏覽器，增加開發效率。</li>
+<li>如果之後有學到 <code>Vue Cli</code> ，在執行發佈指令 <code>npm run build</code> 後，會將構建完成的檔案放到<code>dist</code> 資料夾中，這個資料夾內的 <code>index.html</code> 就無使用本地端 file://… 的方式直接打開，而是必須透過 Web Server 開啟。</li>
+</ul>
+</li>
+<li><a target="_blank" rel="noopener" href="https://marketplace.visualstudio.com/items?itemName=jcbuisson.vue">Vue</a><ul>
+<li>會自動將 Vue.js 相關程式語法給 Hightlight 起來。</li>
+</ul>
+</li>
+<li><a target="_blank" rel="noopener" href="https://marketplace.visualstudio.com/items?itemName=hollowtree.vue-snippets">Vue 2 Snippets</a><ul>
+<li>VScode 會自動跳出 Vue.js 關鍵字的補字。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>個人推薦插件<ul>
+<li><a target="_blank" rel="noopener" href="https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer">Bracket Pair Colorizer</a><ul>
+<li>自動幫你將成對的大括弧還有小括弧加上顏色，使人更容易對齊程式碼</li>
+</ul>
+</li>
+<li>i<a target="_blank" rel="noopener" href="https://marketplace.visualstudio.com/items?itemName=oderwat.indent-rainbow">ndent-rainbow</a><ul>
+<li>將程式碼縮排的部分增加顏色，使人更容易對齊程式碼</li>
+</ul>
+</li>
+<li><a target="_blank" rel="noopener" href="https://marketplace.visualstudio.com/items?itemName=TabNine.tabnine-vscode">TabNine</a><ul>
+<li>根據你的輸入習慣，透過機器學習推薦程式碼補字片段給你</li>
+</ul>
+</li>
+<li><a target="_blank" rel="noopener" href="https://marketplace.visualstudio.com/items?itemName=vscode-icons-team.vscode-icons">vscode-icons</a><ul>
+<li>將你 VScode 檔案欄位的檔案加上相對應的小圖標</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-安裝-chrome-擴充套件"><a href="#2-安裝-chrome-擴充套件" class="headerlink" title="2.安裝 chrome 擴充套件"></a>2.安裝 chrome 擴充套件</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd?hl=zh-TW">Vue.js devtools</a><ul>
+<li>好用的 Vue 除錯工具，可以查看整個 Vue 結構還有資料狀況，下載後如果有導入 Vue 檔，Vue 除錯工具就會出現在 chrome 除錯工具內，所以一開始下載完套件，Chrome 除錯台沒出現 Vue 除錯工具是正常的。</li>
+</ul>
+</li>
+</ul>
+<h2 id="3-載入Vue檔案"><a href="#3-載入Vue檔案" class="headerlink" title="3.載入Vue檔案"></a>3.載入Vue檔案</h2><ul>
+<li><p><a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/guide/installation.html">Vue.js官網教學文件</a></p>
 <ul>
-<li>webpack.base.conf.js<ul>
-<li>主要核心</li>
-</ul>
+<li><p>Vue 檔案有分正式版還有開發版，建議選擇開發版，可以調用開法者工具，還有較完整的除錯提示。如果分別下載開發版本及生產版本，會發現開發版是 vue.js ，生產版是 vue.min.js ，文件上也提醒開發完成程式要上線時，記得把要把開發時引用的 vue.js 檔案更改為 vue.min.js。</p>
+<p><img src="http://i.imgur.com/CxPK1UR.png" alt="http://i.imgur.com/CxPK1UR.png"></p>
 </li>
-<li>webpack.dev.conf.js<ul>
-<li>給我們開發中預覽畫面用的</li>
-</ul>
+<li><p>如果不想下載 Vue 檔案，Vue 也可以像是 jQuery 一樣，使用 <code>CDN</code> 的方式導入 Vue 相關檔案，我是選擇直接載入最新版，而沒有指定版本號，如果要指定版本號方式載入，記得要在載入檔案後面加上 <code>/dist/vue.js</code>，才會在 Vue 除錯工具看到 Vue 的載入版本號，也代表 Vue 成功載入。</p>
+<p><img src="https://i.imgur.com/7HjXIHD.png" alt="https://i.imgur.com/7HjXIHD.png"></p>
 </li>
-<li>webpack.prod.conf.js<ul>
-<li>輸出真正產品用的<a id="more"></a>
-<h1 id="webpack-base-介紹"><a href="#webpack-base-介紹" class="headerlink" title="webpack.base 介紹"></a>webpack.base 介紹</h1></li>
-</ul>
-</li>
-<li>entry 進入點和 output 輸出點<br><img src="https://i.imgur.com/W3KxOwW.png"></li>
-<li>loaer 的寫在這些 module<ul>
-<li>test: /.(png|jpe?g|gif|svg)(?.<em>)?$/,test: /.(png|jpe?g|gif|svg)(?.</em>)?$/ 這個 loader 會將圖檔小於 10 KB 的圖檔用 base64 方式編碼呈現<br><img src="https://i.imgur.com/ykoXXUp.png"></li>
-</ul>
-</li>
-<li>resolve<ul>
-<li>extensions: [‘.js’, ‘.vue’, ‘.json’],這是讓你可以省略副檔名的</li>
-<li>alias:裡面是放各種路徑的縮寫，像是 src 就可以用 @ 來替代<br><img src="https://i.imgur.com/DaNMMgb.png"></li>
 </ul>
 </li>
 </ul>
-<h1 id="config-環境變數"><a href="#config-環境變數" class="headerlink" title="config 環境變數"></a>config 環境變數</h1><p>在 webpack.base.conf.js 的 output 裡面你會看到它輸出的路徑 <strong>path: config.build.assetsRoot</strong>,裡面的 build 就代表 build 資料夾，裡面檔案如下：</p>
-<ul>
-<li>index.js 代表整個運行環境，比如設定 port 口</li>
-<li>dev.env.js 設定開發時的環境變數</li>
-<li>prod.env.js 設定發布時的環境變數</li>
-<li>開發時和發布時環境變數可能不太一樣(ajax路徑不相同)<h1 id="自定義環境變數"><a href="#自定義環境變數" class="headerlink" title="自定義環境變數"></a>自定義環境變數</h1></li>
-</ul>
-<p>1.我們在 dev.env.js 的 module.exports 底下新增一個環境變數<br>記得除了加上’’外還要加””，不然會出錯，還有記得改完後要重啟環境，因為我們新增的是環境變數。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">HTTP_PATH: &#39;&quot;http:&#x2F;&#x2F;localhost&#x2F;&quot;&#39;</span><br></pre></td></tr></table></figure>
-<p><img src="https://i.imgur.com/A6C8oJM.png"><br>2.最後我們來到 scr/components 裡面的 App.vue 檔，移到最下面 js 部分，在 return 資料的部分，我們輸出兩個環境變數</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">msg: process.env.NODE_ENV,</span><br><span class="line">http: process.env.HTTP_PATH</span><br></pre></td></tr></table></figure>
-<p><img src="https://i.imgur.com/JtcpnN8.png"><br>3.使用 <strong>npm run dev</strong>重啟環境，環境變數加入成功<br><img src="https://i.imgur.com/RoFpHJn.png"></p>
+<h2 id="4-開發環境準備完成"><a href="#4-開發環境準備完成" class="headerlink" title="4.開發環境準備完成"></a>4.開發環境準備完成</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;&lt;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&gt;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://i.imgur.com/zx5jwsH.png" alt="https://i.imgur.com/zx5jwsH.png"></p>
+<blockquote>
+<p>如果對文章有任何問題或者文章有誤歡迎底下留言，感謝～<br>明天讓我們建立自己第一支 Vue 應用程式。</p>
+</blockquote>
 
     </div>
 
@@ -454,13 +474,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/11/23/Vue-Cli%E7%B0%A1%E4%BB%8B/" rel="prev" title="Vue Cli-簡介">
-      <i class="fa fa-chevron-left"></i> Vue Cli-簡介
+    <a href="/2021/02/07/%E4%BD%BF%E7%94%A8javascript%E4%BE%86%E8%A7%A3leetcode(#1%20Two%20Sum)(Easy)/" rel="prev" title="使用javascript來解leetcode(#1 Two Sum)(Easy)">
+      <i class="fa fa-chevron-left"></i> 使用javascript來解leetcode(#1 Two Sum)(Easy)
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2021/02/07/%E4%BD%BF%E7%94%A8javascript%E4%BE%86%E8%A7%A3leetcode(#1%20Two%20Sum)(Easy)/" rel="next" title="使用javascript來解leetcode(#1 Two Sum)(Easy)">
-      使用javascript來解leetcode(#1 Two Sum)(Easy) <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -604,9 +621,9 @@
 </script>
 <script>
   var disqus_config = function() {
-    this.page.url = "https://chenghan0918.github.io/2020/11/24/Vue-Cli-Webpack/";
-    this.page.identifier = "2020/11/24/Vue-Cli-Webpack/";
-    this.page.title = "Vue Cli-Webpack";
+    this.page.url = "https://chenghan0918.github.io/2021/02/07/Day1%20%E5%BB%BA%E7%AB%8B%20Vue%20%E9%96%8B%E7%99%BC%E7%92%B0%E5%A2%83/";
+    this.page.identifier = "2021/02/07/Day1 建立 Vue 開發環境/";
+    this.page.title = "Day1 建立 Vue 開發環境";
     };
   NexT.utils.loadComments('#disqus_thread', () => {
     if (window.DISQUS) {
