@@ -6,7 +6,7 @@
   <link href="https://chenghan0918.github.io/atom.xml" rel="self"/>
   
   <link href="https://chenghan0918.github.io/"/>
-  <updated>2021-02-07T14:32:45.216Z</updated>
+  <updated>2021-02-08T13:29:50.563Z</updated>
   <id>https://chenghan0918.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Day2 第一個 Vue 應用程式</title>
+    <link href="https://chenghan0918.github.io/2021/02/08/Day2%20%E7%AC%AC%E4%B8%80%E5%80%8B%20Vue%20%E6%87%89%E7%94%A8%E7%A8%8B%E5%BC%8F/"/>
+    <id>https://chenghan0918.github.io/2021/02/08/Day2%20%E7%AC%AC%E4%B8%80%E5%80%8B%20Vue%20%E6%87%89%E7%94%A8%E7%A8%8B%E5%BC%8F/</id>
+    <published>2021-02-08T13:12:53.000Z</published>
+    <updated>2021-02-08T13:29:50.563Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;先來個-Hello-Word&quot;&gt;&lt;a href=&quot;#先來個-Hello-Word&quot; class=&quot;headerlink&quot; title=&quot;先來個 Hello Word&quot;&gt;&lt;/a&gt;先來個 Hello Word&lt;/h2&gt;&lt;p&gt;首先記得要先載入 Vue</summary>
+        
+      
+    
+    
+    
+    <category term="Web" scheme="https://chenghan0918.github.io/categories/Web/"/>
+    
+    
+    <category term="Vue" scheme="https://chenghan0918.github.io/tags/Vue/"/>
+    
+  </entry>
   
   <entry>
     <title>Day1 建立 Vue 開發環境</title>
