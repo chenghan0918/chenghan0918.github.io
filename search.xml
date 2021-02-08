@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>Day3 ＭVVM 架構</title>
+      <link href="/2021/02/08/Day3%20%EF%BC%ADVVM%20%E6%9E%B6%E6%A7%8B/"/>
+      <url>/2021/02/08/Day3%20%EF%BC%ADVVM%20%E6%9E%B6%E6%A7%8B/</url>
+      
+        <content type="html"><![CDATA[<p>雖然 Vue.js 有自己介紹它不是採用 ＭVVM 的框架，但 MVVM 的概念卻影響 Vue.js 的運作，因此讓我們先了解什麼是 ＭVVM 架構 。</p><h2 id="架構示意圖"><a href="#架構示意圖" class="headerlink" title="架構示意圖"></a>架構示意圖</h2><p><img src="https://i.imgur.com/lDYVYfr.png" alt="https://i.imgur.com/lDYVYfr.png"></p><h3 id="View"><a href="#View" class="headerlink" title="View"></a>View</h3><p>代表顯示在畫面的樣子，像是按鈕、文字輸入欄位等等</p><h3 id="Model"><a href="#Model" class="headerlink" title="Model"></a>Model</h3><p>主要取用資料的部分</p><h3 id="ViewModel"><a href="#ViewModel" class="headerlink" title="ViewModel"></a>ViewModel</h3><p>將資料和畫面綁定的連結器</p><h2 id="實際例子"><a href="#實際例子" class="headerlink" title="實際例子"></a>實際例子</h2><p>透過下面例子，就可了解 Vue 資料與畫面雙向綁定還有 ＭVVM 架構</p><p><img src="https://i.imgur.com/PMhzc1W.png" alt="https://i.imgur.com/PMhzc1W.png"></p><p><img src="https://i.imgur.com/lti9C7G.png" alt="https://i.imgur.com/lti9C7G.png"></p><h3 id="View-1"><a href="#View-1" class="headerlink" title="View"></a>View</h3><ul><li>input 輸入視窗</li><li>input 輸入視窗內的資料顯示</li><li>當我們修改 input 輸入視窗值，資料 text 值也會改變</li></ul><h3 id="Model-1"><a href="#Model-1" class="headerlink" title="Model"></a>Model</h3><ul><li>data 物件中的 text</li><li>當我們用 Vue 開發者工具修改資料 text 值，input 輸入視窗值也會改變</li></ul><h3 id="ViewModel-1"><a href="#ViewModel-1" class="headerlink" title="ViewModel"></a>ViewModel</h3><ul><li>宣告ㄧ個變數 vm Vue 物件，將這個物件與畫面 div 綁定來作為資料與畫面的綁定器。</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> Web </category>
+          
+          <category> it鐵人競賽 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Vue </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Day2 第一個 Vue 應用程式</title>
       <link href="/2021/02/08/Day2%20%E7%AC%AC%E4%B8%80%E5%80%8B%20Vue%20%E6%87%89%E7%94%A8%E7%A8%8B%E5%BC%8F/"/>
       <url>/2021/02/08/Day2%20%E7%AC%AC%E4%B8%80%E5%80%8B%20Vue%20%E6%87%89%E7%94%A8%E7%A8%8B%E5%BC%8F/</url>

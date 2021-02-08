@@ -6,7 +6,7 @@
   <link href="https://chenghan0918.github.io/atom.xml" rel="self"/>
   
   <link href="https://chenghan0918.github.io/"/>
-  <updated>2021-02-08T13:39:13.274Z</updated>
+  <updated>2021-02-08T13:44:41.688Z</updated>
   <id>https://chenghan0918.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Day3 ＭVVM 架構</title>
+    <link href="https://chenghan0918.github.io/2021/02/08/Day3%20%EF%BC%ADVVM%20%E6%9E%B6%E6%A7%8B/"/>
+    <id>https://chenghan0918.github.io/2021/02/08/Day3%20%EF%BC%ADVVM%20%E6%9E%B6%E6%A7%8B/</id>
+    <published>2021-02-08T13:42:51.000Z</published>
+    <updated>2021-02-08T13:44:41.688Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;雖然 Vue.js 有自己介紹它不是採用 ＭVVM 的框架，但 MVVM 的概念卻影響 Vue.js 的運作，因此讓我們先了解什麼是 ＭVVM 架構 。&lt;/p&gt;
+&lt;h2 id=&quot;架構示意圖&quot;&gt;&lt;a href=&quot;#架構示意圖&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Web" scheme="https://chenghan0918.github.io/categories/Web/"/>
+    
+    <category term="it鐵人競賽" scheme="https://chenghan0918.github.io/categories/it%E9%90%B5%E4%BA%BA%E7%AB%B6%E8%B3%BD/"/>
+    
+    
+    <category term="Vue" scheme="https://chenghan0918.github.io/tags/Vue/"/>
+    
+  </entry>
   
   <entry>
     <title>Day2 第一個 Vue 應用程式</title>
