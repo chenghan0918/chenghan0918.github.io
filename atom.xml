@@ -6,7 +6,7 @@
   <link href="https://chenghan0918.github.io/atom.xml" rel="self"/>
   
   <link href="https://chenghan0918.github.io/"/>
-  <updated>2021-02-08T13:44:41.688Z</updated>
+  <updated>2021-02-19T13:22:48.740Z</updated>
   <id>https://chenghan0918.github.io/</id>
   
   <author>
@@ -17,21 +17,91 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Day6 迴圈(v-for)和條件式(v-if)</title>
+    <link href="https://chenghan0918.github.io/2021/02/19/Day6%20%E8%BF%B4%E5%9C%88(v-for)%E5%92%8C%E6%A2%9D%E4%BB%B6%E5%BC%8F(v-if)/"/>
+    <id>https://chenghan0918.github.io/2021/02/19/Day6%20%E8%BF%B4%E5%9C%88(v-for)%E5%92%8C%E6%A2%9D%E4%BB%B6%E5%BC%8F(v-if)/</id>
+    <published>2021-02-19T13:19:56.000Z</published>
+    <updated>2021-02-19T13:22:48.740Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;通常我們會用 &lt;code&gt;for 迴圈&lt;/code&gt;來存取陣列裡面的值，而在 Vue 中，我們則是使用 &lt;code&gt;v-for&lt;/code&gt; 指令。 如果我們今天使用 &lt;code&gt;test 陣列&lt;/code&gt;來紀錄學生考試成績，以物件形式當作陣列的值，物件裡面分別存放</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Day5 物件和陣列</title>
+    <link href="https://chenghan0918.github.io/2021/02/19/Day5%20%E7%89%A9%E4%BB%B6%E5%92%8C%E9%99%A3%E5%88%97/"/>
+    <id>https://chenghan0918.github.io/2021/02/19/Day5%20%E7%89%A9%E4%BB%B6%E5%92%8C%E9%99%A3%E5%88%97/</id>
+    <published>2021-02-19T13:19:26.000Z</published>
+    <updated>2021-02-19T13:21:47.853Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;從前面的文章我們可以看出 Vue 是用物件的方式來存取資料，這邊我們就複習一下物件和陣列的差別。&lt;/p&gt;
+&lt;h2 id=&quot;陣列&quot;&gt;&lt;a href=&quot;#陣列&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Web" scheme="https://chenghan0918.github.io/tags/Web/"/>
+    
+    <category term="it鐵人競賽" scheme="https://chenghan0918.github.io/tags/it%E9%90%B5%E4%BA%BA%E7%AB%B6%E8%B3%BD/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Day4 資料與畫面綁定的方法</title>
+    <link href="https://chenghan0918.github.io/2021/02/19/Day4%20%E8%B3%87%E6%96%99%E8%88%87%E7%95%AB%E9%9D%A2%E7%B6%81%E5%AE%9A%E7%9A%84%E6%96%B9%E6%B3%95/"/>
+    <id>https://chenghan0918.github.io/2021/02/19/Day4%20%E8%B3%87%E6%96%99%E8%88%87%E7%95%AB%E9%9D%A2%E7%B6%81%E5%AE%9A%E7%9A%84%E6%96%B9%E6%B3%95/</id>
+    <published>2021-02-19T13:17:36.000Z</published>
+    <updated>2021-02-19T13:19:16.737Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;介紹三種資料和畫面綁定常用的方式&lt;/p&gt;
+&lt;h2 id=&quot;v-text&quot;&gt;&lt;a href=&quot;#v-text&quot; class=&quot;headerlink&quot; title=&quot;v-text&quot;&gt;&lt;/a&gt;v-text&lt;/h2&gt;&lt;p&gt;可以直接將資料顯示在綁定的 &lt;code&gt;html</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Web" scheme="https://chenghan0918.github.io/tags/Web/"/>
+    
+    <category term="it鐵人競賽" scheme="https://chenghan0918.github.io/tags/it%E9%90%B5%E4%BA%BA%E7%AB%B6%E8%B3%BD/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Day3 ＭVVM 架構</title>
     <link href="https://chenghan0918.github.io/2021/02/08/Day3%20%EF%BC%ADVVM%20%E6%9E%B6%E6%A7%8B/"/>
     <id>https://chenghan0918.github.io/2021/02/08/Day3%20%EF%BC%ADVVM%20%E6%9E%B6%E6%A7%8B/</id>
     <published>2021-02-08T13:42:51.000Z</published>
-    <updated>2021-02-08T13:44:41.688Z</updated>
+    <updated>2021-02-19T10:37:21.157Z</updated>
     
     
-      
-      
-        
-        
     <summary type="html">&lt;p&gt;雖然 Vue.js 有自己介紹它不是採用 ＭVVM 的框架，但 MVVM 的概念卻影響 Vue.js 的運作，因此讓我們先了解什麼是 ＭVVM 架構 。&lt;/p&gt;
-&lt;h2 id=&quot;架構示意圖&quot;&gt;&lt;a href=&quot;#架構示意圖&quot; class=&quot;headerlink&quot;</summary>
-        
-      
+&lt;h2 id=&quot;架構示意圖&quot;&gt;&lt;a href=&quot;#架構示意圖&quot; class=&quot;headerlink&quot; title=&quot;架構示意圖&quot;&gt;&lt;/a&gt;架構示意圖&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/lDYVYfr.png&quot; alt=&quot;https://i.imgur.com/lDYVYfr.png&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;View&quot;&gt;&lt;a href=&quot;#View&quot; class=&quot;headerlink&quot; title=&quot;View&quot;&gt;&lt;/a&gt;View&lt;/h3&gt;&lt;p&gt;代表顯示在畫面的樣子，像是按鈕、文字輸入欄位等等&lt;/p&gt;
+&lt;h3 id=&quot;Model&quot;&gt;&lt;a href=&quot;#Model&quot; class=&quot;headerlink&quot; title=&quot;Model&quot;&gt;&lt;/a&gt;Model&lt;/h3&gt;&lt;p&gt;主要取用資料的部分&lt;/p&gt;
+&lt;h3 id=&quot;ViewModel&quot;&gt;&lt;a href=&quot;#ViewModel&quot; class=&quot;headerlink&quot; title=&quot;ViewModel&quot;&gt;&lt;/a&gt;ViewModel&lt;/h3&gt;&lt;p&gt;將資料和畫面綁定的連結器&lt;/p&gt;</summary>
     
     
     
