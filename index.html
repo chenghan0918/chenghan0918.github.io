@@ -323,7 +323,7 @@
               <span class="post-meta-item-text">發表於</span>
               
 
-              <time title="創建時間：2021-02-19 21:19:56 / 修改時間：21:22:48" itemprop="dateCreated datePublished" datetime="2021-02-19T21:19:56+08:00">2021-02-19</time>
+              <time title="創建時間：2021-02-19 21:19:56 / 修改時間：21:24:50" itemprop="dateCreated datePublished" datetime="2021-02-19T21:19:56+08:00">2021-02-19</time>
             </span>
 
           
@@ -364,12 +364,14 @@
     
     <div class="post-body" itemprop="articleBody">
           <p>通常我們會用 <code>for 迴圈</code>來存取陣列裡面的值，而在 Vue 中，我們則是使用 <code>v-for</code> 指令。 如果我們今天使用 <code>test 陣列</code>來紀錄學生考試成績，以物件形式當作陣列的值，物件裡面分別存放 <code>name</code> 學生姓名還有 <code>score</code> 考試成績。 透過 <code>v-for</code> 我們將 <code>test</code> 物件值存入 <code>in item</code> ，就很像 <code>foreach</code> 的概念，<code>item</code> 會自動代替陣列裡面的每個物件，而 <code>index</code> 就是物件在陣列的索引值，透過這個方式，<code>li 標籤</code>會自動生成陣列裡面物件的數目，而如果我們要將資料渲染到畫面，就用前面提到的 <code>&#123;&#123;&#125;&#125;</code> 方式來顯示資料。我們也可以在 <code>li 標籤</code>中加上 <code>v-if</code> 指令，就是 <code>if</code> 的概念，來設定條件式篩選資料，像是 <code>score&lt;60</code> ，找出成績低於 60 分的同學，由於前面的 <code>v-for</code> 已經將陣列資料設定到 <code>item</code>，如果要存取資料記得都要用 <code>item</code> 來取代物件。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">app</span>&gt;</span></span><br><span class="line">        全班成績：</span><br><span class="line">        <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">&quot;(item,index) in test&quot;</span>&gt;</span>&#123;&#123;index&#125;&#125;.&#123;&#123;item.name&#125;&#125; 得分:&#123;&#123;item.score&#125;&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">        不及格：</span><br><span class="line">        <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">&quot;(item,index) in test&quot;</span> <span class="attr">v-if</span>=<span class="string">&quot;item.score&lt;60&quot;</span>&gt;</span>&#123;&#123;index&#125;&#125;.&#123;&#123;item.name&#125;&#125; 得分:&#123;&#123;item.score&#125;&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="keyword">var</span> app = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">        el: <span class="string">&#x27;#app&#x27;</span>,</span><br><span class="line">        data:&#123;</span><br><span class="line">            test:[</span><br><span class="line">                &#123;</span><br><span class="line">                    name: <span class="string">&#x27;Leo&#x27;</span>,</span><br><span class="line">                    score: <span class="number">44</span></span><br><span class="line">                &#125;,</span><br><span class="line">                &#123;</span><br><span class="line">                    name: <span class="string">&#x27;Amy&#x27;</span>,</span><br><span class="line">                    score: <span class="number">89</span></span><br><span class="line">                &#125;,</span><br><span class="line">                &#123;</span><br><span class="line">                    name: <span class="string">&#x27;Perter&#x27;</span>,</span><br><span class="line">                    score: <span class="number">59</span></span><br><span class="line">                &#125;,</span><br><span class="line">                &#123;</span><br><span class="line">                    name: <span class="string">&#x27;Leo&#x27;</span>,</span><br><span class="line">                    score: <span class="number">90</span></span><br><span class="line">                &#125;,</span><br><span class="line">            ]</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://i.imgur.com/wbgbmTl.png" alt="https://i.imgur.com/wbgbmTl.png"></p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/02/19/Day6%20%E8%BF%B4%E5%9C%88(v-for)%E5%92%8C%E6%A2%9D%E4%BB%B6%E5%BC%8F(v-if)/#more" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -415,7 +417,7 @@
               <span class="post-meta-item-text">發表於</span>
               
 
-              <time title="創建時間：2021-02-19 21:19:26 / 修改時間：21:21:47" itemprop="dateCreated datePublished" datetime="2021-02-19T21:19:26+08:00">2021-02-19</time>
+              <time title="創建時間：2021-02-19 21:19:26 / 修改時間：21:24:38" itemprop="dateCreated datePublished" datetime="2021-02-19T21:19:26+08:00">2021-02-19</time>
             </span>
 
           
@@ -463,23 +465,14 @@
 <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> math = [<span class="number">80</span>,<span class="number">90</span>,<span class="number">60</span>];</span><br><span class="line"><span class="keyword">var</span> total = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;math.length;i++)&#123;</span><br><span class="line">    total += math[i]</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> average_math = total / <span class="number">3</span></span><br></pre></td></tr></table></figure>
 
 <p>雖然和第一個程式相比感覺程式沒有減少太多程式碼，但是當如果我們變數變多，比如50個人，就可以減少宣告很多變數，達到更簡潔的程式碼。 </p>
-<h2 id="物件"><a href="#物件" class="headerlink" title="物件"></a>物件</h2><p>假設我們今天除了上面的數學考試，還多了英文考試，此時如果我們要紀錄每個同學的名字還有成績，如果用陣列的寫法如下。</p>
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> name = [<span class="string">&#x27;Leo&#x27;</span>,<span class="string">&#x27;Amy&#x27;</span>,<span class="string">&#x27;Perter&#x27;</span>] <span class="comment">//紀錄學生名字</span></span><br><span class="line"><span class="keyword">var</span> math = [<span class="number">80</span>,<span class="number">90</span>,<span class="number">60</span>]; <span class="comment">//紀錄數學成績</span></span><br><span class="line"><span class="keyword">var</span> english = [<span class="number">60</span>,<span class="number">80</span>,<span class="number">90</span>]; <span class="comment">//紀錄英文成績</span></span><br></pre></td></tr></table></figure>
-
-<p>假設今天有很多個班級，如果每個班級都傳上面的變數，這樣我們要如何來分辨不同的班級，此時就可以使用到物件。</p>
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> class1 = &#123;</span><br><span class="line">    name:[<span class="string">&#x27;Leo&#x27;</span>,<span class="string">&#x27;Amy&#x27;</span>,<span class="string">&#x27;Perter&#x27;</span>],</span><br><span class="line">    math:[<span class="number">80</span>,<span class="number">90</span>,<span class="number">60</span>],</span><br><span class="line">    english:[<span class="number">60</span>,<span class="number">80</span>,<span class="number">90</span>]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> class2 = &#123;</span><br><span class="line">    name:[<span class="string">&#x27;Jack&#x27;</span>,<span class="string">&#x27;Alleb&#x27;</span>,<span class="string">&#x27;Ray&#x27;</span>],</span><br><span class="line">    math:[<span class="number">80</span>,<span class="number">90</span>,<span class="number">60</span>],</span><br><span class="line">    english:[<span class="number">60</span>,<span class="number">80</span>,<span class="number">90</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="物件包物件"><a href="#物件包物件" class="headerlink" title="物件包物件"></a>物件包物件</h2><h3 id="宣告方法"><a href="#宣告方法" class="headerlink" title="宣告方法"></a>宣告方法</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> class1 = &#123;</span><br><span class="line">    <span class="string">&#x27;Leo&#x27;</span>:&#123;</span><br><span class="line">        math:<span class="number">80</span>,</span><br><span class="line">        english:<span class="number">60</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">&#x27;Jack&#x27;</span>:&#123;</span><br><span class="line">        math:<span class="number">90</span>,</span><br><span class="line">        english:<span class="number">80</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">&#x27;Amy&#x27;</span>:&#123;</span><br><span class="line">        math:<span class="number">60</span>,</span><br><span class="line">        english:<span class="number">55</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="取值方法"><a href="#取值方法" class="headerlink" title="取值方法"></a>取值方法</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(class1.Leo.math) <span class="comment">//取得 Leo 數學成績 80 分</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="物件包方法"><a href="#物件包方法" class="headerlink" title="物件包方法"></a>物件包方法</h2><h3 id="宣告方法-1"><a href="#宣告方法-1" class="headerlink" title="宣告方法"></a>宣告方法</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> class1 = &#123;</span><br><span class="line">    <span class="string">&#x27;Leo&#x27;</span>:&#123;</span><br><span class="line">        math:<span class="number">80</span>,</span><br><span class="line">        english:<span class="number">60</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">&#x27;Jack&#x27;</span>:&#123;</span><br><span class="line">        math:<span class="number">90</span>,</span><br><span class="line">        english:<span class="number">80</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">&#x27;Amy&#x27;</span>:&#123;</span><br><span class="line">        math:<span class="number">60</span>,</span><br><span class="line">        english:<span class="number">55</span></span><br><span class="line">    &#125;,</span><br><span class="line">    show:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">&#x27;class1&#x27;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="取值方法-1"><a href="#取值方法-1" class="headerlink" title="取值方法"></a>取值方法</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class1.show() <span class="comment">// 記得一定要加()</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="陣列包物件"><a href="#陣列包物件" class="headerlink" title="陣列包物件"></a>陣列包物件</h2><h3 id="宣告方法-2"><a href="#宣告方法-2" class="headerlink" title="宣告方法"></a>宣告方法</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> clas = [</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="string">&#x27;Leo&#x27;</span>:&#123;</span><br><span class="line">            math:<span class="number">80</span>,</span><br><span class="line">            english:<span class="number">60</span></span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="string">&#x27;Jack&#x27;</span>:&#123;</span><br><span class="line">            math:<span class="number">90</span>,</span><br><span class="line">            english:<span class="number">80</span></span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="string">&#x27;Amy&#x27;</span>:&#123;</span><br><span class="line">            math:<span class="number">60</span>,</span><br><span class="line">            english:<span class="number">55</span></span><br><span class="line">        &#125;,</span><br><span class="line">        show:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">&#x27;class1&#x27;</span>)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="string">&#x27;Leo&#x27;</span>:&#123;</span><br><span class="line">            math:<span class="number">80</span>,</span><br><span class="line">            english:<span class="number">60</span></span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="string">&#x27;Jack&#x27;</span>:&#123;</span><br><span class="line">            math:<span class="number">90</span>,</span><br><span class="line">            english:<span class="number">80</span></span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="string">&#x27;Amy&#x27;</span>:&#123;</span><br><span class="line">            math:<span class="number">60</span>,</span><br><span class="line">            english:<span class="number">55</span></span><br><span class="line">        &#125;,</span><br><span class="line">        show:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">&#x27;class2&#x27;</span>)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">];</span><br></pre></td></tr></table></figure>
-
-<h3 id="取值方法-2"><a href="#取值方法-2" class="headerlink" title="取值方法"></a>取值方法</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(clas[<span class="number">0</span>].Leo.math)<span class="comment">//取得陣列0中Leo的英文成績</span></span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/02/19/Day5%20%E7%89%A9%E4%BB%B6%E5%92%8C%E9%99%A3%E5%88%97/#more" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -525,7 +518,7 @@
               <span class="post-meta-item-text">發表於</span>
               
 
-              <time title="創建時間：2021-02-19 21:17:36 / 修改時間：21:19:16" itemprop="dateCreated datePublished" datetime="2021-02-19T21:17:36+08:00">2021-02-19</time>
+              <time title="創建時間：2021-02-19 21:17:36 / 修改時間：21:24:31" itemprop="dateCreated datePublished" datetime="2021-02-19T21:17:36+08:00">2021-02-19</time>
             </span>
 
           
@@ -571,15 +564,14 @@
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">p</span>&gt;</span>不會&#123;&#123;message&#125;&#125;取代<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span> <span class="attr">v-text</span>=<span class="string">&quot;message&quot;</span> &gt;</span>被取代<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span> <span class="attr">v-html</span>=<span class="string">&quot;message&quot;</span> &gt;</span>被取代<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">&quot;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="keyword">var</span> app = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">        el:<span class="string">&#x27;.app&#x27;</span>,</span><br><span class="line">        data:&#123;</span><br><span class="line">            message: <span class="string">&#x27;&lt;a href=&quot;#&quot;&gt;Hello Vue&lt;/a&gt;&#x27;</span>,</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://i.imgur.com/8Edq344.png" alt="https://i.imgur.com/8Edq344.png"></p>
-<h2 id="v-model"><a href="#v-model" class="headerlink" title="v-model"></a>v-model</h2><p>常用在輸入欄位或表單值的綁定，像是上面的 <code>input 輸入欄位</code>就綁定資料 <code>message</code>，當 <code>input</code> 值改變則 <code>message</code> 值也會跟著改變，而 <code>message</code> 在畫面顯示的值也會跟著更動。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">        輸入：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">v-model</span>=<span class="string">&quot;message&quot;</span>&gt;</span></span><br><span class="line">        &#123;&#123;message&#125;&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">&quot;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="keyword">var</span> app = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">        el:<span class="string">&#x27;.app&#x27;</span>,</span><br><span class="line">        data:&#123;</span><br><span class="line">            message: <span class="string">&#x27;&#x27;</span>,</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://i.imgur.com/cxDLjRk.png" alt="https://i.imgur.com/tyOaXH1.png"></p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/02/19/Day4%20%E8%B3%87%E6%96%99%E8%88%87%E7%95%AB%E9%9D%A2%E7%B6%81%E5%AE%9A%E7%9A%84%E6%96%B9%E6%B3%95/#more" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -861,7 +853,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-02-08 21:39:11" itemprop="dateModified" datetime="2021-02-08T21:39:11+08:00">2021-02-08</time>
+                <time title="修改時間：2021-02-19 21:24:10" itemprop="dateModified" datetime="2021-02-19T21:24:10+08:00">2021-02-19</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -934,56 +926,15 @@
 </ul>
 </li>
 <li><a target="_blank" rel="noopener" href="https://marketplace.visualstudio.com/items?itemName=hollowtree.vue-snippets">Vue 2 Snippets</a><ul>
-<li>VScode 會自動跳出 Vue.js 關鍵字的補字。</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>個人推薦插件<ul>
-<li><a target="_blank" rel="noopener" href="https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer">Bracket Pair Colorizer</a><ul>
-<li>自動幫你將成對的大括弧還有小括弧加上顏色，使人更容易對齊程式碼</li>
-</ul>
-</li>
-<li>i<a target="_blank" rel="noopener" href="https://marketplace.visualstudio.com/items?itemName=oderwat.indent-rainbow">ndent-rainbow</a><ul>
-<li>將程式碼縮排的部分增加顏色，使人更容易對齊程式碼</li>
-</ul>
-</li>
-<li><a target="_blank" rel="noopener" href="https://marketplace.visualstudio.com/items?itemName=TabNine.tabnine-vscode">TabNine</a><ul>
-<li>根據你的輸入習慣，透過機器學習推薦程式碼補字片段給你</li>
-</ul>
-</li>
-<li><a target="_blank" rel="noopener" href="https://marketplace.visualstudio.com/items?itemName=vscode-icons-team.vscode-icons">vscode-icons</a><ul>
-<li>將你 VScode 檔案欄位的檔案加上相對應的小圖標</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="2-安裝-chrome-擴充套件"><a href="#2-安裝-chrome-擴充套件" class="headerlink" title="2.安裝 chrome 擴充套件"></a>2.安裝 chrome 擴充套件</h2><ul>
-<li><a target="_blank" rel="noopener" href="https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd?hl=zh-TW">Vue.js devtools</a><ul>
-<li>好用的 Vue 除錯工具，可以查看整個 Vue 結構還有資料狀況，下載後如果有導入 Vue 檔，Vue 除錯工具就會出現在 chrome 除錯工具內，所以一開始下載完套件，Chrome 除錯台沒出現 Vue 除錯工具是正常的。</li>
-</ul>
-</li>
-</ul>
-<h2 id="3-載入Vue檔案"><a href="#3-載入Vue檔案" class="headerlink" title="3.載入Vue檔案"></a>3.載入Vue檔案</h2><ul>
-<li><p><a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/guide/installation.html">Vue.js官網教學文件</a></p>
-<ul>
-<li><p>Vue 檔案有分正式版還有開發版，建議選擇開發版，可以調用開法者工具，還有較完整的除錯提示。如果分別下載開發版本及生產版本，會發現開發版是 vue.js ，生產版是 vue.min.js ，文件上也提醒開發完成程式要上線時，記得把要把開發時引用的 vue.js 檔案更改為 vue.min.js。</p>
-<p><img src="http://i.imgur.com/CxPK1UR.png" alt="http://i.imgur.com/CxPK1UR.png"></p>
-</li>
-<li><p>如果不想下載 Vue 檔案，Vue 也可以像是 jQuery 一樣，使用 <code>CDN</code> 的方式導入 Vue 相關檔案，我是選擇直接載入最新版，而沒有指定版本號，如果要指定版本號方式載入，記得要在載入檔案後面加上 <code>/dist/vue.js</code>，才會在 Vue 除錯工具看到 Vue 的載入版本號，也代表 Vue 成功載入。</p>
-<p><img src="https://i.imgur.com/7HjXIHD.png" alt="https://i.imgur.com/7HjXIHD.png"></p>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="4-開發環境準備完成"><a href="#4-開發環境準備完成" class="headerlink" title="4.開發環境準備完成"></a>4.開發環境準備完成</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;&lt;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&gt;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p><img src="https://i.imgur.com/zx5jwsH.png" alt="https://i.imgur.com/zx5jwsH.png"></p>
-<blockquote>
-<p>如果對文章有任何問題或者文章有誤歡迎底下留言，感謝～<br>明天讓我們建立自己第一支 Vue 應用程式。</p>
-</blockquote>
-
+<li>VScode 會自動跳出 Vue.js 關鍵字的補字。
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/02/07/Day1%20%E5%BB%BA%E7%AB%8B%20Vue%20%E9%96%8B%E7%99%BC%E7%92%B0%E5%A2%83/#more" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 

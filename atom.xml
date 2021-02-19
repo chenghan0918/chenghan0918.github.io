@@ -6,7 +6,7 @@
   <link href="https://chenghan0918.github.io/atom.xml" rel="self"/>
   
   <link href="https://chenghan0918.github.io/"/>
-  <updated>2021-02-19T13:22:48.740Z</updated>
+  <updated>2021-02-19T13:24:50.344Z</updated>
   <id>https://chenghan0918.github.io/</id>
   
   <author>
@@ -21,16 +21,10 @@
     <link href="https://chenghan0918.github.io/2021/02/19/Day6%20%E8%BF%B4%E5%9C%88(v-for)%E5%92%8C%E6%A2%9D%E4%BB%B6%E5%BC%8F(v-if)/"/>
     <id>https://chenghan0918.github.io/2021/02/19/Day6%20%E8%BF%B4%E5%9C%88(v-for)%E5%92%8C%E6%A2%9D%E4%BB%B6%E5%BC%8F(v-if)/</id>
     <published>2021-02-19T13:19:56.000Z</published>
-    <updated>2021-02-19T13:22:48.740Z</updated>
+    <updated>2021-02-19T13:24:50.344Z</updated>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;通常我們會用 &lt;code&gt;for 迴圈&lt;/code&gt;來存取陣列裡面的值，而在 Vue 中，我們則是使用 &lt;code&gt;v-for&lt;/code&gt; 指令。 如果我們今天使用 &lt;code&gt;test 陣列&lt;/code&gt;來紀錄學生考試成績，以物件形式當作陣列的值，物件裡面分別存放</summary>
-        
-      
+    <summary type="html">&lt;p&gt;通常我們會用 &lt;code&gt;for 迴圈&lt;/code&gt;來存取陣列裡面的值，而在 Vue 中，我們則是使用 &lt;code&gt;v-for&lt;/code&gt; 指令。 如果我們今天使用 &lt;code&gt;test 陣列&lt;/code&gt;來紀錄學生考試成績，以物件形式當作陣列的值，物件裡面分別存放 &lt;code&gt;name&lt;/code&gt; 學生姓名還有 &lt;code&gt;score&lt;/code&gt; 考試成績。 透過 &lt;code&gt;v-for&lt;/code&gt; 我們將 &lt;code&gt;test&lt;/code&gt; 物件值存入 &lt;code&gt;in item&lt;/code&gt; ，就很像 &lt;code&gt;foreach&lt;/code&gt; 的概念，&lt;code&gt;item&lt;/code&gt; 會自動代替陣列裡面的每個物件，而 &lt;code&gt;index&lt;/code&gt; 就是物件在陣列的索引值，透過這個方式，&lt;code&gt;li 標籤&lt;/code&gt;會自動生成陣列裡面物件的數目，而如果我們要將資料渲染到畫面，就用前面提到的 &lt;code&gt;&amp;#123;&amp;#123;&amp;#125;&amp;#125;&lt;/code&gt; 方式來顯示資料。我們也可以在 &lt;code&gt;li 標籤&lt;/code&gt;中加上 &lt;code&gt;v-if&lt;/code&gt; 指令，就是 &lt;code&gt;if&lt;/code&gt; 的概念，來設定條件式篩選資料，像是 &lt;code&gt;score&amp;lt;60&lt;/code&gt; ，找出成績低於 60 分的同學，由於前面的 &lt;code&gt;v-for&lt;/code&gt; 已經將陣列資料設定到 &lt;code&gt;item&lt;/code&gt;，如果要存取資料記得都要用 &lt;code&gt;item&lt;/code&gt; 來取代物件。&lt;/p&gt;</summary>
     
     
     
@@ -42,17 +36,17 @@
     <link href="https://chenghan0918.github.io/2021/02/19/Day5%20%E7%89%A9%E4%BB%B6%E5%92%8C%E9%99%A3%E5%88%97/"/>
     <id>https://chenghan0918.github.io/2021/02/19/Day5%20%E7%89%A9%E4%BB%B6%E5%92%8C%E9%99%A3%E5%88%97/</id>
     <published>2021-02-19T13:19:26.000Z</published>
-    <updated>2021-02-19T13:21:47.853Z</updated>
+    <updated>2021-02-19T13:24:38.000Z</updated>
     
     
-      
-      
-        
-        
     <summary type="html">&lt;p&gt;從前面的文章我們可以看出 Vue 是用物件的方式來存取資料，這邊我們就複習一下物件和陣列的差別。&lt;/p&gt;
-&lt;h2 id=&quot;陣列&quot;&gt;&lt;a href=&quot;#陣列&quot; class=&quot;headerlink&quot;</summary>
-        
-      
+&lt;h2 id=&quot;陣列&quot;&gt;&lt;a href=&quot;#陣列&quot; class=&quot;headerlink&quot; title=&quot;陣列&quot;&gt;&lt;/a&gt;陣列&lt;/h2&gt;&lt;p&gt;假設我們今天要計算全班同學的數學成績平均(假設班上只有3個人)，在沒有陣列的狀況下，寫法如下 。&lt;/p&gt;
+&lt;figure class=&quot;highlight jsx&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; math1 = &lt;span class=&quot;number&quot;&gt;80&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; math2 = &lt;span class=&quot;number&quot;&gt;90&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; math3 = &lt;span class=&quot;number&quot;&gt;60&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; total = math1 + math2 + math3;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; average = total / &lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;但是如果使用陣列之後，可以這樣寫。&lt;/p&gt;
+&lt;figure class=&quot;highlight jsx&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; math = [&lt;span class=&quot;number&quot;&gt;80&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;90&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;60&lt;/span&gt;];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; total = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt;(&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; i=&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;i&amp;lt;math.length;i++)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    total += math[i]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; average_math = total / &lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;雖然和第一個程式相比感覺程式沒有減少太多程式碼，但是當如果我們變數變多，比如50個人，就可以減少宣告很多變數，達到更簡潔的程式碼。 &lt;/p&gt;</summary>
     
     
     
@@ -68,17 +62,15 @@
     <link href="https://chenghan0918.github.io/2021/02/19/Day4%20%E8%B3%87%E6%96%99%E8%88%87%E7%95%AB%E9%9D%A2%E7%B6%81%E5%AE%9A%E7%9A%84%E6%96%B9%E6%B3%95/"/>
     <id>https://chenghan0918.github.io/2021/02/19/Day4%20%E8%B3%87%E6%96%99%E8%88%87%E7%95%AB%E9%9D%A2%E7%B6%81%E5%AE%9A%E7%9A%84%E6%96%B9%E6%B3%95/</id>
     <published>2021-02-19T13:17:36.000Z</published>
-    <updated>2021-02-19T13:19:16.737Z</updated>
+    <updated>2021-02-19T13:24:31.908Z</updated>
     
     
-      
-      
-        
-        
     <summary type="html">&lt;p&gt;介紹三種資料和畫面綁定常用的方式&lt;/p&gt;
-&lt;h2 id=&quot;v-text&quot;&gt;&lt;a href=&quot;#v-text&quot; class=&quot;headerlink&quot; title=&quot;v-text&quot;&gt;&lt;/a&gt;v-text&lt;/h2&gt;&lt;p&gt;可以直接將資料顯示在綁定的 &lt;code&gt;html</summary>
-        
-      
+&lt;h2 id=&quot;v-text&quot;&gt;&lt;a href=&quot;#v-text&quot; class=&quot;headerlink&quot; title=&quot;v-text&quot;&gt;&lt;/a&gt;v-text&lt;/h2&gt;&lt;p&gt;可以直接將資料顯示在綁定的 &lt;code&gt;html 標籤&lt;/code&gt;內，與 &lt;code&gt;&amp;#123;&amp;#123;&amp;#125;&amp;#125;` 最大的差異在於 `v-text` 會取代原本標籤內的內容，而 `&amp;#123;&amp;#123;&amp;#125;&amp;#125;&lt;/code&gt; 則是不會。像是 &lt;code&gt;message&lt;/code&gt; 變數用 &lt;code&gt;v-text&lt;/code&gt; 放入 &lt;code&gt;p 段落&lt;/code&gt;，則 &lt;code&gt;p 段落&lt;/code&gt;原本的內容就被取代。&lt;/p&gt;
+&lt;h2 id=&quot;v-html&quot;&gt;&lt;a href=&quot;#v-html&quot; class=&quot;headerlink&quot; title=&quot;v-html&quot;&gt;&lt;/a&gt;v-html&lt;/h2&gt;&lt;p&gt;功能和 &lt;code&gt;v-text&lt;/code&gt; 一樣，將資料直接顯示在綁定的 &lt;code&gt;html 標籤&lt;/code&gt;內，也會取代標籤內原本的內容，與 &lt;code&gt;v-text&lt;/code&gt; 差異在於如果綁定的資料有包含 &lt;code&gt;html 標籤&lt;/code&gt;， &lt;code&gt;v-html&lt;/code&gt; 會渲染所包含的標籤在網頁上，而不單純只是純文字。像是 &lt;code&gt;message&lt;/code&gt;變數因為有包含 &lt;code&gt;a 標籤&lt;/code&gt;，所以畫面就會渲染出連結的樣式，用法就像是 js 的&lt;code&gt;innerHTML&lt;/code&gt;。最後官網有提醒我們，不要任意讓用戶輸入的資料用 &lt;code&gt;v-html&lt;/code&gt; 方式呈現，因為這樣可能會產生 &lt;code&gt;XSS 攻擊&lt;/code&gt;，不法人士可以在輸入欄位中插入惡意程式碼，並且透過網頁渲染執行，造成網頁資安風險。&lt;/p&gt;
+&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;body&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&amp;quot;app&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;       &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;p&lt;/span&gt;&amp;gt;&lt;/span&gt;不會&amp;#123;&amp;#123;message&amp;#125;&amp;#125;取代&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;p&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;p&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;v-text&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&amp;quot;message&amp;quot;&lt;/span&gt; &amp;gt;&lt;/span&gt;被取代&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;p&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;p&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;v-html&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&amp;quot;message&amp;quot;&lt;/span&gt; &amp;gt;&lt;/span&gt;被取代&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;p&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;body&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;figure class=&quot;highlight jsx&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;script src=&lt;span class=&quot;string&quot;&gt;&amp;quot;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&amp;quot;&lt;/span&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;script&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; app = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Vue(&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        el:&lt;span class=&quot;string&quot;&gt;&amp;#x27;.app&amp;#x27;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        data:&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            message: &lt;span class=&quot;string&quot;&gt;&amp;#x27;&amp;lt;a href=&amp;quot;#&amp;quot;&amp;gt;Hello Vue&amp;lt;/a&amp;gt;&amp;#x27;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
     
     
     
@@ -146,18 +138,30 @@
     <link href="https://chenghan0918.github.io/2021/02/07/Day1%20%E5%BB%BA%E7%AB%8B%20Vue%20%E9%96%8B%E7%99%BC%E7%92%B0%E5%A2%83/"/>
     <id>https://chenghan0918.github.io/2021/02/07/Day1%20%E5%BB%BA%E7%AB%8B%20Vue%20%E9%96%8B%E7%99%BC%E7%92%B0%E5%A2%83/</id>
     <published>2021-02-07T14:30:02.000Z</published>
-    <updated>2021-02-08T13:39:11.311Z</updated>
+    <updated>2021-02-19T13:24:10.362Z</updated>
     
     
-      
-      
-        
-        
     <summary type="html">&lt;h2 id=&quot;1-安裝編譯器&quot;&gt;&lt;a href=&quot;#1-安裝編譯器&quot; class=&quot;headerlink&quot; title=&quot;1.安裝編譯器&quot;&gt;&lt;/a&gt;1.安裝編譯器&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;VScode 安裝&lt;ul&gt;
-&lt;li&gt;&lt;a</summary>
-        
-      
+&lt;li&gt;&lt;a href=&quot;https://code.visualstudio.com/&quot;&gt;官方下載&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;VScode 插件安裝&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=MS-CEINTL.vscode-language-pack-zh-hant&quot;&gt;Chinese (Traditional) Language Pack for Visual Studio Code&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;幫你把 VScode 繁體化&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=yuichinukiyama.vscode-preview-server&quot;&gt;Preview on Web Server&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;安裝完之後，在編譯器建立的 &lt;code&gt;index.html&lt;/code&gt; 檔上按&lt;code&gt;shift+control+L&lt;/code&gt;，就可以開啟一個虛擬 Web Server 來開啟你的首頁程式，Server 網址是&lt;a href=&quot;http://localhost:8080/index.html&quot;&gt;http://localhost:8080/index.html&lt;/a&gt; ，而不是一般在 &lt;code&gt;index.html&lt;/code&gt; 點擊兩下，使用本地端 file://… 的方式打開首頁程式。使用這個插件好處是當你網頁程式有所更動時，網頁畫面也會隨著程式自動更新，不用再重新啟動瀏覽器，增加開發效率。&lt;/li&gt;
+&lt;li&gt;如果之後有學到 &lt;code&gt;Vue Cli&lt;/code&gt; ，在執行發佈指令 &lt;code&gt;npm run build&lt;/code&gt; 後，會將構建完成的檔案放到&lt;code&gt;dist&lt;/code&gt; 資料夾中，這個資料夾內的 &lt;code&gt;index.html&lt;/code&gt; 就無使用本地端 file://… 的方式直接打開，而是必須透過 Web Server 開啟。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=jcbuisson.vue&quot;&gt;Vue&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;會自動將 Vue.js 相關程式語法給 Hightlight 起來。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=hollowtree.vue-snippets&quot;&gt;Vue 2 Snippets&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;VScode 會自動跳出 Vue.js 關鍵字的補字。</summary>
     
     
     
