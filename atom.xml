@@ -6,7 +6,7 @@
   <link href="https://chenghan0918.github.io/atom.xml" rel="self"/>
   
   <link href="https://chenghan0918.github.io/"/>
-  <updated>2021-02-19T13:24:50.344Z</updated>
+  <updated>2021-01-23T13:00:13.653Z</updated>
   <id>https://chenghan0918.github.io/</id>
   
   <author>
@@ -15,188 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>Day6 迴圈(v-for)和條件式(v-if)</title>
-    <link href="https://chenghan0918.github.io/2021/02/19/Day6%20%E8%BF%B4%E5%9C%88(v-for)%E5%92%8C%E6%A2%9D%E4%BB%B6%E5%BC%8F(v-if)/"/>
-    <id>https://chenghan0918.github.io/2021/02/19/Day6%20%E8%BF%B4%E5%9C%88(v-for)%E5%92%8C%E6%A2%9D%E4%BB%B6%E5%BC%8F(v-if)/</id>
-    <published>2021-02-19T13:19:56.000Z</published>
-    <updated>2021-02-19T13:24:50.344Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;通常我們會用 &lt;code&gt;for 迴圈&lt;/code&gt;來存取陣列裡面的值，而在 Vue 中，我們則是使用 &lt;code&gt;v-for&lt;/code&gt; 指令。 如果我們今天使用 &lt;code&gt;test 陣列&lt;/code&gt;來紀錄學生考試成績，以物件形式當作陣列的值，物件裡面分別存放 &lt;code&gt;name&lt;/code&gt; 學生姓名還有 &lt;code&gt;score&lt;/code&gt; 考試成績。 透過 &lt;code&gt;v-for&lt;/code&gt; 我們將 &lt;code&gt;test&lt;/code&gt; 物件值存入 &lt;code&gt;in item&lt;/code&gt; ，就很像 &lt;code&gt;foreach&lt;/code&gt; 的概念，&lt;code&gt;item&lt;/code&gt; 會自動代替陣列裡面的每個物件，而 &lt;code&gt;index&lt;/code&gt; 就是物件在陣列的索引值，透過這個方式，&lt;code&gt;li 標籤&lt;/code&gt;會自動生成陣列裡面物件的數目，而如果我們要將資料渲染到畫面，就用前面提到的 &lt;code&gt;&amp;#123;&amp;#123;&amp;#125;&amp;#125;&lt;/code&gt; 方式來顯示資料。我們也可以在 &lt;code&gt;li 標籤&lt;/code&gt;中加上 &lt;code&gt;v-if&lt;/code&gt; 指令，就是 &lt;code&gt;if&lt;/code&gt; 的概念，來設定條件式篩選資料，像是 &lt;code&gt;score&amp;lt;60&lt;/code&gt; ，找出成績低於 60 分的同學，由於前面的 &lt;code&gt;v-for&lt;/code&gt; 已經將陣列資料設定到 &lt;code&gt;item&lt;/code&gt;，如果要存取資料記得都要用 &lt;code&gt;item&lt;/code&gt; 來取代物件。&lt;/p&gt;</summary>
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Day5 物件和陣列</title>
-    <link href="https://chenghan0918.github.io/2021/02/19/Day5%20%E7%89%A9%E4%BB%B6%E5%92%8C%E9%99%A3%E5%88%97/"/>
-    <id>https://chenghan0918.github.io/2021/02/19/Day5%20%E7%89%A9%E4%BB%B6%E5%92%8C%E9%99%A3%E5%88%97/</id>
-    <published>2021-02-19T13:19:26.000Z</published>
-    <updated>2021-02-19T13:24:38.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;從前面的文章我們可以看出 Vue 是用物件的方式來存取資料，這邊我們就複習一下物件和陣列的差別。&lt;/p&gt;
-&lt;h2 id=&quot;陣列&quot;&gt;&lt;a href=&quot;#陣列&quot; class=&quot;headerlink&quot; title=&quot;陣列&quot;&gt;&lt;/a&gt;陣列&lt;/h2&gt;&lt;p&gt;假設我們今天要計算全班同學的數學成績平均(假設班上只有3個人)，在沒有陣列的狀況下，寫法如下 。&lt;/p&gt;
-&lt;figure class=&quot;highlight jsx&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; math1 = &lt;span class=&quot;number&quot;&gt;80&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; math2 = &lt;span class=&quot;number&quot;&gt;90&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; math3 = &lt;span class=&quot;number&quot;&gt;60&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; total = math1 + math2 + math3;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; average = total / &lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;p&gt;但是如果使用陣列之後，可以這樣寫。&lt;/p&gt;
-&lt;figure class=&quot;highlight jsx&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; math = [&lt;span class=&quot;number&quot;&gt;80&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;90&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;60&lt;/span&gt;];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; total = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt;(&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; i=&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;i&amp;lt;math.length;i++)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    total += math[i]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; average_math = total / &lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;p&gt;雖然和第一個程式相比感覺程式沒有減少太多程式碼，但是當如果我們變數變多，比如50個人，就可以減少宣告很多變數，達到更簡潔的程式碼。 &lt;/p&gt;</summary>
-    
-    
-    
-    
-    <category term="Web" scheme="https://chenghan0918.github.io/tags/Web/"/>
-    
-    <category term="it鐵人競賽" scheme="https://chenghan0918.github.io/tags/it%E9%90%B5%E4%BA%BA%E7%AB%B6%E8%B3%BD/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Day4 資料與畫面綁定的方法</title>
-    <link href="https://chenghan0918.github.io/2021/02/19/Day4%20%E8%B3%87%E6%96%99%E8%88%87%E7%95%AB%E9%9D%A2%E7%B6%81%E5%AE%9A%E7%9A%84%E6%96%B9%E6%B3%95/"/>
-    <id>https://chenghan0918.github.io/2021/02/19/Day4%20%E8%B3%87%E6%96%99%E8%88%87%E7%95%AB%E9%9D%A2%E7%B6%81%E5%AE%9A%E7%9A%84%E6%96%B9%E6%B3%95/</id>
-    <published>2021-02-19T13:17:36.000Z</published>
-    <updated>2021-02-19T13:24:31.908Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;介紹三種資料和畫面綁定常用的方式&lt;/p&gt;
-&lt;h2 id=&quot;v-text&quot;&gt;&lt;a href=&quot;#v-text&quot; class=&quot;headerlink&quot; title=&quot;v-text&quot;&gt;&lt;/a&gt;v-text&lt;/h2&gt;&lt;p&gt;可以直接將資料顯示在綁定的 &lt;code&gt;html 標籤&lt;/code&gt;內，與 &lt;code&gt;&amp;#123;&amp;#123;&amp;#125;&amp;#125;` 最大的差異在於 `v-text` 會取代原本標籤內的內容，而 `&amp;#123;&amp;#123;&amp;#125;&amp;#125;&lt;/code&gt; 則是不會。像是 &lt;code&gt;message&lt;/code&gt; 變數用 &lt;code&gt;v-text&lt;/code&gt; 放入 &lt;code&gt;p 段落&lt;/code&gt;，則 &lt;code&gt;p 段落&lt;/code&gt;原本的內容就被取代。&lt;/p&gt;
-&lt;h2 id=&quot;v-html&quot;&gt;&lt;a href=&quot;#v-html&quot; class=&quot;headerlink&quot; title=&quot;v-html&quot;&gt;&lt;/a&gt;v-html&lt;/h2&gt;&lt;p&gt;功能和 &lt;code&gt;v-text&lt;/code&gt; 一樣，將資料直接顯示在綁定的 &lt;code&gt;html 標籤&lt;/code&gt;內，也會取代標籤內原本的內容，與 &lt;code&gt;v-text&lt;/code&gt; 差異在於如果綁定的資料有包含 &lt;code&gt;html 標籤&lt;/code&gt;， &lt;code&gt;v-html&lt;/code&gt; 會渲染所包含的標籤在網頁上，而不單純只是純文字。像是 &lt;code&gt;message&lt;/code&gt;變數因為有包含 &lt;code&gt;a 標籤&lt;/code&gt;，所以畫面就會渲染出連結的樣式，用法就像是 js 的&lt;code&gt;innerHTML&lt;/code&gt;。最後官網有提醒我們，不要任意讓用戶輸入的資料用 &lt;code&gt;v-html&lt;/code&gt; 方式呈現，因為這樣可能會產生 &lt;code&gt;XSS 攻擊&lt;/code&gt;，不法人士可以在輸入欄位中插入惡意程式碼，並且透過網頁渲染執行，造成網頁資安風險。&lt;/p&gt;
-&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;body&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&amp;quot;app&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;       &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;p&lt;/span&gt;&amp;gt;&lt;/span&gt;不會&amp;#123;&amp;#123;message&amp;#125;&amp;#125;取代&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;p&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;p&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;v-text&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&amp;quot;message&amp;quot;&lt;/span&gt; &amp;gt;&lt;/span&gt;被取代&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;p&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;p&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;v-html&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&amp;quot;message&amp;quot;&lt;/span&gt; &amp;gt;&lt;/span&gt;被取代&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;p&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;body&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;figure class=&quot;highlight jsx&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;script src=&lt;span class=&quot;string&quot;&gt;&amp;quot;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&amp;quot;&lt;/span&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;script&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; app = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Vue(&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        el:&lt;span class=&quot;string&quot;&gt;&amp;#x27;.app&amp;#x27;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        data:&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            message: &lt;span class=&quot;string&quot;&gt;&amp;#x27;&amp;lt;a href=&amp;quot;#&amp;quot;&amp;gt;Hello Vue&amp;lt;/a&amp;gt;&amp;#x27;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
-    
-    
-    
-    
-    <category term="Web" scheme="https://chenghan0918.github.io/tags/Web/"/>
-    
-    <category term="it鐵人競賽" scheme="https://chenghan0918.github.io/tags/it%E9%90%B5%E4%BA%BA%E7%AB%B6%E8%B3%BD/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Day3 ＭVVM 架構</title>
-    <link href="https://chenghan0918.github.io/2021/02/08/Day3%20%EF%BC%ADVVM%20%E6%9E%B6%E6%A7%8B/"/>
-    <id>https://chenghan0918.github.io/2021/02/08/Day3%20%EF%BC%ADVVM%20%E6%9E%B6%E6%A7%8B/</id>
-    <published>2021-02-08T13:42:51.000Z</published>
-    <updated>2021-02-19T10:37:21.157Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;雖然 Vue.js 有自己介紹它不是採用 ＭVVM 的框架，但 MVVM 的概念卻影響 Vue.js 的運作，因此讓我們先了解什麼是 ＭVVM 架構 。&lt;/p&gt;
-&lt;h2 id=&quot;架構示意圖&quot;&gt;&lt;a href=&quot;#架構示意圖&quot; class=&quot;headerlink&quot; title=&quot;架構示意圖&quot;&gt;&lt;/a&gt;架構示意圖&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/lDYVYfr.png&quot; alt=&quot;https://i.imgur.com/lDYVYfr.png&quot;&gt;&lt;/p&gt;
-&lt;h3 id=&quot;View&quot;&gt;&lt;a href=&quot;#View&quot; class=&quot;headerlink&quot; title=&quot;View&quot;&gt;&lt;/a&gt;View&lt;/h3&gt;&lt;p&gt;代表顯示在畫面的樣子，像是按鈕、文字輸入欄位等等&lt;/p&gt;
-&lt;h3 id=&quot;Model&quot;&gt;&lt;a href=&quot;#Model&quot; class=&quot;headerlink&quot; title=&quot;Model&quot;&gt;&lt;/a&gt;Model&lt;/h3&gt;&lt;p&gt;主要取用資料的部分&lt;/p&gt;
-&lt;h3 id=&quot;ViewModel&quot;&gt;&lt;a href=&quot;#ViewModel&quot; class=&quot;headerlink&quot; title=&quot;ViewModel&quot;&gt;&lt;/a&gt;ViewModel&lt;/h3&gt;&lt;p&gt;將資料和畫面綁定的連結器&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Web" scheme="https://chenghan0918.github.io/categories/Web/"/>
-    
-    <category term="it鐵人競賽" scheme="https://chenghan0918.github.io/categories/it%E9%90%B5%E4%BA%BA%E7%AB%B6%E8%B3%BD/"/>
-    
-    
-    <category term="Vue" scheme="https://chenghan0918.github.io/tags/Vue/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Day2 第一個 Vue 應用程式</title>
-    <link href="https://chenghan0918.github.io/2021/02/08/Day2%20%E7%AC%AC%E4%B8%80%E5%80%8B%20Vue%20%E6%87%89%E7%94%A8%E7%A8%8B%E5%BC%8F/"/>
-    <id>https://chenghan0918.github.io/2021/02/08/Day2%20%E7%AC%AC%E4%B8%80%E5%80%8B%20Vue%20%E6%87%89%E7%94%A8%E7%A8%8B%E5%BC%8F/</id>
-    <published>2021-02-08T13:12:53.000Z</published>
-    <updated>2021-02-08T13:39:13.274Z</updated>
-    
-    
-    <summary type="html">&lt;h2 id=&quot;先來個-Hello-Word&quot;&gt;&lt;a href=&quot;#先來個-Hello-Word&quot; class=&quot;headerlink&quot; title=&quot;先來個 Hello Word&quot;&gt;&lt;/a&gt;先來個 Hello Word&lt;/h2&gt;&lt;p&gt;首先記得要先載入 Vue 檔案&lt;/p&gt;
-&lt;figure class=&quot;highlight jsx&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;script src=&lt;span class=&quot;string&quot;&gt;&amp;quot;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&amp;quot;&lt;/span&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;p&gt;宣告一個變數名稱 app  的 Vue 物件&lt;/p&gt;
-&lt;figure class=&quot;highlight jsx&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; app = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Vue( &amp;#123; &amp;#125; );&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;在 html 檔案內增加一個 div 區塊，並且設定區塊的 id 為 app&lt;/p&gt;
-&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;body&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;id&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&amp;quot;app&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;body&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
-    
-    
-    
-    <category term="Web" scheme="https://chenghan0918.github.io/categories/Web/"/>
-    
-    <category term="it鐵人競賽" scheme="https://chenghan0918.github.io/categories/it%E9%90%B5%E4%BA%BA%E7%AB%B6%E8%B3%BD/"/>
-    
-    
-    <category term="Vue" scheme="https://chenghan0918.github.io/tags/Vue/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Day1 建立 Vue 開發環境</title>
-    <link href="https://chenghan0918.github.io/2021/02/07/Day1%20%E5%BB%BA%E7%AB%8B%20Vue%20%E9%96%8B%E7%99%BC%E7%92%B0%E5%A2%83/"/>
-    <id>https://chenghan0918.github.io/2021/02/07/Day1%20%E5%BB%BA%E7%AB%8B%20Vue%20%E9%96%8B%E7%99%BC%E7%92%B0%E5%A2%83/</id>
-    <published>2021-02-07T14:30:02.000Z</published>
-    <updated>2021-02-19T13:24:10.362Z</updated>
-    
-    
-    <summary type="html">&lt;h2 id=&quot;1-安裝編譯器&quot;&gt;&lt;a href=&quot;#1-安裝編譯器&quot; class=&quot;headerlink&quot; title=&quot;1.安裝編譯器&quot;&gt;&lt;/a&gt;1.安裝編譯器&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;VScode 安裝&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://code.visualstudio.com/&quot;&gt;官方下載&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;VScode 插件安裝&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=MS-CEINTL.vscode-language-pack-zh-hant&quot;&gt;Chinese (Traditional) Language Pack for Visual Studio Code&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;幫你把 VScode 繁體化&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=yuichinukiyama.vscode-preview-server&quot;&gt;Preview on Web Server&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;安裝完之後，在編譯器建立的 &lt;code&gt;index.html&lt;/code&gt; 檔上按&lt;code&gt;shift+control+L&lt;/code&gt;，就可以開啟一個虛擬 Web Server 來開啟你的首頁程式，Server 網址是&lt;a href=&quot;http://localhost:8080/index.html&quot;&gt;http://localhost:8080/index.html&lt;/a&gt; ，而不是一般在 &lt;code&gt;index.html&lt;/code&gt; 點擊兩下，使用本地端 file://… 的方式打開首頁程式。使用這個插件好處是當你網頁程式有所更動時，網頁畫面也會隨著程式自動更新，不用再重新啟動瀏覽器，增加開發效率。&lt;/li&gt;
-&lt;li&gt;如果之後有學到 &lt;code&gt;Vue Cli&lt;/code&gt; ，在執行發佈指令 &lt;code&gt;npm run build&lt;/code&gt; 後，會將構建完成的檔案放到&lt;code&gt;dist&lt;/code&gt; 資料夾中，這個資料夾內的 &lt;code&gt;index.html&lt;/code&gt; 就無使用本地端 file://… 的方式直接打開，而是必須透過 Web Server 開啟。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=jcbuisson.vue&quot;&gt;Vue&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;會自動將 Vue.js 相關程式語法給 Hightlight 起來。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=hollowtree.vue-snippets&quot;&gt;Vue 2 Snippets&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;VScode 會自動跳出 Vue.js 關鍵字的補字。</summary>
-    
-    
-    
-    <category term="Web" scheme="https://chenghan0918.github.io/categories/Web/"/>
-    
-    <category term="it鐵人競賽" scheme="https://chenghan0918.github.io/categories/it%E9%90%B5%E4%BA%BA%E7%AB%B6%E8%B3%BD/"/>
-    
-    
-    <category term="Vue" scheme="https://chenghan0918.github.io/tags/Vue/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>使用javascript來解leetcode(#1 Two Sum)(Easy)</title>
-    <link href="https://chenghan0918.github.io/2021/02/07/%E4%BD%BF%E7%94%A8javascript%E4%BE%86%E8%A7%A3leetcode(#1%20Two%20Sum)(Easy)/"/>
-    <id>https://chenghan0918.github.io/2021/02/07/%E4%BD%BF%E7%94%A8javascript%E4%BE%86%E8%A7%A3leetcode(#1%20Two%20Sum)(Easy)/</id>
-    <published>2021-02-07T14:28:42.000Z</published>
-    <updated>2021-02-08T13:39:44.911Z</updated>
-    
-    
-    <summary type="html">&lt;h2 id=&quot;題目原文&quot;&gt;&lt;a href=&quot;#題目原文&quot; class=&quot;headerlink&quot; title=&quot;題目原文&quot;&gt;&lt;/a&gt;題目原文&lt;/h2&gt;&lt;p&gt;Given an array of integers, return &lt;strong&gt;indices&lt;/strong&gt; of the two numbers such that they add up to a specific target.&lt;/p&gt;
-&lt;p&gt;You may assume that each input would have &lt;strong&gt;&lt;em&gt;exactly&lt;/em&gt;&lt;/strong&gt; one solution, and you may not use the &lt;em&gt;same&lt;/em&gt; element twice.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt;&lt;/p&gt;
-&lt;figure class=&quot;highlight jsx&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;Given nums = [&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;7&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;11&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;15&lt;/span&gt;], target = &lt;span class=&quot;number&quot;&gt;9&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Because nums[&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;] + nums[&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;] = &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt; + &lt;span class=&quot;number&quot;&gt;7&lt;/span&gt; = &lt;span class=&quot;number&quot;&gt;9&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; [&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;].&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
-    
-    
-    
-    <category term="leetcode" scheme="https://chenghan0918.github.io/categories/leetcode/"/>
-    
-    <category term="esay" scheme="https://chenghan0918.github.io/categories/leetcode/esay/"/>
-    
-    
-    <category term="javascript" scheme="https://chenghan0918.github.io/tags/javascript/"/>
-    
-  </entry>
   
   <entry>
     <title>Vue Cli-Webpack</title>
@@ -244,6 +62,467 @@
     
     
     <category term="Web" scheme="https://chenghan0918.github.io/categories/Web/"/>
+    
+    
+    <category term="Vue" scheme="https://chenghan0918.github.io/tags/Vue/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>[Day29] CSS display複習</title>
+    <link href="https://chenghan0918.github.io/2020/10/13/[Day29]%20CSS%20display%E8%A4%87%E7%BF%92/"/>
+    <id>https://chenghan0918.github.io/2020/10/13/[Day29]%20CSS%20display%E8%A4%87%E7%BF%92/</id>
+    <published>2020-10-13T15:12:44.000Z</published>
+    <updated>2021-03-05T14:10:27.150Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;display-block-區塊元素介紹&quot;&gt;&lt;a href=&quot;#display-block-區塊元素介紹&quot; class=&quot;headerlink&quot; title=&quot;display:block 區塊元素介紹&quot;&gt;&lt;/a&gt;display:block</summary>
+        
+      
+    
+    
+    
+    <category term="Web" scheme="https://chenghan0918.github.io/categories/Web/"/>
+    
+    <category term="it鐵人競賽" scheme="https://chenghan0918.github.io/categories/it%E9%90%B5%E4%BA%BA%E7%AB%B6%E8%B3%BD/"/>
+    
+    
+    <category term="CSS" scheme="https://chenghan0918.github.io/tags/CSS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>[Day27] jsES6語法-解構(下)</title>
+    <link href="https://chenghan0918.github.io/2020/10/11/[Day27]%20jsES6%E8%AA%9E%E6%B3%95-%E8%A7%A3%E6%A7%8B(%E4%B8%8B)/"/>
+    <id>https://chenghan0918.github.io/2020/10/11/[Day27]%20jsES6%E8%AA%9E%E6%B3%95-%E8%A7%A3%E6%A7%8B(%E4%B8%8B)/</id>
+    <published>2020-10-11T14:50:31.000Z</published>
+    <updated>2021-03-05T13:45:24.807Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;我們也可以把解構方法用在物件裡面，把 family 的值傳到 Min ，並且用 Leo 的名稱來代替他，當我們使用 console 顯示 Leo 時，就會顯示小明。&lt;/p&gt;
+&lt;figure class=&quot;highlight jsx&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td</summary>
+        
+      
+    
+    
+    
+    <category term="Web" scheme="https://chenghan0918.github.io/categories/Web/"/>
+    
+    <category term="it鐵人競賽" scheme="https://chenghan0918.github.io/categories/it%E9%90%B5%E4%BA%BA%E7%AB%B6%E8%B3%BD/"/>
+    
+    
+    <category term="js" scheme="https://chenghan0918.github.io/tags/js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>[Day26]  jsES6語法-解構(上)</title>
+    <link href="https://chenghan0918.github.io/2020/10/10/[Day26]%20jsES6%E8%AA%9E%E6%B3%95-%E8%A7%A3%E6%A7%8B(%E4%B8%8A)/"/>
+    <id>https://chenghan0918.github.io/2020/10/10/[Day26]%20jsES6%E8%AA%9E%E6%B3%95-%E8%A7%A3%E6%A7%8B(%E4%B8%8A)/</id>
+    <published>2020-10-10T14:50:41.000Z</published>
+    <updated>2021-03-05T13:45:02.962Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;我們可以使用解構的方式，將右邊的值給映射到左邊，比如將 family 的值映射到變數 ming,father,mother 裡面。&lt;/p&gt;
+&lt;figure class=&quot;highlight jsx&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td</summary>
+        
+      
+    
+    
+    
+    <category term="Web" scheme="https://chenghan0918.github.io/categories/Web/"/>
+    
+    <category term="it鐵人競賽" scheme="https://chenghan0918.github.io/categories/it%E9%90%B5%E4%BA%BA%E7%AB%B6%E8%B3%BD/"/>
+    
+    
+    <category term="js" scheme="https://chenghan0918.github.io/tags/js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>[Day25] jsES6語法-常用陣列方法(下)</title>
+    <link href="https://chenghan0918.github.io/2020/10/09/[Day25]%20jsES6%E8%AA%9E%E6%B3%95-%E5%B8%B8%E7%94%A8%E9%99%A3%E5%88%97%E6%96%B9%E6%B3%95(%E4%B8%8B)/"/>
+    <id>https://chenghan0918.github.io/2020/10/09/[Day25]%20jsES6%E8%AA%9E%E6%B3%95-%E5%B8%B8%E7%94%A8%E9%99%A3%E5%88%97%E6%96%B9%E6%B3%95(%E4%B8%8B)/</id>
+    <published>2020-10-09T14:52:05.000Z</published>
+    <updated>2021-03-05T13:43:41.931Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;filter&quot;&gt;&lt;a href=&quot;#filter&quot; class=&quot;headerlink&quot; title=&quot;filter&quot;&gt;&lt;/a&gt;filter&lt;/h2&gt;&lt;p&gt;當我們想要過濾陣列的資料，可以使用 filter 方法，它會return 條件相符合的陣列，比如我們設定</summary>
+        
+      
+    
+    
+    
+    <category term="Web" scheme="https://chenghan0918.github.io/categories/Web/"/>
+    
+    <category term="it鐵人競賽" scheme="https://chenghan0918.github.io/categories/it%E9%90%B5%E4%BA%BA%E7%AB%B6%E8%B3%BD/"/>
+    
+    
+    <category term="js" scheme="https://chenghan0918.github.io/tags/js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>[Day24] jsES6語法-常用陣列方法(中）</title>
+    <link href="https://chenghan0918.github.io/2020/10/08/[Day24]%20jsES6%E8%AA%9E%E6%B3%95-%E5%B8%B8%E7%94%A8%E9%99%A3%E5%88%97%E6%96%B9%E6%B3%95(%E4%B8%AD)/"/>
+    <id>https://chenghan0918.github.io/2020/10/08/[Day24]%20jsES6%E8%AA%9E%E6%B3%95-%E5%B8%B8%E7%94%A8%E9%99%A3%E5%88%97%E6%96%B9%E6%B3%95(%E4%B8%AD)/</id>
+    <published>2020-10-08T14:48:32.000Z</published>
+    <updated>2021-03-05T13:43:15.902Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;forEach&quot;&gt;&lt;a href=&quot;#forEach&quot; class=&quot;headerlink&quot; title=&quot;forEach&quot;&gt;&lt;/a&gt;forEach&lt;/h2&gt;&lt;p&gt;如果我們想存取陣列裡面每一個東西，通常會使用到 for</summary>
+        
+      
+    
+    
+    
+    <category term="Web" scheme="https://chenghan0918.github.io/categories/Web/"/>
+    
+    <category term="it鐵人競賽" scheme="https://chenghan0918.github.io/categories/it%E9%90%B5%E4%BA%BA%E7%AB%B6%E8%B3%BD/"/>
+    
+    
+    <category term="js" scheme="https://chenghan0918.github.io/tags/js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>[Day23] jsES6語法-常用陣列方法(上)</title>
+    <link href="https://chenghan0918.github.io/2020/10/07/[Day23]%20jsES6%E8%AA%9E%E6%B3%95-%E5%B8%B8%E7%94%A8%E9%99%A3%E5%88%97%E6%96%B9%E6%B3%95(%E4%B8%8A)/"/>
+    <id>https://chenghan0918.github.io/2020/10/07/[Day23]%20jsES6%E8%AA%9E%E6%B3%95-%E5%B8%B8%E7%94%A8%E9%99%A3%E5%88%97%E6%96%B9%E6%B3%95(%E4%B8%8A)/</id>
+    <published>2020-10-07T14:47:23.000Z</published>
+    <updated>2021-03-05T13:36:24.705Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;every&quot;&gt;&lt;a href=&quot;#every&quot; class=&quot;headerlink&quot; title=&quot;every&quot;&gt;&lt;/a&gt;every&lt;/h2&gt;&lt;p&gt;如果我們想要確認陣列裡面的資料都符合條件，我們可以在陣列裡面使用 every 條件來篩選， return</summary>
+        
+      
+    
+    
+    
+    <category term="Web" scheme="https://chenghan0918.github.io/categories/Web/"/>
+    
+    <category term="it鐵人競賽" scheme="https://chenghan0918.github.io/categories/it%E9%90%B5%E4%BA%BA%E7%AB%B6%E8%B3%BD/"/>
+    
+    
+    <category term="js" scheme="https://chenghan0918.github.io/tags/js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>[Day22] jsES6語法-縮寫用法</title>
+    <link href="https://chenghan0918.github.io/2020/10/06/[Day22]%20jsES6%E8%AA%9E%E6%B3%95-%E7%B8%AE%E5%AF%AB%E7%94%A8%E6%B3%95/"/>
+    <id>https://chenghan0918.github.io/2020/10/06/[Day22]%20jsES6%E8%AA%9E%E6%B3%95-%E7%B8%AE%E5%AF%AB%E7%94%A8%E6%B3%95/</id>
+    <published>2020-10-06T15:10:47.000Z</published>
+    <updated>2021-03-05T13:35:05.949Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;如果我們宣告兩個物件 milk 和 fruits，並且要生成一個新的物件 dic 去存放這兩個物件。如果我們將 dic 裡面的物件名稱和我們設定的物件值設為一樣，此時我們可以省略掉後面的物件值，像是 dic 2 的物件宣告方式。最後 dic 和 dic2</summary>
+        
+      
+    
+    
+    
+    <category term="Web" scheme="https://chenghan0918.github.io/categories/Web/"/>
+    
+    <category term="it鐵人競賽" scheme="https://chenghan0918.github.io/categories/it%E9%90%B5%E4%BA%BA%E7%AB%B6%E8%B3%BD/"/>
+    
+    
+    <category term="js" scheme="https://chenghan0918.github.io/tags/js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>[Day21] jsES6語法-字串模板 Template String</title>
+    <link href="https://chenghan0918.github.io/2020/10/05/[Day21]%20jsES6%E8%AA%9E%E6%B3%95-%E5%AD%97%E4%B8%B2%E6%A8%A1%E6%9D%BF%20Template%20String/"/>
+    <id>https://chenghan0918.github.io/2020/10/05/[Day21]%20jsES6%E8%AA%9E%E6%B3%95-%E5%AD%97%E4%B8%B2%E6%A8%A1%E6%9D%BF%20Template%20String/</id>
+    <published>2020-10-05T14:35:12.000Z</published>
+    <updated>2021-03-05T13:33:43.777Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;如果我們要我們今天要再字串裡面加入值，就會需要使用到+號。常常我們如果要想要使用 innerHTML 來渲染變數，就會在變數裡面存放一大串的 html 結構，並且用+號將數值連起來，如果為了排版，我們還必須加上\ 來換行，這樣其實相當麻煩。&lt;/p&gt;
+&lt;figure</summary>
+        
+      
+    
+    
+    
+    <category term="Web" scheme="https://chenghan0918.github.io/categories/Web/"/>
+    
+    <category term="it鐵人競賽" scheme="https://chenghan0918.github.io/categories/it%E9%90%B5%E4%BA%BA%E7%AB%B6%E8%B3%BD/"/>
+    
+    
+    <category term="js" scheme="https://chenghan0918.github.io/tags/js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>[Day20] jsES6語法-展開與其餘參數</title>
+    <link href="https://chenghan0918.github.io/2020/10/04/[Day20]%20jsES6%E8%AA%9E%E6%B3%95-%E5%B1%95%E9%96%8B%E8%88%87%E5%85%B6%E9%A4%98%E5%8F%83%E6%95%B8/"/>
+    <id>https://chenghan0918.github.io/2020/10/04/[Day20]%20jsES6%E8%AA%9E%E6%B3%95-%E5%B1%95%E9%96%8B%E8%88%87%E5%85%B6%E9%A4%98%E5%8F%83%E6%95%B8/</id>
+    <published>2020-10-04T15:05:19.000Z</published>
+    <updated>2021-03-05T13:31:20.464Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;合併陣列&quot;&gt;&lt;a href=&quot;#合併陣列&quot; class=&quot;headerlink&quot; title=&quot;合併陣列&quot;&gt;&lt;/a&gt;合併陣列&lt;/h2&gt;&lt;p&gt;一般來說，如果我們要合併陣列可以使用陣列內建的方法 concat 來合併陣列，但是我們也可以透過展開方式來合併陣列，我們可以使用 …arr1 ,…arr2 來將陣列的值取出，並且將他們合併到一個陣列 arr3 中。&lt;/p&gt;
+&lt;figure class=&quot;highlight jsx&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;let&lt;/span&gt; arr1 = [&lt;span class=&quot;string&quot;&gt;&amp;#x27;Leo&amp;#x27;&lt;/span&gt;,&lt;span class=&quot;string&quot;&gt;&amp;#x27;Peter&amp;#x27;&lt;/span&gt;,&lt;span class=&quot;string&quot;&gt;&amp;#x27;Amy&amp;#x27;&lt;/span&gt;];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;let&lt;/span&gt; arr2 = [&lt;span class=&quot;string&quot;&gt;&amp;#x27;Alex&amp;#x27;&lt;/span&gt;,&lt;span class=&quot;string&quot;&gt;&amp;#x27;Ray&amp;#x27;&lt;/span&gt;];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;let&lt;/span&gt; arr3 = arr1.concat(arr2);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(arr3);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;figure class=&quot;highlight jsx&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;let&lt;/span&gt; arr1 = [&lt;span class=&quot;string&quot;&gt;&amp;#x27;Leo&amp;#x27;&lt;/span&gt;,&lt;span class=&quot;string&quot;&gt;&amp;#x27;Peter&amp;#x27;&lt;/span&gt;,&lt;span class=&quot;string&quot;&gt;&amp;#x27;Amy&amp;#x27;&lt;/span&gt;];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;let&lt;/span&gt; arr2 = [&lt;span class=&quot;string&quot;&gt;&amp;#x27;Alex&amp;#x27;&lt;/span&gt;,&lt;span class=&quot;string&quot;&gt;&amp;#x27;Ray&amp;#x27;&lt;/span&gt;];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;let&lt;/span&gt; arr3 = [...arr1, ...arr2];&lt;span class=&quot;comment&quot;&gt;//...將陣列的值取出&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(arr3);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;淺複製觀念&quot;&gt;&lt;a href=&quot;#淺複製觀念&quot; class=&quot;headerlink&quot; title=&quot;淺複製觀念&quot;&gt;&lt;/a&gt;淺複製觀念&lt;/h2&gt;&lt;p&gt;如果我們今天將 arr2 陣列設定成 arr1 陣列，此時當我們將 arr2 陣列的值 push 一個值 Harry，此時我們如果使用 console.log 顯示出陣列，會發現 arr1 也增加了 Harry 的值，原因在於我們是傳 arr1 的參考給 arr2 ，因此當我們更動 arr2 的值，同樣也會修改到 arr1 的值。如果我們想要修改 arr2 的值卻不影響 arr1 ，此時我們將 arr2 設定成 […arr1] ，陣列 arr2 就會設定成從 arr1  取出的值，但是不是傳參考，因此當 arr2 更改時，arr1 不會跟著變動。&lt;/p&gt;
+&lt;figure class=&quot;highlight jsx&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;let&lt;/span&gt; arr1 = [&lt;span class=&quot;string&quot;&gt;&amp;#x27;Leo&amp;#x27;&lt;/span&gt;,&lt;span class=&quot;string&quot;&gt;&amp;#x27;Peter&amp;#x27;&lt;/span&gt;,&lt;span class=&quot;string&quot;&gt;&amp;#x27;Amy&amp;#x27;&lt;/span&gt;]; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;let&lt;/span&gt; arr2 = arr1;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;arr2.push(&lt;span class=&quot;string&quot;&gt;&amp;#x27;Harry&amp;#x27;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(arr1);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(arr2);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 傳參考&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
+    
+    
+    
+    <category term="Web" scheme="https://chenghan0918.github.io/categories/Web/"/>
+    
+    <category term="it鐵人競賽" scheme="https://chenghan0918.github.io/categories/it%E9%90%B5%E4%BA%BA%E7%AB%B6%E8%B3%BD/"/>
+    
+    
+    <category term="js" scheme="https://chenghan0918.github.io/tags/js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>[Day19] jsES6語法-使用 let 與 const 宣告變數</title>
+    <link href="https://chenghan0918.github.io/2020/10/03/[Day19]%20jsES6%E8%AA%9E%E6%B3%95-%E4%BD%BF%E7%94%A8%20let%20%E8%88%87%20const%20%E5%AE%A3%E5%91%8A%E8%AE%8A%E6%95%B8/"/>
+    <id>https://chenghan0918.github.io/2020/10/03/[Day19]%20jsES6%E8%AA%9E%E6%B3%95-%E4%BD%BF%E7%94%A8%20let%20%E8%88%87%20const%20%E5%AE%A3%E5%91%8A%E8%AE%8A%E6%95%B8/</id>
+    <published>2020-10-03T12:33:35.000Z</published>
+    <updated>2021-03-05T13:31:15.307Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Hoisting-差異&quot;&gt;&lt;a href=&quot;#Hoisting-差異&quot; class=&quot;headerlink&quot; title=&quot;Hoisting 差異&quot;&gt;&lt;/a&gt;Hoisting 差異&lt;/h2&gt;&lt;p&gt;所先我們先複習一下 &lt;code&gt;Hoisting&lt;/code&gt;</summary>
+        
+      
+    
+    
+    
+    <category term="Web" scheme="https://chenghan0918.github.io/categories/Web/"/>
+    
+    <category term="it鐵人競賽" scheme="https://chenghan0918.github.io/categories/it%E9%90%B5%E4%BA%BA%E7%AB%B6%E8%B3%BD/"/>
+    
+    
+    <category term="js" scheme="https://chenghan0918.github.io/tags/js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>[Day18] 表單使用進階</title>
+    <link href="https://chenghan0918.github.io/2020/10/02/[Day18]%20%E8%A1%A8%E5%96%AE%E4%BD%BF%E7%94%A8%E9%80%B2%E9%9A%8E/"/>
+    <id>https://chenghan0918.github.io/2020/10/02/[Day18]%20%E8%A1%A8%E5%96%AE%E4%BD%BF%E7%94%A8%E9%80%B2%E9%9A%8E/</id>
+    <published>2020-10-02T13:08:48.000Z</published>
+    <updated>2021-03-05T13:27:18.123Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;使用-v-for-動態產生選項&quot;&gt;&lt;a href=&quot;#使用-v-for-動態產生選項&quot; class=&quot;headerlink&quot; title=&quot;使用 v-for 動態產生選項&quot;&gt;&lt;/a&gt;使用 v-for 動態產生選項&lt;/h2&gt;&lt;p&gt;如果我們今天要將陣列的資料放進 &lt;code&gt;select&lt;/code&gt; 單選下拉式選單中，可以在 &lt;code&gt;option&lt;/code&gt; 標籤中使用 &lt;code&gt;v-for&lt;/code&gt;，將 &lt;code&gt;item&lt;/code&gt; 帶入到選項中，記得要在 &lt;code&gt;value&lt;/code&gt; 前面加上 &lt;code&gt;:&lt;/code&gt; ，因為 &lt;code&gt;value&lt;/code&gt; 的值是隨著陣列的內容而不同是一種動態的屬性，最後我們使用 &lt;code&gt;v-model&lt;/code&gt; 將 &lt;code&gt;select&lt;/code&gt; 和資料  &lt;code&gt;selected&lt;/code&gt;  綁定，當我們點擊選項後，選項的 &lt;code&gt;value&lt;/code&gt; 就會變成 &lt;code&gt;selected&lt;/code&gt; 的值。&lt;/p&gt;
+&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;body&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&amp;quot;app&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;v-model&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&amp;quot;select&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;option&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;disabled&lt;/span&gt;&amp;gt;&lt;/span&gt;請選擇&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;option&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;option&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;v-for&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&amp;quot;item in dataArray&amp;quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;:value&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&amp;quot;item&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&amp;#123;&amp;#123;item&amp;#125;&amp;#125;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;option&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;select&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;body&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;figure class=&quot;highlight jsx&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;script src=&lt;span class=&quot;string&quot;&gt;&amp;quot;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&amp;quot;&lt;/span&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;script&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; app = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Vue(&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        el:&lt;span class=&quot;string&quot;&gt;&amp;#x27;.app&amp;#x27;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        data:&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            dataArray:[&lt;span class=&quot;string&quot;&gt;&amp;#x27;Leo&amp;#x27;&lt;/span&gt;,&lt;span class=&quot;string&quot;&gt;&amp;#x27;Perter&amp;#x27;&lt;/span&gt;,&lt;span class=&quot;string&quot;&gt;&amp;#x27;Harry&amp;#x27;&lt;/span&gt;],&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                        selected:&lt;span class=&quot;string&quot;&gt;&amp;#x27;&amp;#x27;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
+    
+    
+    
+    <category term="Web" scheme="https://chenghan0918.github.io/categories/Web/"/>
+    
+    <category term="it鐵人競賽" scheme="https://chenghan0918.github.io/categories/it%E9%90%B5%E4%BA%BA%E7%AB%B6%E8%B3%BD/"/>
+    
+    
+    <category term="Vue" scheme="https://chenghan0918.github.io/tags/Vue/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>[Day17] 條件式 (v-if) 進階</title>
+    <link href="https://chenghan0918.github.io/2020/10/01/[Day17]%20%E6%A2%9D%E4%BB%B6%E5%BC%8F%20(v-if)%20%E9%80%B2%E9%9A%8E/"/>
+    <id>https://chenghan0918.github.io/2020/10/01/[Day17]%20%E6%A2%9D%E4%BB%B6%E5%BC%8F%20(v-if)%20%E9%80%B2%E9%9A%8E/</id>
+    <published>2020-10-01T12:13:09.000Z</published>
+    <updated>2021-03-05T13:25:50.543Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;否定用法&quot;&gt;&lt;a href=&quot;#否定用法&quot; class=&quot;headerlink&quot; title=&quot;!否定用法&quot;&gt;&lt;/a&gt;!否定用法&lt;/h2&gt;&lt;p&gt;我們在 &lt;code&gt;v-if&lt;/code&gt; 條件直接使用否定&lt;code&gt;！&lt;/code&gt;用法，將 &lt;code&gt;true&lt;/code&gt; 的條件式改成 &lt;code&gt;false&lt;/code&gt;，當條件等於 &lt;code&gt;true&lt;/code&gt; 就會顯示出成功的 &lt;code&gt;div&lt;/code&gt; 區塊，反之則會顯示失敗的 &lt;code&gt;div&lt;/code&gt; 區塊。我們也可以寫一個 &lt;code&gt;checkbox&lt;/code&gt; 綁定 &lt;code&gt;isSucceed&lt;/code&gt; 來更改 &lt;code&gt;true&lt;/code&gt; 和 &lt;code&gt;false&lt;/code&gt;。&lt;/p&gt;
+&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;body&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&amp;quot;app&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;v-if&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&amp;quot;isSucceed&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;成功&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;v-if&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&amp;quot;!isSucceed&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;失敗&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;input&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;type&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&amp;quot;checkbox&amp;quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;v-model&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&amp;quot;isSucceed&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;更換&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;body&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;figure class=&quot;highlight jsx&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;script src=&lt;span class=&quot;string&quot;&gt;&amp;quot;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&amp;quot;&lt;/span&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;script&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; app = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Vue(&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        el:&lt;span class=&quot;string&quot;&gt;&amp;#x27;.app&amp;#x27;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        data:&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            isSucceed:&lt;span class=&quot;literal&quot;&gt;false&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
+    
+    
+    
+    <category term="Web" scheme="https://chenghan0918.github.io/categories/Web/"/>
+    
+    <category term="it鐵人競賽" scheme="https://chenghan0918.github.io/categories/it%E9%90%B5%E4%BA%BA%E7%AB%B6%E8%B3%BD/"/>
+    
+    
+    <category term="Vue" scheme="https://chenghan0918.github.io/tags/Vue/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>[Day16] 頁面操作 (v-on) 進階</title>
+    <link href="https://chenghan0918.github.io/2020/09/30/[Day16]%20%E9%A0%81%E9%9D%A2%E6%93%8D%E4%BD%9C%20(v-on)%20%E9%80%B2%E9%9A%8E/"/>
+    <id>https://chenghan0918.github.io/2020/09/30/[Day16]%20%E9%A0%81%E9%9D%A2%E6%93%8D%E4%BD%9C%20(v-on)%20%E9%80%B2%E9%9A%8E/</id>
+    <published>2020-09-30T14:02:47.000Z</published>
+    <updated>2021-03-05T13:22:49.889Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;帶入參數&quot;&gt;&lt;a href=&quot;#帶入參數&quot; class=&quot;headerlink&quot; title=&quot;帶入參數&quot;&gt;&lt;/a&gt;帶入參數&lt;/h2&gt;&lt;p&gt;我們設定一個 &lt;code&gt;dataArr&lt;/code&gt; 陣列，裡面存放 &lt;code&gt;name&lt;/code&gt; 還有 &lt;code&gt;money&lt;/code&gt; 組成的物件，我們宣告一個 &lt;code&gt;save&lt;/code&gt; 方法，傳入一個物件 &lt;code&gt;item&lt;/code&gt; 把當成這個方法參數，並將這個方法用 &lt;code&gt;＠click&lt;/code&gt; 綁定在 &lt;code&gt;button&lt;/code&gt; 的點擊事件。最後我們使用 &lt;code&gt;v-for&lt;/code&gt; 存取 &lt;code&gt;dataArr&lt;/code&gt; 的資料 ，將 &lt;code&gt;dataArr&lt;/code&gt; 的值傳入 &lt;code&gt;item&lt;/code&gt; ，此時當我們點擊按鈕後，&lt;code&gt;dataArr&lt;/code&gt; 就會用 &lt;code&gt;item&lt;/code&gt; 物件的方式傳入 &lt;code&gt;save&lt;/code&gt; 方法中，執行將物件的 &lt;code&gt;money&lt;/code&gt; 加 500。&lt;/p&gt;
+&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;body&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&amp;quot;app&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;ul&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;li&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;v-for&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&amp;quot;item in dataArr&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &amp;#123;&amp;#123;item.name&amp;#125;&amp;#125;有&amp;#123;&amp;#123;item.money&amp;#125;&amp;#125;$ &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;input&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;type&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&amp;quot;button&amp;quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;value&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&amp;quot;儲值&amp;quot;&lt;/span&gt; @&lt;span class=&quot;attr&quot;&gt;click&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&amp;quot;save(item)&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;li&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;ul&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;body&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
+    
+    
+    
+    <category term="Web" scheme="https://chenghan0918.github.io/categories/Web/"/>
+    
+    <category term="it鐵人競賽" scheme="https://chenghan0918.github.io/categories/it%E9%90%B5%E4%BA%BA%E7%AB%B6%E8%B3%BD/"/>
+    
+    
+    <category term="Vue" scheme="https://chenghan0918.github.io/tags/Vue/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>[Day15] 元件概念</title>
+    <link href="https://chenghan0918.github.io/2020/09/29/[Day15]%20%E5%85%83%E4%BB%B6%E6%A6%82%E5%BF%B5/"/>
+    <id>https://chenghan0918.github.io/2020/09/29/[Day15]%20%E5%85%83%E4%BB%B6%E6%A6%82%E5%BF%B5/</id>
+    <published>2020-09-29T15:12:04.000Z</published>
+    <updated>2021-03-05T13:21:18.296Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;我們今天在 Vue 應用中宣告一個資料 &lt;code&gt;counter&lt;/code&gt;，並且設定一個按鈕綁定點擊事件，此時當我們點擊按鈕時，會發現按鈕上的 &lt;code&gt;counter&lt;/code&gt; 變數值加一，我們將相同按鈕程式碼複製再產生一個相同的按鈕。此點會發現當我們點擊按鈕時，兩顆按鈕的資料都會加一，如果我們要將按鈕的資料分開，可能的做法是將不同的按鈕綁定不同的變數，但這樣就變成我們要多設定一個變數，如果此時按鈕一多，那麼要設定新的變數也會變多。此時我們可以使用 Vue 元件的做法來解決這個問題。透過元件，我們可以將程式給模組化重複利用。接下來說明元件的使用方式，首先我們必須再 Vue 應用程式前面宣告一個 &lt;code&gt;Vue.component&lt;/code&gt; ，() 內第一個參數我們放的是元件的名稱，像是範例程式將元件名稱設定成 &lt;code&gt;&amp;#39;counter&amp;#39;&lt;/code&gt; ，接下來第二個參數就很像是我們宣告一個 Vue app 的樣子，裡面是一個物件形式，也有 &lt;code&gt;data&lt;/code&gt; 資料不過和一般 Vue 應用宣告的方式不太一樣，我們必須以物件的形式透過 &lt;code&gt;function return&lt;/code&gt; 來傳遞資料，像是範例程式我們將資料 &lt;code&gt;counter&lt;/code&gt; 包裝物件透過函數來回傳。接下來我們使用 &lt;code&gt;template&lt;/code&gt; 的方式來宣告元件，有很多可以產生元件的方法，這邊我們先用 &lt;code&gt;template&lt;/code&gt; 為例子，&lt;code&gt;template&lt;/code&gt; 裡面我們必須以字串的方式來放入我們想在畫面呈現的程式碼，就很像是 js 的 &lt;code&gt;innerHTML&lt;/code&gt; ，然後這邊我們使用一個 js ES6 &lt;code&gt;模版字符串&lt;/code&gt;的語法，將我們要呈現在畫面上的 html 程式語法直接打在&lt;code&gt;模版字符串&lt;/code&gt;裡面，透過此方法我們可以省略串接字串的加號，更容易撰寫程式，因此我們複製上一個按鈕得程式碼將它放進中，最後我們透過元件&lt;code&gt;&amp;lt;counter&amp;gt;&amp;lt;/counter&amp;gt;&lt;/code&gt;來產生兩格按鈕，當我們點擊兩顆按鈕時，可以明顯發現按鈕內的資料不會都加一，達到了資料的獨立。透過 Vue 開發者工具，我們也可以看到再在&lt;code&gt;root 元件&lt;/code&gt;裡面有兩個 &lt;code&gt;counter&lt;/code&gt; 元件，點進去 &lt;code&gt;counter&lt;/code&gt; 元件發現他們的資料確實都是獨立的。&lt;/p&gt;
+&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;body&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;id&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&amp;#x27;app&amp;#x27;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        一般寫法:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;button&lt;/span&gt; @&lt;span class=&quot;attr&quot;&gt;click&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&amp;quot;counter+=1&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&amp;#123;&amp;#123;counter&amp;#125;&amp;#125;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;button&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;button&lt;/span&gt; @&lt;span class=&quot;attr&quot;&gt;click&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&amp;quot;counter+=1&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&amp;#123;&amp;#123;counter&amp;#125;&amp;#125;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;button&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        元件寫法：&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;counter&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;counter&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;counter&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;counter&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;body&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
+    
+    
+    
+    <category term="Web" scheme="https://chenghan0918.github.io/categories/Web/"/>
+    
+    <category term="it鐵人競賽" scheme="https://chenghan0918.github.io/categories/it%E9%90%B5%E4%BA%BA%E7%AB%B6%E8%B3%BD/"/>
+    
+    
+    <category term="Vue" scheme="https://chenghan0918.github.io/tags/Vue/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>[Day14] 迴圈 (v-for) 進階(2)</title>
+    <link href="https://chenghan0918.github.io/2020/09/28/[Day14]%20%E8%BF%B4%E5%9C%88%20(v-for)%20%E9%80%B2%E9%9A%8E(2)/"/>
+    <id>https://chenghan0918.github.io/2020/09/28/[Day14]%20%E8%BF%B4%E5%9C%88%20(v-for)%20%E9%80%B2%E9%9A%8E(2)/</id>
+    <published>2020-09-28T13:40:22.000Z</published>
+    <updated>2021-03-05T13:16:56.025Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;不能運行的狀況&quot;&gt;&lt;a href=&quot;#不能運行的狀況&quot; class=&quot;headerlink&quot; title=&quot;不能運行的狀況&quot;&gt;&lt;/a&gt;不能運行的狀況&lt;/h2&gt;&lt;h3 id=&quot;設定陣列長度為０&quot;&gt;&lt;a href=&quot;#設定陣列長度為０&quot; class=&quot;headerlink&quot; title=&quot;設定陣列長度為０&quot;&gt;&lt;/a&gt;設定陣列長度為０&lt;/h3&gt;&lt;p&gt;在 js 中我們可以將某個陣列長度設定為０來將這個陣列的值消失，如範例的 &lt;code&gt;dataArray2&lt;/code&gt; ，但是在 Vue 中這種寫法是不行執行的，我們今天透過一個 &lt;code&gt;noWork&lt;/code&gt; 方法去將陣列的長度設定為 0，並且在 &lt;code&gt;console&lt;/code&gt; 上印出我們修改的陣列，會發現雖然最後陣列裡面的元素變成 0 ，但是畫面上 &lt;code&gt;li&lt;/code&gt; 標籤所渲染的陣列資料卻沒有改變。 &lt;/p&gt;
+&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;body&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;id&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&amp;#x27;app&amp;#x27;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;ul&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;li&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;v-for&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&amp;#x27;item in dataArray1&amp;#x27;&lt;/span&gt;&amp;gt;&lt;/span&gt;&amp;#123;&amp;#123;item&amp;#125;&amp;#125;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;li&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;ul&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;button&lt;/span&gt; @&lt;span class=&quot;attr&quot;&gt;click&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&amp;#x27;noWork&amp;#x27;&lt;/span&gt;&amp;gt;&lt;/span&gt;更改陣列長度&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;button&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;body&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;figure class=&quot;highlight jsx&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;script src=&lt;span class=&quot;string&quot;&gt;&amp;quot;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&amp;quot;&lt;/span&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;script&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; app = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Vue(&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        el: &lt;span class=&quot;string&quot;&gt;&amp;#x27;#app&amp;#x27;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        data:&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            dataArray1:[&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        methods: &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            noWork:&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &lt;span class=&quot;built_in&quot;&gt;this&lt;/span&gt;.dataArray1.length = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;built_in&quot;&gt;this&lt;/span&gt;.dataArray1.length);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; dataArray2 = [&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    dataArray2.length = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
+    
+    
+    
+    <category term="Web" scheme="https://chenghan0918.github.io/categories/Web/"/>
+    
+    <category term="it鐵人競賽" scheme="https://chenghan0918.github.io/categories/it%E9%90%B5%E4%BA%BA%E7%AB%B6%E8%B3%BD/"/>
+    
+    
+    <category term="Vue" scheme="https://chenghan0918.github.io/tags/Vue/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>[Day13] 迴圈 (v-for) 進階(1)</title>
+    <link href="https://chenghan0918.github.io/2020/09/27/[Day13]%20%E8%BF%B4%E5%9C%88%20(v-for)%20%E9%80%B2%E9%9A%8E(1)/"/>
+    <id>https://chenghan0918.github.io/2020/09/27/[Day13]%20%E8%BF%B4%E5%9C%88%20(v-for)%20%E9%80%B2%E9%9A%8E(1)/</id>
+    <published>2020-09-27T13:02:51.000Z</published>
+    <updated>2021-03-05T13:35:12.892Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;物件與陣列的索引&quot;&gt;&lt;a href=&quot;#物件與陣列的索引&quot; class=&quot;headerlink&quot; title=&quot;物件與陣列的索引&quot;&gt;&lt;/a&gt;物件與陣列的索引&lt;/h2&gt;&lt;p&gt;我們可以用陣列或者物件的形式來存放資料，並且透過 &lt;code&gt;v-for&lt;/code&gt; 的方式將資料全部顯示出來，其中我們會使用 &lt;code&gt;index&lt;/code&gt; 來存放資料的索引值，而物件和陣列最大的差別就在於索引值部分，陣列是用數字由 0 依序表示索引，而物件則用物件內部指定名稱表示索引。&lt;/p&gt;
+&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;body&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;id&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;app&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        陣列資料&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;ul&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;li&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;v-for&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&amp;quot;(item,index) in dataArray&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&amp;#123;&amp;#123;index&amp;#125;&amp;#125;:&amp;#123;&amp;#123;item.name&amp;#125;&amp;#125;&amp;#123;&amp;#123;item.age&amp;#125;&amp;#125;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;li&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;ul&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        物件資料&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;ul&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;li&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;v-for&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&amp;quot;(item,index) in dataObject&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&amp;#123;&amp;#123;index&amp;#125;&amp;#125;:&amp;#123;&amp;#123;item.name&amp;#125;&amp;#125;&amp;#123;&amp;#123;item.age&amp;#125;&amp;#125;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;li&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;ul&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;body&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
+    
+    
+    
+    <category term="Web" scheme="https://chenghan0918.github.io/categories/Web/"/>
+    
+    <category term="it鐵人競賽" scheme="https://chenghan0918.github.io/categories/it%E9%90%B5%E4%BA%BA%E7%AB%B6%E8%B3%BD/"/>
+    
+    
+    <category term="Vue" scheme="https://chenghan0918.github.io/tags/Vue/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>[Day12] 動態切換 ClassName</title>
+    <link href="https://chenghan0918.github.io/2020/09/26/[Day12]%20%E5%8B%95%E6%85%8B%E5%88%87%E6%8F%9B%20ClassName/"/>
+    <id>https://chenghan0918.github.io/2020/09/26/[Day12]%20%E5%8B%95%E6%85%8B%E5%88%87%E6%8F%9B%20ClassName/</id>
+    <published>2020-09-26T13:12:37.000Z</published>
+    <updated>2021-03-05T13:11:02.217Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;物件方式&quot;&gt;&lt;a href=&quot;#物件方式&quot; class=&quot;headerlink&quot; title=&quot;物件方式&quot;&gt;&lt;/a&gt;物件方式&lt;/h2&gt;&lt;p&gt;先前提到我們可以使用 &lt;code&gt;v-bind&lt;/code&gt; 來動態綁定會變化的元素屬性，比如用 &lt;code&gt;:class = &amp;quot;&amp;#123;&amp;#39;套用類別名稱&amp;#39;:判斷值&amp;#125;&amp;quot;&lt;/code&gt;，以物件方式加入類別樣式，在這裡我們有另一種寫法，就是直接將 &lt;code&gt;class&lt;/code&gt; 裡面所存放的物件，直接存放在 Vue 資料中，像是下面範例的 &lt;code&gt;classObject&lt;/code&gt;，這樣的好處是可直接透過物件的方式來修改類別樣式的判斷式，而不用在另外用資料來存判斷式的值，像是 &lt;code&gt;isColorRed&lt;/code&gt; 或 &lt;code&gt;isTextBold&lt;/code&gt; 就可以省掉。我們用 &lt;code&gt;v-on&lt;/code&gt; 在 &lt;code&gt;button&lt;/code&gt; 加上 &lt;code&gt;click 事件&lt;/code&gt;，觸發之後可以變更判斷式的值，用&lt;code&gt;！&lt;/code&gt;否定語法，將 &lt;code&gt;true&lt;/code&gt; 變成 &lt;code&gt;false&lt;/code&gt; ，或 &lt;code&gt;false&lt;/code&gt; 變成 &lt;code&gt;true&lt;/code&gt; 來套用樣式，要注意第二種寫法，如果我們要存取物件時，如果遇到物件內的存取名稱是用&lt;code&gt;-符號&lt;/code&gt;連接，我們要改成用&lt;code&gt;[&amp;#39;存取名稱&amp;#39;]&lt;/code&gt;才不會顯示錯誤，像是 &lt;code&gt;text-bold&lt;/code&gt;。&lt;/p&gt;
+&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;body&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;id&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;app&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;p&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;:class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&amp;quot;&amp;#123;&amp;#x27;color&amp;#x27;:isColorRed,&amp;#x27;text-bold&amp;#x27;:isTextBold&amp;#125;&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;物件寫法1&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;p&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;button&lt;/span&gt; @&lt;span class=&quot;attr&quot;&gt;click&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&amp;quot;isColorRed=!isColorRed&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;變紅&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;button&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;button&lt;/span&gt; @&lt;span class=&quot;attr&quot;&gt;click&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&amp;quot;isTextBold=!isTextBold&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;變粗&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;button&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;p&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;:class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&amp;quot;classObject&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;物件寫法2&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;p&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;button&lt;/span&gt; @&lt;span class=&quot;attr&quot;&gt;click&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&amp;quot;classObject.color=!classObject.color&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;變紅&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;button&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;button&lt;/span&gt; @&lt;span class=&quot;attr&quot;&gt;click&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&amp;quot;classObject[&amp;#x27;text-bold&amp;#x27;]=!classObject[&amp;#x27;text-bold&amp;#x27;]&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;變粗&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;button&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;body&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;figure class=&quot;highlight jsx&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;script src=&lt;span class=&quot;string&quot;&gt;&amp;quot;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&amp;quot;&lt;/span&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;script&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; app = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Vue(&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        el: &lt;span class=&quot;string&quot;&gt;&amp;#x27;#app&amp;#x27;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        data:&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            isColorRed:&lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            isTextBold:&lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            classObject:&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &lt;span class=&quot;string&quot;&gt;&amp;#x27;color&amp;#x27;&lt;/span&gt;:&lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &lt;span class=&quot;string&quot;&gt;&amp;#x27;text-bold&amp;#x27;&lt;/span&gt;:&lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-class&quot;&gt;.color&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;       &lt;span class=&quot;attribute&quot;&gt;color&lt;/span&gt;:red;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   &lt;span class=&quot;selector-class&quot;&gt;.text-bold&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;       &lt;span class=&quot;attribute&quot;&gt;font-weight&lt;/span&gt;: bold;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
+    
+    
+    
+    <category term="Web" scheme="https://chenghan0918.github.io/categories/Web/"/>
+    
+    <category term="it鐵人競賽" scheme="https://chenghan0918.github.io/categories/it%E9%90%B5%E4%BA%BA%E7%AB%B6%E8%B3%BD/"/>
+    
+    
+    <category term="Vue" scheme="https://chenghan0918.github.io/tags/Vue/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>[Day11] 資料綁定細節</title>
+    <link href="https://chenghan0918.github.io/2020/09/25/[Day11]%20%E8%B3%87%E6%96%99%E7%B6%81%E5%AE%9A%E7%B4%B0%E7%AF%80/"/>
+    <id>https://chenghan0918.github.io/2020/09/25/[Day11]%20%E8%B3%87%E6%96%99%E7%B6%81%E5%AE%9A%E7%B4%B0%E7%AF%80/</id>
+    <published>2020-09-25T13:16:22.000Z</published>
+    <updated>2021-03-05T13:08:49.553Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;單向綁定-v-once&quot;&gt;&lt;a href=&quot;#單向綁定-v-once&quot; class=&quot;headerlink&quot; title=&quot;單向綁定 (v-once)&quot;&gt;&lt;/a&gt;單向綁定 (v-once)&lt;/h2&gt;&lt;p&gt;   一般來說，如果我們使用 &lt;code&gt;v-text&lt;/code&gt; 來綁定資料與畫面，那通常會是雙面綁定，資料和畫面是交互影響的，假設我們只想讓畫面只渲染一次資料後就不再變動，我們可以使用 &lt;code&gt;v-once&lt;/code&gt; 語法，如下面程式，當 &lt;code&gt;input&lt;/code&gt; 輸入畫面資料 &lt;code&gt;text&lt;/code&gt; 改變時，有加 &lt;code&gt;v-once&lt;/code&gt; 的 div 區塊不會跟著改變。&lt;/p&gt;
+&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;body&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;id&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;app&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;input&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;type&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&amp;quot;text&amp;quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;v-model&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&amp;quot;text&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;v-text&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&amp;#x27;text&amp;#x27;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;v-once&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;v-text&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&amp;#x27;text&amp;#x27;&lt;/span&gt; &amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;body&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;figure class=&quot;highlight jsx&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;script src=&lt;span class=&quot;string&quot;&gt;&amp;quot;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&amp;quot;&lt;/span&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;script&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; app = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Vue(&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        el: &lt;span class=&quot;string&quot;&gt;&amp;#x27;#app&amp;#x27;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        data:&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            text:&lt;span class=&quot;string&quot;&gt;&amp;#x27;hello&amp;#x27;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
+    
+    
+    
+    <category term="Web" scheme="https://chenghan0918.github.io/categories/Web/"/>
+    
+    <category term="it鐵人競賽" scheme="https://chenghan0918.github.io/categories/it%E9%90%B5%E4%BA%BA%E7%AB%B6%E8%B3%BD/"/>
     
     
     <category term="Vue" scheme="https://chenghan0918.github.io/tags/Vue/"/>

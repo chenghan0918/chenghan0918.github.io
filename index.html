@@ -151,7 +151,7 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤<span class="badge">4</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤<span class="badge">3</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
@@ -161,7 +161,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔<span class="badge">9</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔<span class="badge">31</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -235,7 +235,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-count">31</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -248,7 +248,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">標籤</span></a>
       </div>
   </nav>
@@ -292,779 +292,6 @@
 
         <div class="content index posts-expand">
           
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://chenghan0918.github.io/2021/02/19/Day6%20%E8%BF%B4%E5%9C%88(v-for)%E5%92%8C%E6%A2%9D%E4%BB%B6%E5%BC%8F(v-if)/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/Leo.jpeg">
-      <meta itemprop="name" content="Leo">
-      <meta itemprop="description" content="You can’t connect the dots looking forward; you can only connect them looking backwards.">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Leo's Space">
-    </span>
-
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/02/19/Day6%20%E8%BF%B4%E5%9C%88(v-for)%E5%92%8C%E6%A2%9D%E4%BB%B6%E5%BC%8F(v-if)/" class="post-title-link" itemprop="url">Day6 迴圈(v-for)和條件式(v-if)</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-              
-
-              <time title="創建時間：2021-02-19 21:19:56 / 修改時間：21:24:50" itemprop="dateCreated datePublished" datetime="2021-02-19T21:19:56+08:00">2021-02-19</time>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/2021/02/19/Day6%20%E8%BF%B4%E5%9C%88(v-for)%E5%92%8C%E6%A2%9D%E4%BB%B6%E5%BC%8F(v-if)/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/02/19/Day6 迴圈(v-for)和條件式(v-if)/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="文章字數">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">文章字數：</span>
-              <span>1.2k</span>
-            </span>
-            <span class="post-meta-item" title="所需閱讀時間">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
-              <span>1 分鐘</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>通常我們會用 <code>for 迴圈</code>來存取陣列裡面的值，而在 Vue 中，我們則是使用 <code>v-for</code> 指令。 如果我們今天使用 <code>test 陣列</code>來紀錄學生考試成績，以物件形式當作陣列的值，物件裡面分別存放 <code>name</code> 學生姓名還有 <code>score</code> 考試成績。 透過 <code>v-for</code> 我們將 <code>test</code> 物件值存入 <code>in item</code> ，就很像 <code>foreach</code> 的概念，<code>item</code> 會自動代替陣列裡面的每個物件，而 <code>index</code> 就是物件在陣列的索引值，透過這個方式，<code>li 標籤</code>會自動生成陣列裡面物件的數目，而如果我們要將資料渲染到畫面，就用前面提到的 <code>&#123;&#123;&#125;&#125;</code> 方式來顯示資料。我們也可以在 <code>li 標籤</code>中加上 <code>v-if</code> 指令，就是 <code>if</code> 的概念，來設定條件式篩選資料，像是 <code>score&lt;60</code> ，找出成績低於 60 分的同學，由於前面的 <code>v-for</code> 已經將陣列資料設定到 <code>item</code>，如果要存取資料記得都要用 <code>item</code> 來取代物件。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/02/19/Day6%20%E8%BF%B4%E5%9C%88(v-for)%E5%92%8C%E6%A2%9D%E4%BB%B6%E5%BC%8F(v-if)/#more" rel="contents">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://chenghan0918.github.io/2021/02/19/Day5%20%E7%89%A9%E4%BB%B6%E5%92%8C%E9%99%A3%E5%88%97/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/Leo.jpeg">
-      <meta itemprop="name" content="Leo">
-      <meta itemprop="description" content="You can’t connect the dots looking forward; you can only connect them looking backwards.">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Leo's Space">
-    </span>
-
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/02/19/Day5%20%E7%89%A9%E4%BB%B6%E5%92%8C%E9%99%A3%E5%88%97/" class="post-title-link" itemprop="url">Day5 物件和陣列</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-              
-
-              <time title="創建時間：2021-02-19 21:19:26 / 修改時間：21:24:38" itemprop="dateCreated datePublished" datetime="2021-02-19T21:19:26+08:00">2021-02-19</time>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/2021/02/19/Day5%20%E7%89%A9%E4%BB%B6%E5%92%8C%E9%99%A3%E5%88%97/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/02/19/Day5 物件和陣列/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="文章字數">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">文章字數：</span>
-              <span>1.9k</span>
-            </span>
-            <span class="post-meta-item" title="所需閱讀時間">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
-              <span>2 分鐘</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>從前面的文章我們可以看出 Vue 是用物件的方式來存取資料，這邊我們就複習一下物件和陣列的差別。</p>
-<h2 id="陣列"><a href="#陣列" class="headerlink" title="陣列"></a>陣列</h2><p>假設我們今天要計算全班同學的數學成績平均(假設班上只有3個人)，在沒有陣列的狀況下，寫法如下 。</p>
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> math1 = <span class="number">80</span>;</span><br><span class="line"><span class="keyword">var</span> math2 = <span class="number">90</span>;</span><br><span class="line"><span class="keyword">var</span> math3 = <span class="number">60</span>;</span><br><span class="line"><span class="keyword">var</span> total = math1 + math2 + math3;</span><br><span class="line"><span class="keyword">var</span> average = total / <span class="number">3</span></span><br></pre></td></tr></table></figure>
-
-<p>但是如果使用陣列之後，可以這樣寫。</p>
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> math = [<span class="number">80</span>,<span class="number">90</span>,<span class="number">60</span>];</span><br><span class="line"><span class="keyword">var</span> total = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;math.length;i++)&#123;</span><br><span class="line">    total += math[i]</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> average_math = total / <span class="number">3</span></span><br></pre></td></tr></table></figure>
-
-<p>雖然和第一個程式相比感覺程式沒有減少太多程式碼，但是當如果我們變數變多，比如50個人，就可以減少宣告很多變數，達到更簡潔的程式碼。 </p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/02/19/Day5%20%E7%89%A9%E4%BB%B6%E5%92%8C%E9%99%A3%E5%88%97/#more" rel="contents">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://chenghan0918.github.io/2021/02/19/Day4%20%E8%B3%87%E6%96%99%E8%88%87%E7%95%AB%E9%9D%A2%E7%B6%81%E5%AE%9A%E7%9A%84%E6%96%B9%E6%B3%95/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/Leo.jpeg">
-      <meta itemprop="name" content="Leo">
-      <meta itemprop="description" content="You can’t connect the dots looking forward; you can only connect them looking backwards.">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Leo's Space">
-    </span>
-
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/02/19/Day4%20%E8%B3%87%E6%96%99%E8%88%87%E7%95%AB%E9%9D%A2%E7%B6%81%E5%AE%9A%E7%9A%84%E6%96%B9%E6%B3%95/" class="post-title-link" itemprop="url">Day4 資料與畫面綁定的方法</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-              
-
-              <time title="創建時間：2021-02-19 21:17:36 / 修改時間：21:24:31" itemprop="dateCreated datePublished" datetime="2021-02-19T21:17:36+08:00">2021-02-19</time>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/2021/02/19/Day4%20%E8%B3%87%E6%96%99%E8%88%87%E7%95%AB%E9%9D%A2%E7%B6%81%E5%AE%9A%E7%9A%84%E6%96%B9%E6%B3%95/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/02/19/Day4 資料與畫面綁定的方法/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="文章字數">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">文章字數：</span>
-              <span>1.4k</span>
-            </span>
-            <span class="post-meta-item" title="所需閱讀時間">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
-              <span>1 分鐘</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>介紹三種資料和畫面綁定常用的方式</p>
-<h2 id="v-text"><a href="#v-text" class="headerlink" title="v-text"></a>v-text</h2><p>可以直接將資料顯示在綁定的 <code>html 標籤</code>內，與 <code>&#123;&#123;&#125;&#125;` 最大的差異在於 `v-text` 會取代原本標籤內的內容，而 `&#123;&#123;&#125;&#125;</code> 則是不會。像是 <code>message</code> 變數用 <code>v-text</code> 放入 <code>p 段落</code>，則 <code>p 段落</code>原本的內容就被取代。</p>
-<h2 id="v-html"><a href="#v-html" class="headerlink" title="v-html"></a>v-html</h2><p>功能和 <code>v-text</code> 一樣，將資料直接顯示在綁定的 <code>html 標籤</code>內，也會取代標籤內原本的內容，與 <code>v-text</code> 差異在於如果綁定的資料有包含 <code>html 標籤</code>， <code>v-html</code> 會渲染所包含的標籤在網頁上，而不單純只是純文字。像是 <code>message</code>變數因為有包含 <code>a 標籤</code>，所以畫面就會渲染出連結的樣式，用法就像是 js 的<code>innerHTML</code>。最後官網有提醒我們，不要任意讓用戶輸入的資料用 <code>v-html</code> 方式呈現，因為這樣可能會產生 <code>XSS 攻擊</code>，不法人士可以在輸入欄位中插入惡意程式碼，並且透過網頁渲染執行，造成網頁資安風險。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">p</span>&gt;</span>不會&#123;&#123;message&#125;&#125;取代<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span> <span class="attr">v-text</span>=<span class="string">&quot;message&quot;</span> &gt;</span>被取代<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span> <span class="attr">v-html</span>=<span class="string">&quot;message&quot;</span> &gt;</span>被取代<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">&quot;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="keyword">var</span> app = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">        el:<span class="string">&#x27;.app&#x27;</span>,</span><br><span class="line">        data:&#123;</span><br><span class="line">            message: <span class="string">&#x27;&lt;a href=&quot;#&quot;&gt;Hello Vue&lt;/a&gt;&#x27;</span>,</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/02/19/Day4%20%E8%B3%87%E6%96%99%E8%88%87%E7%95%AB%E9%9D%A2%E7%B6%81%E5%AE%9A%E7%9A%84%E6%96%B9%E6%B3%95/#more" rel="contents">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://chenghan0918.github.io/2021/02/08/Day3%20%EF%BC%ADVVM%20%E6%9E%B6%E6%A7%8B/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/Leo.jpeg">
-      <meta itemprop="name" content="Leo">
-      <meta itemprop="description" content="You can’t connect the dots looking forward; you can only connect them looking backwards.">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Leo's Space">
-    </span>
-
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/02/08/Day3%20%EF%BC%ADVVM%20%E6%9E%B6%E6%A7%8B/" class="post-title-link" itemprop="url">Day3 ＭVVM 架構</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2021-02-08 21:42:51" itemprop="dateCreated datePublished" datetime="2021-02-08T21:42:51+08:00">2021-02-08</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-02-19 18:37:21" itemprop="dateModified" datetime="2021-02-19T18:37:21+08:00">2021-02-19</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Web/" itemprop="url" rel="index"><span itemprop="name">Web</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/it%E9%90%B5%E4%BA%BA%E7%AB%B6%E8%B3%BD/" itemprop="url" rel="index"><span itemprop="name">it鐵人競賽</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/2021/02/08/Day3%20%EF%BC%ADVVM%20%E6%9E%B6%E6%A7%8B/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/02/08/Day3 ＭVVM 架構/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="文章字數">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">文章字數：</span>
-              <span>325</span>
-            </span>
-            <span class="post-meta-item" title="所需閱讀時間">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
-              <span>1 分鐘</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>雖然 Vue.js 有自己介紹它不是採用 ＭVVM 的框架，但 MVVM 的概念卻影響 Vue.js 的運作，因此讓我們先了解什麼是 ＭVVM 架構 。</p>
-<h2 id="架構示意圖"><a href="#架構示意圖" class="headerlink" title="架構示意圖"></a>架構示意圖</h2><p><img src="https://i.imgur.com/lDYVYfr.png" alt="https://i.imgur.com/lDYVYfr.png"></p>
-<h3 id="View"><a href="#View" class="headerlink" title="View"></a>View</h3><p>代表顯示在畫面的樣子，像是按鈕、文字輸入欄位等等</p>
-<h3 id="Model"><a href="#Model" class="headerlink" title="Model"></a>Model</h3><p>主要取用資料的部分</p>
-<h3 id="ViewModel"><a href="#ViewModel" class="headerlink" title="ViewModel"></a>ViewModel</h3><p>將資料和畫面綁定的連結器</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/02/08/Day3%20%EF%BC%ADVVM%20%E6%9E%B6%E6%A7%8B/#more" rel="contents">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://chenghan0918.github.io/2021/02/08/Day2%20%E7%AC%AC%E4%B8%80%E5%80%8B%20Vue%20%E6%87%89%E7%94%A8%E7%A8%8B%E5%BC%8F/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/Leo.jpeg">
-      <meta itemprop="name" content="Leo">
-      <meta itemprop="description" content="You can’t connect the dots looking forward; you can only connect them looking backwards.">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Leo's Space">
-    </span>
-
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/02/08/Day2%20%E7%AC%AC%E4%B8%80%E5%80%8B%20Vue%20%E6%87%89%E7%94%A8%E7%A8%8B%E5%BC%8F/" class="post-title-link" itemprop="url">Day2 第一個 Vue 應用程式</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-              
-
-              <time title="創建時間：2021-02-08 21:12:53 / 修改時間：21:39:13" itemprop="dateCreated datePublished" datetime="2021-02-08T21:12:53+08:00">2021-02-08</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Web/" itemprop="url" rel="index"><span itemprop="name">Web</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/it%E9%90%B5%E4%BA%BA%E7%AB%B6%E8%B3%BD/" itemprop="url" rel="index"><span itemprop="name">it鐵人競賽</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/2021/02/08/Day2%20%E7%AC%AC%E4%B8%80%E5%80%8B%20Vue%20%E6%87%89%E7%94%A8%E7%A8%8B%E5%BC%8F/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/02/08/Day2 第一個 Vue 應用程式/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="文章字數">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">文章字數：</span>
-              <span>1.2k</span>
-            </span>
-            <span class="post-meta-item" title="所需閱讀時間">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
-              <span>1 分鐘</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="先來個-Hello-Word"><a href="#先來個-Hello-Word" class="headerlink" title="先來個 Hello Word"></a>先來個 Hello Word</h2><p>首先記得要先載入 Vue 檔案</p>
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;script src=<span class="string">&quot;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&quot;</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-<p>宣告一個變數名稱 app  的 Vue 物件</p>
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> app = <span class="keyword">new</span> Vue( &#123; &#125; );</span><br></pre></td></tr></table></figure>
-<p>在 html 檔案內增加一個 div 區塊，並且設定區塊的 id 為 app</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/02/08/Day2%20%E7%AC%AC%E4%B8%80%E5%80%8B%20Vue%20%E6%87%89%E7%94%A8%E7%A8%8B%E5%BC%8F/#more" rel="contents">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://chenghan0918.github.io/2021/02/07/Day1%20%E5%BB%BA%E7%AB%8B%20Vue%20%E9%96%8B%E7%99%BC%E7%92%B0%E5%A2%83/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/Leo.jpeg">
-      <meta itemprop="name" content="Leo">
-      <meta itemprop="description" content="You can’t connect the dots looking forward; you can only connect them looking backwards.">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Leo's Space">
-    </span>
-
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/02/07/Day1%20%E5%BB%BA%E7%AB%8B%20Vue%20%E9%96%8B%E7%99%BC%E7%92%B0%E5%A2%83/" class="post-title-link" itemprop="url">Day1 建立 Vue 開發環境</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2021-02-07 22:30:02" itemprop="dateCreated datePublished" datetime="2021-02-07T22:30:02+08:00">2021-02-07</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-02-19 21:24:10" itemprop="dateModified" datetime="2021-02-19T21:24:10+08:00">2021-02-19</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Web/" itemprop="url" rel="index"><span itemprop="name">Web</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/it%E9%90%B5%E4%BA%BA%E7%AB%B6%E8%B3%BD/" itemprop="url" rel="index"><span itemprop="name">it鐵人競賽</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/2021/02/07/Day1%20%E5%BB%BA%E7%AB%8B%20Vue%20%E9%96%8B%E7%99%BC%E7%92%B0%E5%A2%83/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/02/07/Day1 建立 Vue 開發環境/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="文章字數">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">文章字數：</span>
-              <span>1.3k</span>
-            </span>
-            <span class="post-meta-item" title="所需閱讀時間">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
-              <span>1 分鐘</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="1-安裝編譯器"><a href="#1-安裝編譯器" class="headerlink" title="1.安裝編譯器"></a>1.安裝編譯器</h2><ul>
-<li>VScode 安裝<ul>
-<li><a target="_blank" rel="noopener" href="https://code.visualstudio.com/">官方下載</a></li>
-</ul>
-</li>
-<li>VScode 插件安裝<ul>
-<li><a target="_blank" rel="noopener" href="https://marketplace.visualstudio.com/items?itemName=MS-CEINTL.vscode-language-pack-zh-hant">Chinese (Traditional) Language Pack for Visual Studio Code</a><ul>
-<li>幫你把 VScode 繁體化</li>
-</ul>
-</li>
-<li><a target="_blank" rel="noopener" href="https://marketplace.visualstudio.com/items?itemName=yuichinukiyama.vscode-preview-server">Preview on Web Server</a><ul>
-<li>安裝完之後，在編譯器建立的 <code>index.html</code> 檔上按<code>shift+control+L</code>，就可以開啟一個虛擬 Web Server 來開啟你的首頁程式，Server 網址是<a target="_blank" rel="noopener" href="http://localhost:8080/index.html">http://localhost:8080/index.html</a> ，而不是一般在 <code>index.html</code> 點擊兩下，使用本地端 file://… 的方式打開首頁程式。使用這個插件好處是當你網頁程式有所更動時，網頁畫面也會隨著程式自動更新，不用再重新啟動瀏覽器，增加開發效率。</li>
-<li>如果之後有學到 <code>Vue Cli</code> ，在執行發佈指令 <code>npm run build</code> 後，會將構建完成的檔案放到<code>dist</code> 資料夾中，這個資料夾內的 <code>index.html</code> 就無使用本地端 file://… 的方式直接打開，而是必須透過 Web Server 開啟。</li>
-</ul>
-</li>
-<li><a target="_blank" rel="noopener" href="https://marketplace.visualstudio.com/items?itemName=jcbuisson.vue">Vue</a><ul>
-<li>會自動將 Vue.js 相關程式語法給 Hightlight 起來。</li>
-</ul>
-</li>
-<li><a target="_blank" rel="noopener" href="https://marketplace.visualstudio.com/items?itemName=hollowtree.vue-snippets">Vue 2 Snippets</a><ul>
-<li>VScode 會自動跳出 Vue.js 關鍵字的補字。
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/02/07/Day1%20%E5%BB%BA%E7%AB%8B%20Vue%20%E9%96%8B%E7%99%BC%E7%92%B0%E5%A2%83/#more" rel="contents">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://chenghan0918.github.io/2021/02/07/%E4%BD%BF%E7%94%A8javascript%E4%BE%86%E8%A7%A3leetcode(#1%20Two%20Sum)(Easy)/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/Leo.jpeg">
-      <meta itemprop="name" content="Leo">
-      <meta itemprop="description" content="You can’t connect the dots looking forward; you can only connect them looking backwards.">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Leo's Space">
-    </span>
-
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/02/07/%E4%BD%BF%E7%94%A8javascript%E4%BE%86%E8%A7%A3leetcode(#1%20Two%20Sum)(Easy)/" class="post-title-link" itemprop="url">使用javascript來解leetcode(#1 Two Sum)(Easy)</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2021-02-07 22:28:42" itemprop="dateCreated datePublished" datetime="2021-02-07T22:28:42+08:00">2021-02-07</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-02-08 21:39:44" itemprop="dateModified" datetime="2021-02-08T21:39:44+08:00">2021-02-08</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/leetcode/" itemprop="url" rel="index"><span itemprop="name">leetcode</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/leetcode/esay/" itemprop="url" rel="index"><span itemprop="name">esay</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/2021/02/07/%E4%BD%BF%E7%94%A8javascript%E4%BE%86%E8%A7%A3leetcode(#1%20Two%20Sum)(Easy)/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/02/07/使用javascript來解leetcode(#1 Two Sum)(Easy)/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="文章字數">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">文章字數：</span>
-              <span>2.4k</span>
-            </span>
-            <span class="post-meta-item" title="所需閱讀時間">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
-              <span>2 分鐘</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="題目原文"><a href="#題目原文" class="headerlink" title="題目原文"></a>題目原文</h2><p>Given an array of integers, return <strong>indices</strong> of the two numbers such that they add up to a specific target.</p>
-<p>You may assume that each input would have <strong><em>exactly</em></strong> one solution, and you may not use the <em>same</em> element twice.</p>
-<p><strong>Example:</strong></p>
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Given nums = [<span class="number">2</span>, <span class="number">7</span>, <span class="number">11</span>, <span class="number">15</span>], target = <span class="number">9</span>,</span><br><span class="line"></span><br><span class="line">Because nums[<span class="number">0</span>] + nums[<span class="number">1</span>] = <span class="number">2</span> + <span class="number">7</span> = <span class="number">9</span>,</span><br><span class="line"><span class="keyword">return</span> [<span class="number">0</span>, <span class="number">1</span>].</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/02/07/%E4%BD%BF%E7%94%A8javascript%E4%BE%86%E8%A7%A3leetcode(#1%20Two%20Sum)(Easy)/#more" rel="contents">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
       
   
   
@@ -1297,8 +524,908 @@
   
   
 
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://chenghan0918.github.io/2020/10/13/[Day29]%20CSS%20display%E8%A4%87%E7%BF%92/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/Leo.jpeg">
+      <meta itemprop="name" content="Leo">
+      <meta itemprop="description" content="You can’t connect the dots looking forward; you can only connect them looking backwards.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Leo's Space">
+    </span>
+
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/10/13/%5BDay29%5D%20CSS%20display%E8%A4%87%E7%BF%92/" class="post-title-link" itemprop="url">[Day29] CSS display複習</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2020-10-13 23:12:44" itemprop="dateCreated datePublished" datetime="2020-10-13T23:12:44+08:00">2020-10-13</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-03-05 22:10:27" itemprop="dateModified" datetime="2021-03-05T22:10:27+08:00">2021-03-05</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Web/" itemprop="url" rel="index"><span itemprop="name">Web</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/it%E9%90%B5%E4%BA%BA%E7%AB%B6%E8%B3%BD/" itemprop="url" rel="index"><span itemprop="name">it鐵人競賽</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2020/10/13/%5BDay29%5D%20CSS%20display%E8%A4%87%E7%BF%92/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/10/13/[Day29] CSS display複習/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="文章字數">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">文章字數：</span>
+              <span>154</span>
+            </span>
+            <span class="post-meta-item" title="所需閱讀時間">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+              <span>1 分鐘</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="display-block-區塊元素介紹"><a href="#display-block-區塊元素介紹" class="headerlink" title="display:block 區塊元素介紹"></a>display:block 區塊元素介紹</h2><ul>
+<li>特性<ul>
+<li>h1,ul,li,p</li>
+<li>占滿整個版面</li>
+<li>可設定寬高</li>
+<li>會另起一行來呈現</li>
+<li>display: block</li>
+<li>可以包行內元素</li>
+<li>div排版用區塊標籤</li>
+<li><a target="_blank" rel="noopener" href="https://codepen.io/lpfpgnsq/pen/BajJwOy">範例</a><h2 id="display-inline-行內元素介紹"><a href="#display-inline-行內元素介紹" class="headerlink" title="display:inline 行內元素介紹"></a>display:inline 行內元素介紹</h2></li>
+</ul>
+</li>
+<li>特性<ul>
+<li>不會換行</li>
+<li>span排版用行內標籤</li>
+<li>不能設定寬高</li>
+<li>改成display: block（a標籤要讓人好點擊時）</li>
+<li><a target="_blank" rel="noopener" href="https://codepen.io/lpfpgnsq/pen/dyGJVww">範例</a></li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://chenghan0918.github.io/2020/10/11/[Day27]%20jsES6%E8%AA%9E%E6%B3%95-%E8%A7%A3%E6%A7%8B(%E4%B8%8B)/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/Leo.jpeg">
+      <meta itemprop="name" content="Leo">
+      <meta itemprop="description" content="You can’t connect the dots looking forward; you can only connect them looking backwards.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Leo's Space">
+    </span>
+
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/10/11/%5BDay27%5D%20jsES6%E8%AA%9E%E6%B3%95-%E8%A7%A3%E6%A7%8B(%E4%B8%8B)/" class="post-title-link" itemprop="url">[Day27] jsES6語法-解構(下)</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2020-10-11 22:50:31" itemprop="dateCreated datePublished" datetime="2020-10-11T22:50:31+08:00">2020-10-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-03-05 21:45:24" itemprop="dateModified" datetime="2021-03-05T21:45:24+08:00">2021-03-05</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Web/" itemprop="url" rel="index"><span itemprop="name">Web</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/it%E9%90%B5%E4%BA%BA%E7%AB%B6%E8%B3%BD/" itemprop="url" rel="index"><span itemprop="name">it鐵人競賽</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2020/10/11/%5BDay27%5D%20jsES6%E8%AA%9E%E6%B3%95-%E8%A7%A3%E6%A7%8B(%E4%B8%8B)/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/10/11/[Day27] jsES6語法-解構(下)/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="文章字數">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">文章字數：</span>
+              <span>330</span>
+            </span>
+            <span class="post-meta-item" title="所需閱讀時間">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+              <span>1 分鐘</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>我們也可以把解構方法用在物件裡面，把 family 的值傳到 Min ，並且用 Leo 的名稱來代替他，當我們使用 console 顯示 Leo 時，就會顯示小明。</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> family = &#123;</span><br><span class="line">    Min:<span class="string">&#x27;小明&#x27;</span>,</span><br><span class="line">    Mo:<span class="string">&#x27;媽媽&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> &#123; <span class="attr">Min</span>:Leo&#125; = family;</span><br><span class="line"><span class="built_in">console</span>.log(Leo);</span><br></pre></td></tr></table></figure>
+
+<p>如果我們的解構值後面只有一個值，那麼他會預設先給第一個值，小明就會被換成阿明，當我們console ming 時，他會顯示阿明。</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> [ming = <span class="string">&#x27;小明&#x27;</span>,jay = <span class="string">&#x27;杰倫&#x27;</span>]=[<span class="string">&#x27;阿明&#x27;</span>];</span><br><span class="line"><span class="built_in">console</span>.log(ming,jay)</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://chenghan0918.github.io/2020/10/10/[Day26]%20jsES6%E8%AA%9E%E6%B3%95-%E8%A7%A3%E6%A7%8B(%E4%B8%8A)/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/Leo.jpeg">
+      <meta itemprop="name" content="Leo">
+      <meta itemprop="description" content="You can’t connect the dots looking forward; you can only connect them looking backwards.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Leo's Space">
+    </span>
+
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/10/10/%5BDay26%5D%20jsES6%E8%AA%9E%E6%B3%95-%E8%A7%A3%E6%A7%8B(%E4%B8%8A)/" class="post-title-link" itemprop="url">[Day26]  jsES6語法-解構(上)</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2020-10-10 22:50:41" itemprop="dateCreated datePublished" datetime="2020-10-10T22:50:41+08:00">2020-10-10</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-03-05 21:45:02" itemprop="dateModified" datetime="2021-03-05T21:45:02+08:00">2021-03-05</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Web/" itemprop="url" rel="index"><span itemprop="name">Web</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/it%E9%90%B5%E4%BA%BA%E7%AB%B6%E8%B3%BD/" itemprop="url" rel="index"><span itemprop="name">it鐵人競賽</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2020/10/10/%5BDay26%5D%20jsES6%E8%AA%9E%E6%B3%95-%E8%A7%A3%E6%A7%8B(%E4%B8%8A)/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/10/10/[Day26] jsES6語法-解構(上)/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="文章字數">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">文章字數：</span>
+              <span>428</span>
+            </span>
+            <span class="post-meta-item" title="所需閱讀時間">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+              <span>1 分鐘</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>我們可以使用解構的方式，將右邊的值給映射到左邊，比如將 family 的值映射到變數 ming,father,mother 裡面。</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> family = [<span class="string">&#x27;小明&#x27;</span>,<span class="string">&#x27;爸爸&#x27;</span>,<span class="string">&#x27;媽媽&#x27;</span>];</span><br><span class="line"><span class="keyword">let</span> [ming,father,mother] = family</span><br><span class="line"><span class="built_in">console</span>.log(ming,father,mother)</span><br></pre></td></tr></table></figure>
+
+<p>我們也可以用這種方式來交換數值，而不用像先前一樣多宣告一個變數來交換值。</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> mother = <span class="string">&#x27;媽媽&#x27;</span>;</span><br><span class="line"><span class="keyword">let</span> father = <span class="string">&#x27;爸爸&#x27;</span>;</span><br><span class="line">[mother,father] = [father,mother];</span><br><span class="line"><span class="built_in">console</span>.log(mother,father);</span><br></pre></td></tr></table></figure>
+
+<p>我們也可以直接使用解構的方式，將 str 字串的值給取出來，映射到 a b c 變數中。</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> str = <span class="string">&#x27;你好嗎&#x27;</span>;</span><br><span class="line"><span class="keyword">let</span> [a,b,c] = str;</span><br><span class="line"><span class="built_in">console</span>.log(a,b,c)</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://chenghan0918.github.io/2020/10/09/[Day25]%20jsES6%E8%AA%9E%E6%B3%95-%E5%B8%B8%E7%94%A8%E9%99%A3%E5%88%97%E6%96%B9%E6%B3%95(%E4%B8%8B)/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/Leo.jpeg">
+      <meta itemprop="name" content="Leo">
+      <meta itemprop="description" content="You can’t connect the dots looking forward; you can only connect them looking backwards.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Leo's Space">
+    </span>
+
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/10/09/%5BDay25%5D%20jsES6%E8%AA%9E%E6%B3%95-%E5%B8%B8%E7%94%A8%E9%99%A3%E5%88%97%E6%96%B9%E6%B3%95(%E4%B8%8B)/" class="post-title-link" itemprop="url">[Day25] jsES6語法-常用陣列方法(下)</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2020-10-09 22:52:05" itemprop="dateCreated datePublished" datetime="2020-10-09T22:52:05+08:00">2020-10-09</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-03-05 21:43:41" itemprop="dateModified" datetime="2021-03-05T21:43:41+08:00">2021-03-05</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Web/" itemprop="url" rel="index"><span itemprop="name">Web</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/it%E9%90%B5%E4%BA%BA%E7%AB%B6%E8%B3%BD/" itemprop="url" rel="index"><span itemprop="name">it鐵人競賽</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2020/10/09/%5BDay25%5D%20jsES6%E8%AA%9E%E6%B3%95-%E5%B8%B8%E7%94%A8%E9%99%A3%E5%88%97%E6%96%B9%E6%B3%95(%E4%B8%8B)/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/10/09/[Day25] jsES6語法-常用陣列方法(下)/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="文章字數">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">文章字數：</span>
+              <span>663</span>
+            </span>
+            <span class="post-meta-item" title="所需閱讀時間">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+              <span>1 分鐘</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="filter"><a href="#filter" class="headerlink" title="filter"></a>filter</h2><p>當我們想要過濾陣列的資料，可以使用 filter 方法，它會return 條件相符合的陣列，比如我們設定 money 的條件 &gt; 100 ，就可以篩選出兩個物件。</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> people = [</span><br><span class="line">    &#123;</span><br><span class="line">        name:<span class="string">&#x27;Leo&#x27;</span>,</span><br><span class="line">        money:<span class="number">200</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        name:<span class="string">&#x27;Peter&#x27;</span>,</span><br><span class="line">        money:<span class="number">200</span></span><br><span class="line">    &#125;</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> filterPeople = people.filter(<span class="function"><span class="keyword">function</span>(<span class="params">item,index</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(item.money&gt;<span class="number">100</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">console</span>.log(filterPeople)</span><br></pre></td></tr></table></figure>
+
+<h2 id="find"><a href="#find" class="headerlink" title="find"></a>find</h2><p>和 filter 最大的差異在於，find 只回傳第一個符合條件的值，就此就算我們設定 money 的條件 &gt; 100 ，也只會回傳第一個物件的值。</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> people = [</span><br><span class="line">    &#123;</span><br><span class="line">        name:<span class="string">&#x27;Leo&#x27;</span>,</span><br><span class="line">        money:<span class="number">200</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        name:<span class="string">&#x27;Peter&#x27;</span>,</span><br><span class="line">        money:<span class="number">200</span></span><br><span class="line">    &#125;</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> findPeople = people.find(<span class="function"><span class="keyword">function</span>(<span class="params">item,index</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(item.money&gt;<span class="number">100</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">console</span>.log(findPeople)</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://chenghan0918.github.io/2020/10/08/[Day24]%20jsES6%E8%AA%9E%E6%B3%95-%E5%B8%B8%E7%94%A8%E9%99%A3%E5%88%97%E6%96%B9%E6%B3%95(%E4%B8%AD)/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/Leo.jpeg">
+      <meta itemprop="name" content="Leo">
+      <meta itemprop="description" content="You can’t connect the dots looking forward; you can only connect them looking backwards.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Leo's Space">
+    </span>
+
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/10/08/%5BDay24%5D%20jsES6%E8%AA%9E%E6%B3%95-%E5%B8%B8%E7%94%A8%E9%99%A3%E5%88%97%E6%96%B9%E6%B3%95(%E4%B8%AD)/" class="post-title-link" itemprop="url">[Day24] jsES6語法-常用陣列方法(中）</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2020-10-08 22:48:32" itemprop="dateCreated datePublished" datetime="2020-10-08T22:48:32+08:00">2020-10-08</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-03-05 21:43:15" itemprop="dateModified" datetime="2021-03-05T21:43:15+08:00">2021-03-05</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Web/" itemprop="url" rel="index"><span itemprop="name">Web</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/it%E9%90%B5%E4%BA%BA%E7%AB%B6%E8%B3%BD/" itemprop="url" rel="index"><span itemprop="name">it鐵人競賽</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2020/10/08/%5BDay24%5D%20jsES6%E8%AA%9E%E6%B3%95-%E5%B8%B8%E7%94%A8%E9%99%A3%E5%88%97%E6%96%B9%E6%B3%95(%E4%B8%AD)/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/10/08/[Day24] jsES6語法-常用陣列方法(中)/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="文章字數">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">文章字數：</span>
+              <span>644</span>
+            </span>
+            <span class="post-meta-item" title="所需閱讀時間">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+              <span>1 分鐘</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="forEach"><a href="#forEach" class="headerlink" title="forEach"></a>forEach</h2><p>如果我們想存取陣列裡面每一個東西，通常會使用到 for 迴圈，如果我們今天想要讓程式更簡潔一些，可以使用 forEach 方法，他可以自動存取陣列裡面的值而不要設定初始值和條件。</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> people = [</span><br><span class="line">    &#123;</span><br><span class="line">        name:<span class="string">&#x27;Leo&#x27;</span>,</span><br><span class="line">        money:<span class="number">100</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        name:<span class="string">&#x27;Peter&#x27;</span>,</span><br><span class="line">        money:<span class="number">200</span></span><br><span class="line">    &#125;</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line">people.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">item,index</span>)</span>&#123;</span><br><span class="line">    item.icash = item.money + <span class="number">100</span>;</span><br><span class="line">    <span class="built_in">console</span>.log(item)</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h2 id="map"><a href="#map" class="headerlink" title="map"></a>map</h2><p>與 forEach 和 map 最大的差異在於，map 必須回傳東西，除此之外他的功能就和 forEach 一樣，如果我們今天沒有 return 值，就會回傳 undefined。</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> people = [</span><br><span class="line">    &#123;</span><br><span class="line">        name:<span class="string">&#x27;Leo&#x27;</span>,</span><br><span class="line">        money:<span class="number">100</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        name:<span class="string">&#x27;Peter&#x27;</span>,</span><br><span class="line">        money:<span class="number">200</span></span><br><span class="line">    &#125;</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> newpeople = people.map(<span class="function"><span class="keyword">function</span>(<span class="params">item,index</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        ...item,</span><br><span class="line">        icash:item.money+<span class="number">500</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(newpeople);</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://chenghan0918.github.io/2020/10/07/[Day23]%20jsES6%E8%AA%9E%E6%B3%95-%E5%B8%B8%E7%94%A8%E9%99%A3%E5%88%97%E6%96%B9%E6%B3%95(%E4%B8%8A)/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/Leo.jpeg">
+      <meta itemprop="name" content="Leo">
+      <meta itemprop="description" content="You can’t connect the dots looking forward; you can only connect them looking backwards.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Leo's Space">
+    </span>
+
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/10/07/%5BDay23%5D%20jsES6%E8%AA%9E%E6%B3%95-%E5%B8%B8%E7%94%A8%E9%99%A3%E5%88%97%E6%96%B9%E6%B3%95(%E4%B8%8A)/" class="post-title-link" itemprop="url">[Day23] jsES6語法-常用陣列方法(上)</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2020-10-07 22:47:23" itemprop="dateCreated datePublished" datetime="2020-10-07T22:47:23+08:00">2020-10-07</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-03-05 21:36:24" itemprop="dateModified" datetime="2021-03-05T21:36:24+08:00">2021-03-05</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Web/" itemprop="url" rel="index"><span itemprop="name">Web</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/it%E9%90%B5%E4%BA%BA%E7%AB%B6%E8%B3%BD/" itemprop="url" rel="index"><span itemprop="name">it鐵人競賽</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2020/10/07/%5BDay23%5D%20jsES6%E8%AA%9E%E6%B3%95-%E5%B8%B8%E7%94%A8%E9%99%A3%E5%88%97%E6%96%B9%E6%B3%95(%E4%B8%8A)/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/10/07/[Day23] jsES6語法-常用陣列方法(上)/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="文章字數">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">文章字數：</span>
+              <span>921</span>
+            </span>
+            <span class="post-meta-item" title="所需閱讀時間">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+              <span>1 分鐘</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="every"><a href="#every" class="headerlink" title="every"></a>every</h2><p>如果我們想要確認陣列裡面的資料都符合條件，我們可以在陣列裡面使用 every 條件來篩選， return 後面的條件式如果全部符合條件就會回傳 true，如果沒有就是回傳 false。像是陣列 people 裡面只有一個物件的 money &gt; 150 ，因此會回傳 false。</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> people = [</span><br><span class="line">    &#123;</span><br><span class="line">        name:<span class="string">&#x27;Leo&#x27;</span>,</span><br><span class="line">        money:<span class="number">100</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        name:<span class="string">&#x27;Peter&#x27;</span>,</span><br><span class="line">        money:<span class="number">200</span></span><br><span class="line">    &#125;</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> ans = people.every(<span class="function"><span class="keyword">function</span>(<span class="params">item</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> item.money &gt; <span class="number">150</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(ans)</span><br></pre></td></tr></table></figure>
+
+<h2 id="some"><a href="#some" class="headerlink" title="some"></a>some</h2><p>和 every 最大的差異在於，陣列裡面只要有條件符合，就會回傳 true ，比如有有其中一個物件的 money &gt; 150 ，最後就會回傳 true。 </p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> people = [</span><br><span class="line">    &#123;</span><br><span class="line">        name:<span class="string">&#x27;Leo&#x27;</span>,</span><br><span class="line">        money:<span class="number">100</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        name:<span class="string">&#x27;Peter&#x27;</span>,</span><br><span class="line">        money:<span class="number">200</span></span><br><span class="line">    &#125;</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> ans = people.some(<span class="function"><span class="keyword">function</span>(<span class="params">item</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> item.money &gt; <span class="number">150</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(ans)</span><br></pre></td></tr></table></figure>
+
+<h2 id="reduce"><a href="#reduce" class="headerlink" title="reduce"></a>reduce</h2><p> 參數 prev 代表先前的值，而 prev 的初始值就是 reduce 的第二個參數，像這範例就是 0，最後我們將陣列的值全部加起來，得到 300 的總和。</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> people = [</span><br><span class="line">    &#123;</span><br><span class="line">        name:<span class="string">&#x27;Leo&#x27;</span>,</span><br><span class="line">        money:<span class="number">100</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        name:<span class="string">&#x27;Peter&#x27;</span>,</span><br><span class="line">        money:<span class="number">200</span></span><br><span class="line">    &#125;</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> ans = people.reduce(<span class="function"><span class="keyword">function</span>(<span class="params">prev,item</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> prev+item.money</span><br><span class="line">&#125;,<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(ans);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://chenghan0918.github.io/2020/10/06/[Day22]%20jsES6%E8%AA%9E%E6%B3%95-%E7%B8%AE%E5%AF%AB%E7%94%A8%E6%B3%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/Leo.jpeg">
+      <meta itemprop="name" content="Leo">
+      <meta itemprop="description" content="You can’t connect the dots looking forward; you can only connect them looking backwards.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Leo's Space">
+    </span>
+
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/10/06/%5BDay22%5D%20jsES6%E8%AA%9E%E6%B3%95-%E7%B8%AE%E5%AF%AB%E7%94%A8%E6%B3%95/" class="post-title-link" itemprop="url">[Day22] jsES6語法-縮寫用法</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2020-10-06 23:10:47" itemprop="dateCreated datePublished" datetime="2020-10-06T23:10:47+08:00">2020-10-06</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-03-05 21:35:05" itemprop="dateModified" datetime="2021-03-05T21:35:05+08:00">2021-03-05</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Web/" itemprop="url" rel="index"><span itemprop="name">Web</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/it%E9%90%B5%E4%BA%BA%E7%AB%B6%E8%B3%BD/" itemprop="url" rel="index"><span itemprop="name">it鐵人競賽</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2020/10/06/%5BDay22%5D%20jsES6%E8%AA%9E%E6%B3%95-%E7%B8%AE%E5%AF%AB%E7%94%A8%E6%B3%95/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/10/06/[Day22] jsES6語法-縮寫用法/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="文章字數">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">文章字數：</span>
+              <span>575</span>
+            </span>
+            <span class="post-meta-item" title="所需閱讀時間">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+              <span>1 分鐘</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>如果我們宣告兩個物件 milk 和 fruits，並且要生成一個新的物件 dic 去存放這兩個物件。如果我們將 dic 裡面的物件名稱和我們設定的物件值設為一樣，此時我們可以省略掉後面的物件值，像是 dic 2 的物件宣告方式。最後 dic 和 dic2 得到的結果會是一樣的。</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> milk = <span class="string">&#x27;牛奶&#x27;</span>;</span><br><span class="line"><span class="keyword">const</span> fruits = &#123;</span><br><span class="line">    apple:<span class="string">&#x27;蘋果&#x27;</span>,</span><br><span class="line">    banana:<span class="string">&#x27;香蕉&#x27;</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">const</span> dic = &#123;</span><br><span class="line">    fruits:fruits,</span><br><span class="line">    milk:milk</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> dic2 = &#123;</span><br><span class="line">    fruits,</span><br><span class="line">    milk</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>如果之後學到 Vue router，就很常會使用到這個縮寫用法。</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span><br><span class="line"><span class="keyword">import</span> App <span class="keyword">from</span> <span class="string">&#x27;/App&#x27;</span></span><br><span class="line"><span class="keyword">import</span> router <span class="keyword">from</span> <span class="string">&#x27;./router&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">    el:<span class="string">&#x27;#app&#x27;</span>,</span><br><span class="line">    router:router,<span class="comment">//可以縮寫成 router</span></span><br><span class="line">    template:<span class="string">&#x27;&lt;App/&gt;&#x27;</span>,</span><br><span class="line">    component:&#123;App&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://chenghan0918.github.io/2020/10/05/[Day21]%20jsES6%E8%AA%9E%E6%B3%95-%E5%AD%97%E4%B8%B2%E6%A8%A1%E6%9D%BF%20Template%20String/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/Leo.jpeg">
+      <meta itemprop="name" content="Leo">
+      <meta itemprop="description" content="You can’t connect the dots looking forward; you can only connect them looking backwards.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Leo's Space">
+    </span>
+
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/10/05/%5BDay21%5D%20jsES6%E8%AA%9E%E6%B3%95-%E5%AD%97%E4%B8%B2%E6%A8%A1%E6%9D%BF%20Template%20String/" class="post-title-link" itemprop="url">[Day21] jsES6語法-字串模板 Template String</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2020-10-05 22:35:12" itemprop="dateCreated datePublished" datetime="2020-10-05T22:35:12+08:00">2020-10-05</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-03-05 21:33:43" itemprop="dateModified" datetime="2021-03-05T21:33:43+08:00">2021-03-05</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Web/" itemprop="url" rel="index"><span itemprop="name">Web</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/it%E9%90%B5%E4%BA%BA%E7%AB%B6%E8%B3%BD/" itemprop="url" rel="index"><span itemprop="name">it鐵人競賽</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2020/10/05/%5BDay21%5D%20jsES6%E8%AA%9E%E6%B3%95-%E5%AD%97%E4%B8%B2%E6%A8%A1%E6%9D%BF%20Template%20String/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/10/05/[Day21] jsES6語法-字串模板 Template String/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="文章字數">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">文章字數：</span>
+              <span>959</span>
+            </span>
+            <span class="post-meta-item" title="所需閱讀時間">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+              <span>1 分鐘</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>如果我們要我們今天要再字串裡面加入值，就會需要使用到+號。常常我們如果要想要使用 innerHTML 來渲染變數，就會在變數裡面存放一大串的 html 結構，並且用+號將數值連起來，如果為了排版，我們還必須加上\ 來換行，這樣其實相當麻煩。</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> dataArr = [<span class="string">&#x27;Peter&#x27;</span>,<span class="string">&#x27;Merry&#x27;</span>,<span class="string">&#x27;Leo&#x27;</span>];</span><br><span class="line"><span class="keyword">let</span> text = <span class="string">&#x27;我叫做&#x27;</span>+dataArr[<span class="number">0</span>];</span><br><span class="line"><span class="built_in">console</span>.log(text);</span><br><span class="line"><span class="keyword">let</span> list = <span class="string">&#x27;&lt;ul&gt;\</span></span><br><span class="line"><span class="string">&lt;li&gt;&#x27;</span>+dataArr[<span class="number">0</span>]+<span class="string">&#x27;&lt;/li&gt;\</span></span><br><span class="line"><span class="string">&lt;li&gt;&#x27;</span>+dataArr[<span class="number">1</span>]+<span class="string">&#x27;&lt;/li&gt;\</span></span><br><span class="line"><span class="string">&lt;li&gt;&#x27;</span>+dataArr[<span class="number">2</span>]+<span class="string">&#x27;&lt;/li&gt;\</span></span><br><span class="line"><span class="string">&lt;ul&gt;&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<p>如果我們ES6 新的模板語法，就可以省去這些麻煩。我們可以直接使用模板語法，並且將想要打的標籤結構還有值輸入進’’(是鍵盤1旁邊的符號，不是這個，因為如果使用它，it邦內建是反紅色的語法，所以打不出來)內，記得如果是值的呈現要加上${}，才可以正確顯示出值來。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;content&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> dataArr = [<span class="string">&#x27;Peter&#x27;</span>,<span class="string">&#x27;Merry&#x27;</span>,<span class="string">&#x27;Leo&#x27;</span>];</span><br><span class="line"><span class="keyword">let</span> text = <span class="string">`我叫做<span class="subst">$&#123;dataArr[<span class="number">0</span>]&#125;</span>`</span>;</span><br><span class="line"><span class="keyword">let</span> list = <span class="string">`</span></span><br><span class="line"><span class="string">        &lt;ul&gt;</span></span><br><span class="line"><span class="string">       &lt;li&gt;<span class="subst">$&#123;dataArr[<span class="number">0</span>]&#125;</span>&lt;/li&gt;</span></span><br><span class="line"><span class="string">       &lt;li&gt;<span class="subst">$&#123;dataArr[<span class="number">1</span>]&#125;</span>&lt;/li&gt;</span></span><br><span class="line"><span class="string">       &lt;li&gt;<span class="subst">$&#123;dataArr[<span class="number">2</span>]&#125;</span>&lt;/li&gt;</span></span><br><span class="line"><span class="string">    &lt;ul&gt;</span></span><br><span class="line"><span class="string">`</span>;</span><br><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">&#x27;content&#x27;</span>).innerHTML=list;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一頁"></i></a>
+  </nav>
 
 
 
