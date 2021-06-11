@@ -151,7 +151,7 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤<span class="badge">3</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤<span class="badge">4</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
@@ -161,7 +161,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔<span class="badge">31</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔<span class="badge">32</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -235,7 +235,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">31</span>
+          <span class="site-state-item-count">32</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -248,7 +248,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">標籤</span></a>
       </div>
   </nav>
@@ -292,6 +292,158 @@
 
         <div class="content index posts-expand">
           
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://chenghan0918.github.io/2021/06/11/API/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/Leo.jpeg">
+      <meta itemprop="name" content="Leo">
+      <meta itemprop="description" content="You can’t connect the dots looking forward; you can only connect them looking backwards.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Leo's Space">
+    </span>
+
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/06/11/API/" class="post-title-link" itemprop="url">第一次用 Node.js  開  API 就上手</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+              
+
+              <time title="創建時間：2021-06-11 21:51:01 / 修改時間：22:05:33" itemprop="dateCreated datePublished" datetime="2021-06-11T21:51:01+08:00">2021-06-11</time>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2021/06/11/API/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/06/11/API/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="文章字數">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">文章字數：</span>
+              <span>4.2k</span>
+            </span>
+            <span class="post-meta-item" title="所需閱讀時間">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+              <span>4 分鐘</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>Node.js  可以想像成是一種可以在後端運行的 JS 語言，因此對於如果原本就熟悉 JS 來做前端開發的人，算是一個進入後端門檻相對較親近的語言，因此本篇文章主要分享如何第一次使用 Node.js 就可以開啟一個自己的 API，包含基本資料庫的新增、修改、刪除、查看功能。廢話不多說，就讓我們看下去。 </p>
+<h1 id="準備工作"><a href="#準備工作" class="headerlink" title="準備工作"></a>準備工作</h1><h2 id="安裝-Node-js"><a href="#安裝-Node-js" class="headerlink" title="安裝 Node.js"></a>安裝 Node.js</h2><p><a target="_blank" rel="noopener" href="https://nodejs.org/en/">Node.js 官方網址</a></p>
+<h2 id="安裝-VSCode-套件"><a href="#安裝-VSCode-套件" class="headerlink" title="安裝 VSCode 套件"></a>安裝 VSCode 套件</h2><p>安裝 <a target="_blank" rel="noopener" href="https://marketplace.visualstudio.com/items?itemName=rangav.vscode-thunder-client">Thunder Client</a> 來測試 API</p>
+<h2 id="安裝環境"><a href="#安裝環境" class="headerlink" title="安裝環境"></a>安裝環境</h2><p>本次練習採用 Node.js 裡面的 Express 框架，首先我們先透過 npm 來安裝 Express 框架。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install express-generator -g  </span><br></pre></td></tr></table></figure>
+
+<h2 id="建立專案"><a href="#建立專案" class="headerlink" title="建立專案"></a>建立專案</h2><p>使用 Express 框架建立自己的應用程式，資料夾名稱 myapp，並且將使用 EJS 當成 View 的模板。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">express --view=ejs myapp</span><br></pre></td></tr></table></figure>
+
+<h2 id="安裝套件"><a href="#安裝套件" class="headerlink" title="安裝套件"></a>安裝套件</h2><p>下載此專案所需套件。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm  install</span><br></pre></td></tr></table></figure>
+
+<h2 id="測試環境"><a href="#測試環境" class="headerlink" title="測試環境"></a>測試環境</h2><p>使用以下指令來啟動我們 local 端的 server</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm start</span><br></pre></td></tr></table></figure>
+
+<p>進入網址 <a target="_blank" rel="noopener" href="http://localhost:3000/">http://localhost:3000</a>，如果看到以下畫面，代表成功在本地建好一個 Node.js 的Server </p>
+<p><img src="https://i.imgur.com/drqZIqY.png"></p>
+<h1 id="檔案結構介紹"><a href="#檔案結構介紹" class="headerlink" title="檔案結構介紹"></a>檔案結構介紹</h1><ul>
+<li>bin：檔案 www 是 server 的設定。</li>
+<li>node_modules：使用  npm install 後所安裝的套件。</li>
+<li>public：裡面放置 images 、 js 與 css 檔案。</li>
+<li>routes：裡面的檔案是路由的設定。</li>
+<li>view：網頁頁面渲染呈現方式，裡面放 EJS 模板。</li>
+<li>app.js：執行程式時的進入點。</li>
+<li>package-lock.json：紀錄使用  npm install 後所安裝的套件資訊。</li>
+<li>package.json：紀錄專案所需的套件資訊。</li>
+</ul>
+<h1 id="基本網路概念"><a href="#基本網路概念" class="headerlink" title="基本網路概念"></a>基本網路概念</h1><p>如果我們前端瀏覽器要透過網路向 server 取資料，它需要發出一個要求 request ，當 server 收到請求後，會回應 response 我們的請求。而這一來一往之間也規定了一些方法。以下列舉比較常見的 http 方法:</p>
+<ul>
+<li>GET：client 端想要獲得 server 端的資料。</li>
+<li>POST：client 端想要新增資料到 server 端。</li>
+<li>DELETE：client 端想要刪除 server 端的一筆資料。</li>
+<li>PATCH：client 端想要修改 server 端的一筆資料。</li>
+</ul>
+<h1 id="程式實作"><a href="#程式實作" class="headerlink" title="程式實作"></a>程式實作</h1><h2 id="新增路由"><a href="#新增路由" class="headerlink" title="新增路由"></a>新增路由</h2><p>在 routes 裡面新增檔案 api.js ，檔案內容可以先複製 user.js 並稍微修改如下：</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> express = <span class="built_in">require</span>(<span class="string">&#x27;express&#x27;</span>);</span><br><span class="line"><span class="keyword">var</span> router = express.Router();</span><br><span class="line">router.get(<span class="string">&#x27;/&#x27;</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res, next</span>) </span>&#123;</span><br><span class="line">    res.send(<span class="string">&#x27;API&#x27;</span>);<span class="comment">//修改裡面的文字成 API</span></span><br><span class="line">  &#125;);</span><br><span class="line"><span class="built_in">module</span>.exports = router;</span><br></pre></td></tr></table></figure>
+
+<p>修改 app.js 內容將 api.js 導入並使用。</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> indexRouter = <span class="built_in">require</span>(<span class="string">&#x27;./routes/index&#x27;</span>);</span><br><span class="line"><span class="keyword">var</span> usersRouter = <span class="built_in">require</span>(<span class="string">&#x27;./routes/users&#x27;</span>);</span><br><span class="line"><span class="keyword">var</span> apiRouter = <span class="built_in">require</span>(<span class="string">&#x27;./routes/api&#x27;</span>);<span class="comment">// 新增這行來導入 api.js   </span></span><br><span class="line"></span><br><span class="line">app.use(<span class="string">&#x27;/&#x27;</span>, indexRouter);</span><br><span class="line">app.use(<span class="string">&#x27;/users&#x27;</span>, usersRouter);</span><br><span class="line">app.use(<span class="string">&#x27;/api&#x27;</span>,apiRouter);<span class="comment">//新增這行來使用 api.js，並且設定使用路徑為 /api</span></span><br></pre></td></tr></table></figure>
+
+<p>關閉 server 後重啟，並進入 <a target="_blank" rel="noopener" href="http://localhost:3000/api">http://localhost:3000/api</a> ，看到畫面顯示文字 API 代表新增路由成功。</p>
+<p><img src="https://i.imgur.com/bNZ83fg.png"></p>
+<h2 id="模擬後端資料"><a href="#模擬後端資料" class="headerlink" title="模擬後端資料"></a>模擬後端資料</h2><p>我們在 api.js 裡面新增變數 data 來模擬後端 DB 裡面的資料。</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> data =[</span><br><span class="line">  &#123;</span><br><span class="line">    id:<span class="number">1</span>,</span><br><span class="line">    name: <span class="string">&#x27;手機&#x27;</span></span><br><span class="line">  &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<h2 id="POST-方法（新增）"><a href="#POST-方法（新增）" class="headerlink" title="POST 方法（新增）"></a>POST 方法（新增）</h2><p>修改 api.js ，我們使用 <strong>router.post(‘/路徑’,方法)</strong> 來新增 http 的 post 方法，路徑設定成 /products ，裡面的方法有兩個個參數 req 代表前端使用者的要求（request），res 代表後端伺服器的回應（response）。</p>
+<p>我們使用變數 product  來接收前端的要求 req.body，然後我們將 product 與一個變數 id 包成一個物件，並且透過 push 將這個物件加入我們所模擬的後端資料 data 中 ，變數 id 的值我們使用 ****new Date().getTime() 來生成一個時間戳記代表編號，由於我們 product 到時候會是接收一個 json 物件格式，如果我們要直接取出物件裡面的變數來使用，可以透過 ES6 的解構語法  … product  來取出值。</p>
+<p>當後端成功接收到前端要求的東西，後端可以使用 res.send() 裡面加入要回傳給前端的資料，這邊是加入我們模擬資料庫的變數 data，並且加入一個變數 success 來代表是否有成功回應，如果有就是 true。最後記得要再加上  res.end() 來代表後端回應的動作結束。改完後記得要重啟～</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">router.post(<span class="string">&#x27;/products&#x27;</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> product = req.body <span class="comment">// 用一個變數接收請求</span></span><br><span class="line">    data.push(&#123;</span><br><span class="line">      id:<span class="keyword">new</span> <span class="built_in">Date</span>().getTime(),</span><br><span class="line">      ...product</span><br><span class="line">    &#125;);</span><br><span class="line">    res.send(&#123;</span><br><span class="line">      success:<span class="literal">true</span>,</span><br><span class="line">      data</span><br><span class="line">    &#125;);</span><br><span class="line">    res.end();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>使用  <a target="_blank" rel="noopener" href="https://marketplace.visualstudio.com/items?itemName=rangav.vscode-thunder-client">Thunder Client</a>   選擇 POST 來測試  API 是否正常，輸入網址 <a target="_blank" rel="noopener" href="http://localhost:3000/api/products">http://localhost:3000/api/products</a>，req 帶入一個 json 物件裡面屬性  name 代表商品名稱。</p>
+<p><img src="https://i.imgur.com/LaTAk78.png"></p>
+<h2 id="GET-方法（查詢）"><a href="#GET-方法（查詢）" class="headerlink" title="GET 方法（查詢）"></a>GET 方法（查詢）</h2><p>修改 api.js ，之前我們顯示 API  在畫面的那幾行程式，其實就是使用 router.get() 來實作 http 的 get 方法，路由路徑和 post 方法是一樣的，程式邏輯其實就是 psot 方法裡面，後端一樣使用 res.send() 來回應資料給前端，裡面包含模擬資料庫的 data ，還有代表是否成功回應的 success 。記得回應結束後要加上res.end()，改完後記得要重啟～</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">router.get(<span class="string">&#x27;/products&#x27;</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>) </span>&#123;</span><br><span class="line">  res.send(&#123;</span><br><span class="line">    success:<span class="literal">true</span>,</span><br><span class="line">    data</span><br><span class="line">  &#125;);</span><br><span class="line">  res.end();</span><br><span class="line">&#125;);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>使用  <a target="_blank" rel="noopener" href="https://marketplace.visualstudio.com/items?itemName=rangav.vscode-thunder-client">Thunder Client</a>   選擇 GET 來測試  API 是否正常，輸入網址 <a target="_blank" rel="noopener" href="http://localhost:3000/api/products">http://localhost:3000/api/products</a></p>
+<p><img src="https://i.imgur.com/zieYwwG.png"></p>
+<h2 id="DELETE-（刪除）"><a href="#DELETE-（刪除）" class="headerlink" title="DELETE （刪除）"></a>DELETE （刪除）</h2><p>修改 api.js ，使用 router.delete() 來實作 http 的 delete 方法，路由路徑要新增 :id ，透過變數 id 來儲存前端使用者輸入的數字，這個數字代表前端使用者想要刪除的產品代號。 接下來我們宣告一個變數 deleteId，它的值我們透過 req.params.id 來取得前端輸入傳給後端的 id 數字，然後我們對 data 進行 forEach() 方法，如果當 data 裡面的 id 和使用者想刪除的 deleteId 是一樣的話，使用 splice(想刪除的位置，刪除數量，刪除要在那個位置新增的東西)來刪除資料，splice(key,1) 參數設定代表從 id 和 deleteId 相同的那個 item 它的 key 位置開始刪除，刪除數量設定 1  ，沒有第三個參數代表沒有新增東西。最後 res  回應的邏輯就和上面相同。改完後記得要重啟～</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">router.delete(<span class="string">&#x27;/products/:id&#x27;</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> deleteId = req.params.id</span><br><span class="line">  data.forEach(<span class="function">(<span class="params">item,key</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span>(item.id==deleteId)&#123;</span><br><span class="line">      data.splice(key,<span class="number">1</span>)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line">  res.send(&#123;</span><br><span class="line">    success:<span class="literal">true</span>,</span><br><span class="line">    data</span><br><span class="line">  &#125;);</span><br><span class="line">  res.end();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p><img src="https://i.imgur.com/693udOQ.png"></p>
+<p>使用  <a target="_blank" rel="noopener" href="https://marketplace.visualstudio.com/items?itemName=rangav.vscode-thunder-client">Thunder Client</a>   選擇 DELETE 來測試  API 是否正常，輸入網址 <a target="_blank" rel="noopener" href="http://localhost:3000/api/products/1">http://localhost:3000/api/products/1</a> ，裡面的 1 就代表想要刪除的產品 id。成功執行後就會發現回應中的  data 裡面 id 為 1 ，商品 name 為手機商品已經被刪除 。</p>
+<h2 id="PATCH（修改）"><a href="#PATCH（修改）" class="headerlink" title="PATCH（修改）"></a>PATCH（修改）</h2><p>修改 api.js ，使用 router.patch() 來實作 http 的 patch 方法，路徑一樣是比照刪除的方法，id 用來接收前端使用者想要刪除的商品編號。其實修改的邏輯可以想成刪除 DELETE 原本的資料，再新增POST 新的資料。所以我們結合新增和刪除的邏輯，product 代表修改的商品名稱，id 就是想要修改的商品編號，之後我們透過 products[key].name=product.name 修改商品的值。</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">router.patch(<span class="string">&#x27;/products/:id&#x27;</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> deleteId = req.params.id;</span><br><span class="line">  <span class="keyword">var</span> product = req.body;</span><br><span class="line">  data.forEach(<span class="function">(<span class="params">item,key</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span>(item.id==deleteId )&#123;</span><br><span class="line">      data[key].name=product.name;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line">  res.send(&#123;</span><br><span class="line">    success:<span class="literal">true</span>,</span><br><span class="line">        data</span><br><span class="line">  &#125;);</span><br><span class="line">  res.end();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>使用  <a target="_blank" rel="noopener" href="https://marketplace.visualstudio.com/items?itemName=rangav.vscode-thunder-client">Thunder Client</a>   選擇 PATCH 來測試  API 是否正常，輸入網址 <a target="_blank" rel="noopener" href="http://localhost:3000/api/products/1">http://localhost:3000/api/products/1</a> ，裡面的 1 就代表想要修改產品名稱的產品 id。成功執行後就會發現回應中 data 裡面 id 為 1 ，商品 name 為手機的商品已經被改名成電腦。 </p>
+<p><img src="https://i.imgur.com/PRy2Co7.png"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
       
   
   
@@ -1296,117 +1448,6 @@
 
 <p>如果之後學到 Vue router，就很常會使用到這個縮寫用法。</p>
 <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span><br><span class="line"><span class="keyword">import</span> App <span class="keyword">from</span> <span class="string">&#x27;/App&#x27;</span></span><br><span class="line"><span class="keyword">import</span> router <span class="keyword">from</span> <span class="string">&#x27;./router&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">    el:<span class="string">&#x27;#app&#x27;</span>,</span><br><span class="line">    router:router,<span class="comment">//可以縮寫成 router</span></span><br><span class="line">    template:<span class="string">&#x27;&lt;App/&gt;&#x27;</span>,</span><br><span class="line">    component:&#123;App&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://chenghan0918.github.io/2020/10/05/[Day21]%20jsES6%E8%AA%9E%E6%B3%95-%E5%AD%97%E4%B8%B2%E6%A8%A1%E6%9D%BF%20Template%20String/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/Leo.jpeg">
-      <meta itemprop="name" content="Leo">
-      <meta itemprop="description" content="You can’t connect the dots looking forward; you can only connect them looking backwards.">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Leo's Space">
-    </span>
-
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/10/05/%5BDay21%5D%20jsES6%E8%AA%9E%E6%B3%95-%E5%AD%97%E4%B8%B2%E6%A8%A1%E6%9D%BF%20Template%20String/" class="post-title-link" itemprop="url">[Day21] jsES6語法-字串模板 Template String</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2020-10-05 22:35:12" itemprop="dateCreated datePublished" datetime="2020-10-05T22:35:12+08:00">2020-10-05</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-03-05 21:33:43" itemprop="dateModified" datetime="2021-03-05T21:33:43+08:00">2021-03-05</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Web/" itemprop="url" rel="index"><span itemprop="name">Web</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/it%E9%90%B5%E4%BA%BA%E7%AB%B6%E8%B3%BD/" itemprop="url" rel="index"><span itemprop="name">it鐵人競賽</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/2020/10/05/%5BDay21%5D%20jsES6%E8%AA%9E%E6%B3%95-%E5%AD%97%E4%B8%B2%E6%A8%A1%E6%9D%BF%20Template%20String/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/10/05/[Day21] jsES6語法-字串模板 Template String/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="文章字數">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">文章字數：</span>
-              <span>959</span>
-            </span>
-            <span class="post-meta-item" title="所需閱讀時間">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
-              <span>1 分鐘</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>如果我們要我們今天要再字串裡面加入值，就會需要使用到+號。常常我們如果要想要使用 innerHTML 來渲染變數，就會在變數裡面存放一大串的 html 結構，並且用+號將數值連起來，如果為了排版，我們還必須加上\ 來換行，這樣其實相當麻煩。</p>
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> dataArr = [<span class="string">&#x27;Peter&#x27;</span>,<span class="string">&#x27;Merry&#x27;</span>,<span class="string">&#x27;Leo&#x27;</span>];</span><br><span class="line"><span class="keyword">let</span> text = <span class="string">&#x27;我叫做&#x27;</span>+dataArr[<span class="number">0</span>];</span><br><span class="line"><span class="built_in">console</span>.log(text);</span><br><span class="line"><span class="keyword">let</span> list = <span class="string">&#x27;&lt;ul&gt;\</span></span><br><span class="line"><span class="string">&lt;li&gt;&#x27;</span>+dataArr[<span class="number">0</span>]+<span class="string">&#x27;&lt;/li&gt;\</span></span><br><span class="line"><span class="string">&lt;li&gt;&#x27;</span>+dataArr[<span class="number">1</span>]+<span class="string">&#x27;&lt;/li&gt;\</span></span><br><span class="line"><span class="string">&lt;li&gt;&#x27;</span>+dataArr[<span class="number">2</span>]+<span class="string">&#x27;&lt;/li&gt;\</span></span><br><span class="line"><span class="string">&lt;ul&gt;&#x27;</span>;</span><br></pre></td></tr></table></figure>
-
-<p>如果我們ES6 新的模板語法，就可以省去這些麻煩。我們可以直接使用模板語法，並且將想要打的標籤結構還有值輸入進’’(是鍵盤1旁邊的符號，不是這個，因為如果使用它，it邦內建是反紅色的語法，所以打不出來)內，記得如果是值的呈現要加上${}，才可以正確顯示出值來。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;content&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> dataArr = [<span class="string">&#x27;Peter&#x27;</span>,<span class="string">&#x27;Merry&#x27;</span>,<span class="string">&#x27;Leo&#x27;</span>];</span><br><span class="line"><span class="keyword">let</span> text = <span class="string">`我叫做<span class="subst">$&#123;dataArr[<span class="number">0</span>]&#125;</span>`</span>;</span><br><span class="line"><span class="keyword">let</span> list = <span class="string">`</span></span><br><span class="line"><span class="string">        &lt;ul&gt;</span></span><br><span class="line"><span class="string">       &lt;li&gt;<span class="subst">$&#123;dataArr[<span class="number">0</span>]&#125;</span>&lt;/li&gt;</span></span><br><span class="line"><span class="string">       &lt;li&gt;<span class="subst">$&#123;dataArr[<span class="number">1</span>]&#125;</span>&lt;/li&gt;</span></span><br><span class="line"><span class="string">       &lt;li&gt;<span class="subst">$&#123;dataArr[<span class="number">2</span>]&#125;</span>&lt;/li&gt;</span></span><br><span class="line"><span class="string">    &lt;ul&gt;</span></span><br><span class="line"><span class="string">`</span>;</span><br><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">&#x27;content&#x27;</span>).innerHTML=list;</span><br></pre></td></tr></table></figure>
       
     </div>
 
